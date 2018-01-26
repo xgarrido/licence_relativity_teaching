@@ -15,6 +15,63 @@ pour l’énergie d’une particule libre qui sera démontrée dans quelques sem
 mc^{2}$).
 #+END_QUESTION
 
+La durée de vie du baryon \Lambda_{0}[fn:cb0c07154fe6de2] dans le référentiel du laboratoire est plus grande par rapport
+à sa durée de vie propre \tau = 2.9 10^{-10} s :
+#+BEGIN_SRC latex
+  \begin{align*}
+    t &= \gamma\tau\\
+    &=\frac{1}{\surd1-\beta^2}\tau
+  \end{align*}
+#+END_SRC
+
+Le facteur de Lorentz \gamma se calcule en faisant le rapport de l'énergie totale du baryon $E$ à la
+masse de cette particule $mc^2$. Ce résultat se déduit de la transformation du quadri-vecteur
+énergie-impulsion:
+#+BEGIN_SRC latex
+  \begin{align*}
+    \begin{bmatrix}
+      E\\p_xc\\p_yc\\p_zc
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \gamma&\beta\gamma&0&0\\
+      \beta\gamma&\gamma&0&0\\
+      0&0&1&0\\
+      0&0&0&1
+    \end{bmatrix}
+    \cdot
+    \underbrace{\begin{bmatrix}
+      E'=mc^2\\0\\0\\0
+    \end{bmatrix}}_{\substack{\text{référentiel propre}\\\text{où la particule est au repos}}}
+  \end{align*}
+#+END_SRC
+
+La valeur de \gamma est ainsi égale à
+#+BEGIN_SRC latex
+  \begin{align*}
+    \gamma=\frac{E}{mc^2}=\frac{\unit[10]{GeV}}{\unit[1.115]{GeV}}=8.969
+  \end{align*}
+#+END_SRC
+
+La vitesse du baryon se déduit
+#+BEGIN_SRC latex
+  \begin{align*}
+    \gamma=\frac{1}{\surd1-\beta^2}\to\beta&=\frac{v}{c}=\sqrt{1-\frac{1}{\gamma^2}}=0.9938\\
+    v&=99.38\%c
+  \end{align*}
+#+END_SRC
+et la distance moyenne parcourue
+#+BEGIN_SRC latex
+  \begin{align*}
+    L=v\times t=v\times\gamma\tau=\unit[0.77]{m}
+  \end{align*}
+#+END_SRC
+
+#+CAPTION: *Photographies de deux événements faisant apparaître la désintégration de deux particules $\bm{V}$*
+#+CAPTION: (référence [[http://www.nature.com/physics/looking-back/rochester/index.html][Rochester G. D. & Butler C. C. 1947]])
+[[file:figures/v_particles.jpg]]
+
+
 ** Contraction des longueurs
 #+BEGIN_QUESTION
 On considère deux référentiels inertiels en translation rectiligne uniforme l'un par rapport à
@@ -43,3 +100,9 @@ Résoudre ce paradoxe en étudiant les coordonnées des extrémités $R_{1,2}$ e
 et du trou dans chacun des référentiels ($\mathcal{R}$ puis $\mathcal{R}'$). /Indication: lorsqu'on
 travaille dans $\mathcal{R}'$ il faut étudier la trajectoire des extrémités du trou./
 #+END_QUESTION
+
+* Footnotes
+
+[fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
+$uds$. La terminologie d'étrangeté vient de la durée de vie particulièrement longue de ces
+particules, caractéristique de désintégrations par interaction faible.
