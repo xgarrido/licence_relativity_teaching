@@ -1,0 +1,28 @@
+#+TITLE: Special relativity classes of Licence 3
+#+AUTHOR: Xavier Garrido
+#+OPTIONS: toc:nil num:nil
+
+* Introduction
+
+This repository contains materials for Special Relativity classes given in Licence 3 of Fundamental
+Physics at the University of Paris Sud.
+
+* Installation
+
+You will need special =orgmode= settings to translate the =org= files into =pdf= documents. All the needed
+code is embedded within this file in the next sections. Nevertheless, you will need to install some
+[[https://github.com/xgarrido/latex-templates][latex-templates]] specially developed for such purpose.
+
+Moreover, to avoid duplication of =org-mode= LaTeX class, [[https://github.com/xgarrido/zsh-org-pages][org-pages]] script is used to produce =pdf= file
+as well as =html= (if needed). It adds another dependency but it eases the unification of org export
+for several file sources.
+
+There is no need to detangle this file since emacs will do it when you will use the Makefile in the
+corresponding directories. So, next step will be to do =make= within the different directories.
+
+* Browsing classes
+
+You can navigate through the different classes (all in french) by following the
+next links
+
+#+INCLUDE: toc.org

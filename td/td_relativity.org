@@ -1,0 +1,45 @@
+#+TITLE:  Travaux Dirigés de Relativité Restreinte -- Licence 3
+#+AUTHOR: Xavier Garrido
+#+EMAIL:  xavier.garrido@u-psud.fr
+#+OPTIONS: ^:{} toc:2 tags:t author:t email:t split:html
+#+LATEX_CLASS: teaching-class
+#+LATEX_CLASS_OPTIONS: [novc]
+
+* TD1 : Principe de relativité et premières conséquences
+** Désintégration
+#+BEGIN_QUESTION
+Le \Lambda_{0} est un baryon de masse 1115 MeV/c^{2} qui se désintègre en une paire proton-pion :
+$\Lambda_0\to p+\pi^-$. Sa durée de vie propre étant de 2.9 × 10^{−10} s, quelle est la distance
+moyenne parcourue par un \Lambda_{0} d'énergie 10 GeV dans le laboratoire ? (On admettra la formule
+pour l’énergie d’une particule libre qui sera démontrée dans quelques semaines : $E =\gamma
+mc^{2}$).
+#+END_QUESTION
+
+** Contraction des longueurs
+#+BEGIN_QUESTION
+On considère deux référentiels inertiels en translation rectiligne uniforme l'un par rapport à
+l'autre. On considère une règle immobile dans l'un des référentiels et alignée selon l'axe de la
+translation. Retrouver le phénomène de contraction des longueurs de deux ou trois manières
+différentes.
+#+END_QUESTION
+
+** Paradoxe de la règle et du trou
+#+BEGIN_QUESTION
+On étudie la situation schématisée sur la figure 1. On se place dans un référentiel inertiel
+$\mathcal{R}$ doté des axes $x$ et $y$ et d'une horloge donnant $t$. Une règle de longueur propre
+$L_0$ se déplace à une vitesse constante $\vv{V} = V \vv{e}_x$ proche de $c$. Un plan percé d'un
+trou de largeur propre $L_0$ se déplace lui selon l'axe $Oy$ à une vitesse constante $\vv{u} =
+u\vv{e}_y$; $u\ll c$ de telle sorte qu'on peut traiter le mouvement du trou dans l’approximation non
+relativiste. Les mouvements de la règle et du trou sont tels que le milieu de la règle rejoint le
+milieu du trou à $t$ = 0 et coïncide alors avec l'origine $O$ du référentiel.
+
+
+En raison de la contraction de la longueur de la règle dans $\mathcal{R}$, on s'attend à ce qu’elle
+passe largement dans le trou. Il apparaît un paradoxe lorsqu'on se place dans le référentiel
+$\mathcal{R}'$ attaché à la règle et qu'on voit la largeur du trou rétrécir: la règle ne pourrait
+alors plus passer.
+
+Résoudre ce paradoxe en étudiant les coordonnées des extrémités $R_{1,2}$ et $T_{1,2}$ de la règle
+et du trou dans chacun des référentiels ($\mathcal{R}$ puis $\mathcal{R}'$). /Indication: lorsqu'on
+travaille dans $\mathcal{R}'$ il faut étudier la trajectoire des extrémités du trou./
+#+END_QUESTION
