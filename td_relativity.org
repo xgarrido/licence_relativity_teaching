@@ -3,7 +3,7 @@
 #+EMAIL:  xavier.garrido@u-psud.fr
 #+OPTIONS: ^:{} toc:2 tags:t author:t email:t split:html
 #+LATEX_CLASS: teaching-class
-#+LATEX_CLASS_OPTIONS: [novc]
+# #+LATEX_CLASS_OPTIONS: [novc]
 
 * TD1 : Principe de relativité et premières conséquences
 ** Désintégration
