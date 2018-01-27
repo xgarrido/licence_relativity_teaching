@@ -80,6 +80,51 @@ translation. Retrouver le phénomène de contraction des longueurs de deux ou tr
 différentes.
 #+END_QUESTION
 
+- *1^{ère} démonstration* : On réalise la mesure avec un rayon lumineux qui fait l'aller-retour entre
+  les deux extrémités $A$ et $B$ de la règle. Dans le référentiel propre $\mathcal{R}'$ de la règle,
+  la lumière met un temps $\Delta t'=\tfrac{2L'}{c}$ pour faire l'aller-retour sachant que $L'$ est
+  la longueur propre de la règle.
+
+  Dans le référentiel $\mathcal{R}$ étant donné le déplacement de la règle, le temps $\Delta t$ mis
+  par la lumière pour faire l'aller-retour s'exprime de la façon suivante
+  #+BEGIN_SRC latex
+    \begin{align*}
+      \Delta t&=\Delta t_{A\to B}+\Delta t_{B\to A}
+    \end{align*}
+  #+END_SRC
+  avec
+  #+BEGIN_SRC latex
+    \begin{align*}
+      c\Delta t_{A\to B}&=L + V\Delta t_{A\to B}\\
+      c\Delta t_{B\to A}&=L - V\Delta t_{B\to A}\\
+    \end{align*}
+  #+END_SRC
+  On déduit que
+  #+BEGIN_SRC latex
+    \begin{align*}
+      \Delta t_{A\to B}\left(1-\frac{V}{c}\right)&=\frac{L}{c}\to\Delta t_{A\to B}=\frac{\nicefrac{L}{c}}{1-\beta}\\
+      \Delta t_{B\to A}\left(1+\frac{V}{c}\right)&=\frac{L}{c}\to\Delta t_{B\to A}=\frac{\nicefrac{L}{c}}{1+\beta}\\
+    \end{align*}
+  #+END_SRC
+  et donc que
+  #+BEGIN_SRC latex
+    \begin{align*}
+      \Delta t&=\Delta t_{A\to B}+\Delta t_{B\to A}\\
+      &=\frac{L}{c}\left(\frac{1}{1-\beta}+\frac{1}{1+\beta}\right)\\
+      &=\frac{\nicefrac{2L}{c}}{1-\beta^2}=\gamma^2\frac{2L}{c}
+    \end{align*}
+  #+END_SRC
+  La relation de dilatation du temps implique que $\Delta t=\gamma\Delta t'=\gamma\tfrac{2L'}{c}$ et
+  donc
+  #+BEGIN_SRC latex
+    \begin{align*}
+      \Delta t&=\frac{\nicefrac{2L}{c}}{1-\beta^2}=\gamma^2\frac{2L}{c}=\gamma\frac{2L'}{c}\\
+      L&=\frac{L'}{\gamma}
+    \end{align*}
+  #+END_SRC
+  \gamma étant toujours supérieur au égal à 1, les longueurs mesurées longitudinalement au
+  déplacement du référentiel $\nicefrac{\mathcal{R}'}{\mathcal{R}}$ sont contractées.
+
 ** Paradoxe de la règle et du trou
 #+BEGIN_QUESTION
 On étudie la situation schématisée sur la figure 1. On se place dans un référentiel inertiel
