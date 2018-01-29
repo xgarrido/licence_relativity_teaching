@@ -29,9 +29,9 @@ masse de cette particule $mc^2$. Ce résultat se déduit de la transformation du
 énergie-impulsion:
 #+BEGIN_SRC latex
   \begin{align*}
-    \begin{bmatrix}
+    \begin{pmatrix}
       E\\p_xc\\p_yc\\p_zc
-    \end{bmatrix}
+    \end{pmatrix}
     =
     \begin{bmatrix}
       \gamma&\beta\gamma&0&0\\
@@ -40,9 +40,9 @@ masse de cette particule $mc^2$. Ce résultat se déduit de la transformation du
       0&0&0&1
     \end{bmatrix}
     \cdot
-    \underbrace{\begin{bmatrix}
+    \underbrace{\begin{pmatrix}
       E'=mc^2\\0\\0\\0
-    \end{bmatrix}}_{\substack{\text{référentiel propre}\\\text{où la particule est au repos}}}
+    \end{pmatrix}}_{\substack{\text{référentiel propre}\\\text{où la particule est au repos}}}
   \end{align*}
 #+END_SRC
 
@@ -70,7 +70,6 @@ et la distance moyenne parcourue
 #+CAPTION: *Photographies de deux événements faisant apparaître la désintégration de deux particules $\bm{V}$*
 #+CAPTION: (référence [[http://www.nature.com/physics/looking-back/rochester/index.html][Rochester G. D. & Butler C. C. 1947]])
 [[file:figures/v_particles.jpg]]
-
 
 ** Contraction des longueurs
 #+BEGIN_QUESTION
@@ -124,6 +123,62 @@ différentes.
   #+END_SRC
   \gamma étant toujours supérieur au égal à 1, les longueurs mesurées longitudinalement au
   déplacement du référentiel $\nicefrac{\mathcal{R}'}{\mathcal{R}}$ sont contractées.
+
+- *2^{ème} démonstration* : on considère à présent la mesure des extrémités de la règle $A$ et $B$ au
+  même instant $t_A=t_B$ dans $\mathcal{R}$. On a donc deux événements coïncidents repérés en
+  coordonnées espace-temps par les quadri-vecteurs
+  #+BEGIN_SRC latex
+    \begin{align*}
+      E_A=
+      \begin{pmatrix}
+        ct_A\\x_A\\y_A\\z_A
+      \end{pmatrix}
+      \quad\text{et}\quad E_B=
+      \begin{pmatrix}
+        ct_B=ct_A\\x_B\\y_B\\z_B
+      \end{pmatrix}
+    \end{align*}
+  #+END_SRC
+  À l'aide de la transformation de Lorentz, on cherche à déterminer les coordonnées espace-temps de
+  ces événements $E_A$ et $E_B$ dans le référentiel propre $\mathcal{R}'$ soit
+  #+BEGIN_SRC latex
+    \begin{align*}
+      E_{A,B}'&=
+      \begin{pmatrix}
+        ct_{A,B}'\\x_{A,B}'\\y_{A,B}'\\z_{A,B}'
+      \end{pmatrix}
+      =
+      \begin{bmatrix}
+        \gamma&-\beta\gamma&0&0\\
+        -\beta\gamma&\gamma&0&0\\
+        0&0&1&0\\
+        0&0&0&1
+      \end{bmatrix}
+      \cdot
+      \begin{pmatrix}
+        ct_{A,B}\\x_{A,B}\\y_{A,B}\\z_{A,B}
+      \end{pmatrix}
+    \end{align*}
+    \begin{align*}
+      E_A'=
+      \begin{pmatrix}
+        ct_A'=\gamma(ct_A-\beta x_A)\\
+        x_A'=\gamma(x_A-\beta ct_A)\\
+        y_A'=y_A\\
+        z_A'=z_A
+      \end{pmatrix}\quad\text{et}\quad
+      E_B'=
+      \begin{pmatrix}
+        ct_B'=\gamma(ct_B-\beta x_B)\\
+        x_B'=\gamma(x_B-\beta ct_B)\\
+        y_B'=y_B\\
+        z_B'=z_B
+      \end{pmatrix}
+    \end{align*}
+  #+END_SRC
+  La différence $x_A'-x_B'$ est alors égale à $\gamma(x_A'-x_B')$ d'où $L'=\gamma L$. On notera par
+  ailleurs que les événements $E_A'$ et $E_B'$ ne sont pas simultanés dans $\mathcal{R}'$
+  ($ct_A'-ct_B'=\gamma\beta(x_B-x_A)\neq 0$).
 
 ** Paradoxe de la règle et du trou
 #+BEGIN_QUESTION
