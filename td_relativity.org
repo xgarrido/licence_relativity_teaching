@@ -180,6 +180,23 @@ différentes.
   ailleurs que les événements $E_A'$ et $E_B'$ ne sont pas simultanés dans $\mathcal{R}'$
   ($ct_A'-ct_B'=\gamma\beta(x_B-x_A)\neq 0$).
 
+# - *3^{ème} démonstration* : on utilise l'invariance de l'intervalle d'espace-temps
+#   $ds^2=c^2dt^2-dx^2-dy^2-dz^2=c^2\Delta t^2-d\Delta\ell^2$, soit
+#   #+BEGIN_SRC latex
+#     \begin{align*}
+#       c^2\Delta t'^2-d\Delta\ell'^2&=c^2\Delta t^2-d\Delta\ell^2
+#     \end{align*}
+#   #+END_SRC
+#   Or par définition $d\ell'$ est nul dans le référentiel propre $\mathcal{R}'$. D'autre part,
+#   $\Delta t=\tfrac{L}{V}$ et $\Delta t'=\tfrac{L'}{V}$ d'où
+#   #+BEGIN_SRC latex
+#     \begin{align*}
+#       c^2\frac{L'^2}{V^2}&=c^2\frac{L^2}{V^2}-L^2\\
+#       &=\frac{c^2}{V^2}L^2\left(1-\beta^2)\right)\\
+#       L'^2&=\frac{L^2}{\gamma^2}\to L'=\frac{L}{\gamma}
+#     \end{align*}
+#   #+END_SRC
+
 ** Paradoxe de la règle et du trou
 #+BEGIN_QUESTION
 On étudie la situation schématisée sur la figure 1. On se place dans un référentiel inertiel
@@ -190,6 +207,10 @@ u\vv{e}_y$; $u\ll c$ de telle sorte qu'on peut traiter le mouvement du trou dans
 relativiste. Les mouvements de la règle et du trou sont tels que le milieu de la règle rejoint le
 milieu du trou à $t$ = 0 et coïncide alors avec l'origine $O$ du référentiel.
 
+#+BEGIN_CENTER
+#+LATEX: \includegraphics[width=0.75\linewidth]{figures/paradoxe_regle_trou.pdf}
+#+LATEX: \captionof{figure}{\textbf{Représentation du dispositif.} La règle a pour extrémités les points $R_1$ et~$R_2$. $T_1$ et $T_2$ sont les bords du trou.}
+#+END_CENTER
 
 En raison de la contraction de la longueur de la règle dans $\mathcal{R}$, on s'attend à ce qu’elle
 passe largement dans le trou. Il apparaît un paradoxe lorsqu'on se place dans le référentiel
@@ -200,6 +221,54 @@ Résoudre ce paradoxe en étudiant les coordonnées des extrémités $R_{1,2}$ e
 et du trou dans chacun des référentiels ($\mathcal{R}$ puis $\mathcal{R}'$). /Indication: lorsqu'on
 travaille dans $\mathcal{R}'$ il faut étudier la trajectoire des extrémités du trou./
 #+END_QUESTION
+
+Du point de vue du référentiel inertiel $\mathcal{R}$, la longueur de la règle est "contractée" par
+rapport à sa longueur propre : la règle devrait donc tomber naturellement dans le trou. Toutefois,
+du point du référentiel $\mathcal{R}'$ de la règle, c'est le trou qui se déplace à une vitesse
+$-V\vv{u}_x$ et qui en raison de la contraction des longueurs apparaît alors plus petit que sa
+taille propre : du point de vue de la règle, le trou n'est donc pas assez large ! Ce paradoxe trouve
+sa solution dans le fait que le trou apparaît en réalité penché du point de vue de la règle. Pour
+nous en convaincre, on écrit depuis $\mathcal{R}'$, les coordonnées espace-temps des extrémités
+$T_1$ et $T_2$ du trou\nbsp:
+#+BEGIN_SRC latex
+  \begin{align*}
+    t'_{T_{1,2}}&=\gamma(t_{T_{1,2}}-\tfrac{\beta}{c}x_{T_{1,2}})\\
+    x'_{T_{1,2}}&=\gamma(-Vt_{T_{1,2}}+x_{T_{1,2}})\\
+    y'_{T_{1,2}}&=y_{T_{1,2}}=u\times t_{T_{1,2}}
+  \end{align*}
+#+END_SRC
+avec $x_{T_1}=-\tfrac{L_0}{2}$ et $x_{T_2}=+\tfrac{L_0}{2}$. De la première équation, on déduit que
+#+BEGIN_SRC latex
+  \begin{align*}
+    t_{T_1}&=\frac{t'_{T_1}}{\gamma}+\frac{\beta}{c}x_{T_1}=\frac{t'_{T_1}}{\gamma}-\frac{\beta}{c}\frac{L_0}{2}\\
+    t_{T_2}&=\frac{t'_{T_2}}{\gamma}+\frac{\beta}{c}x_{T_2}=\frac{t'_{T_2}}{\gamma}+\frac{\beta}{c}\frac{L_0}{2}
+  \end{align*}
+#+END_SRC
+d'où
+#+BEGIN_SRC latex
+  \begin{align*}
+    x'_{T_1}&=-Vt'_{T_1}-\frac{L_0}{2\gamma}\\
+    y'_{T_1}&=-\frac{u}{\gamma}t'_{T_1}-\frac{u\beta}{c}\frac{L_0}{2}
+  \end{align*}
+#+END_SRC
+et
+#+BEGIN_SRC latex
+  \begin{align*}
+    x'_{T_2}&=-Vt'_{T_2}+\frac{L_0}{2\gamma}\\
+    y'_{T_2}&=\frac{u}{\gamma}t'_{T_2}+\frac{u\beta}{c}\frac{L_0}{2}
+  \end{align*}
+#+END_SRC
+On remarque que lorsque $t'_{T_1}=t'_{T_2}$, la position $y'_{T_1}$ est différente de la position
+$y'_{T_2}$ : le trou apparait donc penché depuis $\mathcal{R}'$. En éliminant le temps des équations
+ci-dessus, on obtient la position de $y'_{T_{1,2}}$ en fonction de $x'_{T_{1,2}}$ soit
+#+BEGIN_SRC latex
+  \begin{align*}
+    y'_{T_1}&=-\frac{u}{V}\left(\frac{x'_{T_1}}{\gamma}+\frac{L_0}{2}\right)\\
+    y'_{T_2}&=-\frac{u}{V}\left(\frac{x'_{T_2}}{\gamma}-\frac{L_0}{2}\right)
+  \end{align*}
+#+END_SRC
+Lorsque $y'_{T_1}=0$, $x'_{T_1}=-\tfrac{\gamma L_0}{2}$ et $t'_{T_1}=\tfrac{L_0V\gamma}{2c^2}$. Au
+même instant $t'_{T_1}=t'_{T_2}$, la position de l'extrémité $T_2$ est à la position
 
 * Footnotes
 

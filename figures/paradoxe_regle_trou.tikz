@@ -1,0 +1,36 @@
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+    fill=black,circle}%
+}
+\begin{tikzpicture}
+  \sf
+  \definecolor{red}{RGB}{221,42,43}
+  \definecolor{green}{RGB}{105,182,40}
+  \definecolor{blue}{RGB}{0,51,153}
+  \definecolor{orange}{RGB}{192,128,64}
+  \definecolor{gray}{RGB}{107,108,110}
+
+  %% some definitions
+
+  %% characteristic points
+  \coordinate[mark coordinate] (O) at (0,0);
+
+  \draw[->, dashed] (0,0) -- (0,1) node[above] {$y$};
+  \draw[->, dashed] (0,0) -- (4,0) node[above] {$x$};
+
+  \draw[very thick, -|] (-3, -1) -- (-1, -1) node[below right] {$T_1$};
+  \draw[very thick, |-] (1, -1) node[below left] {$T_2$} -- (4, -1);
+
+  \draw[very thick, |-|, blue] (-3,0) node[above left] {$R_1$} -- (-1,0) node[above right] {$R_2$};
+
+  \draw[very thick, ->] (1.5, -1) -- (1.5, -0.5) node[right] {$\overrightarrow{u}$};
+  \draw[very thick, ->] (-1, 0) -- (0, 0) node[midway, below] {$\overrightarrow{V}$};
+
+  \draw (0,0) node[below right] {$\mathbf{O}$};
+
+\end{tikzpicture}
