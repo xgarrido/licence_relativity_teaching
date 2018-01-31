@@ -270,6 +270,33 @@ ci-dessus, on obtient la position de $y'_{T_{1,2}}$ en fonction de $x'_{T_{1,2}}
 Lorsque $y'_{T_1}=0$, $x'_{T_1}=-\tfrac{\gamma L_0}{2}$ et $t'_{T_1}=\tfrac{L_0V\gamma}{2c^2}$. Au
 même instant $t'_{T_1}=t'_{T_2}$, la position de l'extrémité $T_2$ est à la position
 
+** Expérience de Fizeau
+#+BEGIN_QUESTION
+On considère le dispositif expérimental illustré par le schéma ci-contre: une source lumineuse
+(située loin à droite sur la figure) émet un rayonnement que l'on scinde en deux parties qui suivent
+les chemins illustrés sur la figure : l'un des faisceaux entre dans le dispositif par l'ouverture en
+haut à droite et a une vitesse dont la direction est toujours identique à celle des écoulements
+qu'il traverse, l'autre faisceau entre dans le dispositif par l’ouverture en bas à droite et a une
+vitesse opposée à celle des écoulements qu'il traverse. Les faisceaux sortent du dispositif en se
+propageant tous deux vers la droite et se réunissent ensuite sur un écran où on les fait interférer.
+
+On note $v'$ la vitesse de la lumière par rapport à l'eau mesurée dans un référentiel où l'eau est
+immobile, et $v_\pm$ cette même vitesse mesurée dans le laboratoire. Il y a un indice \pm pour
+distinguer les deux vitesses possibles de l’écoulement : $\pm V$.
+
+1) On note $n$ l'indice de l'eau, de sorte que $v'=\nicefrac{c}{n}$. Montrer qu'en négligeant les
+   termes d’ordre $\left(\nicefrac{V}{c}\right)^2$ on obtient $v_\pm=\nicefrac{c}{n}\pm
+   V\left(1-\nicefrac{1}{n^2}\right)$.
+
+2) En déduire l'expression de la différence de phase $\Delta\phi$ entre les photons suivant les deux
+   chemins possibles (on notera \lambda la longueur d’onde de la lumière). Donner la valeur prédite
+   par la mécanique classique.
+
+   1) Dans son expérience de 1851, Fizeau utilisa un montage pour lequel $L$ = 1.487\nbsp{}m, $V$ =
+      7.059\nbsp{}m/s, \lambda = 0.526\nbsp{}µm et $n$ = 1.333. Il obtint $\nicefrac{\Delta\phi}{2n}$ =
+      0.23, cela permet-il de trancher entre l'approche relativiste et l'approche classique ?
+#+END_QUESTION
+
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
