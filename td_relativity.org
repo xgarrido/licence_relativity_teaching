@@ -270,6 +270,26 @@ ci-dessus, on obtient la position de $y'_{T_{1,2}}$ en fonction de $x'_{T_{1,2}}
 Lorsque $y'_{T_1}=0$, $x'_{T_1}=-\tfrac{\gamma L_0}{2}$ et $t'_{T_1}=\tfrac{L_0V\gamma}{2c^2}$. Au
 même instant $t'_{T_1}=t'_{T_2}$, la position de l'extrémité $T_2$ est à la position
 
+** Composition des vitesses
+#+BEGIN_QUESTION
+1) On considère une transformation de Lorentz entre deux référentiels. L'un $(\mathcal{R})$ est
+   immobile, l'autre $(\mathcal{R}')$ se déplace à vitesse constante $V\vv{u}_x$ par rapport à
+   $\mathcal{R}$. On considère un point matériel en mouvement. Donner les coordonnées de sa vitesse
+   $\vv{v}$ dans $\mathcal{R}$ en fonction des coordonnées de sa vitesse $\vv{v}'$ dans
+   $\mathcal{R}'$ et de $V$. On dérivera le résultat de deux manières différentes (soit de manière
+   directe, soit en passant par les lois de transformation de la quadri-vitesse).
+#+END_QUESTION
+
+#+BEGIN_QUESTION
+2) [@2] On considère deux particules (1 et 2) animées de vitesses constantes $\vv{~v}$ et $\vv{V}$
+   dans le laboratoire. On définit la vitesse relative $\vv{v}_\text{rel.}$ de 1 par rapport à 2
+   comme la vitesse de 1 dans le référentiel où 2 est au repos[fn:55e25f58788cdf5]. Montrer que
+   #+BEGIN_SRC latex
+     \begin{align*}
+       v_\text{rel.}^2=\frac{1}{\left(1-\nicefrac{\vv{v}.\vv{V}}{c^2}\right)^2}\left\{\left(\vv{v}-\vv{V}\right)^2-\frac{\left(\vv{v}\wedge\vv{V}\right)^2}{c^2}\right\}
+     \end{align*}
+   #+END_SRC
+#+END_QUESTION
 ** Expérience de Fizeau
 #+BEGIN_QUESTION
 On considère le dispositif expérimental illustré par le schéma ci-contre: une source lumineuse
@@ -302,3 +322,5 @@ distinguer les deux vitesses possibles de l’écoulement : $\pm V$.
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
 $uds$. La terminologie d'étrangeté vient de la durée de vie particulièrement longue de ces
 particules, caractéristique de désintégrations par interaction faible.
+
+[fn:55e25f58788cdf5] Attention ce n'est $\vv{v}-\vv{V}$ que dans la limite non relativiste !
