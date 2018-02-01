@@ -280,6 +280,86 @@ même instant $t'_{T_1}=t'_{T_2}$, la position de l'extrémité $T_2$ est à la 
    directe, soit en passant par les lois de transformation de la quadri-vitesse).
 #+END_QUESTION
 
+- *Méthode dérivée du quadri-vecteur espace-temps*
+
+  #+BEGIN_SRC latex
+    \begin{align*}
+      \begin{pmatrix}
+        ct'\\x'\\y'\\z'
+      \end{pmatrix}
+      =
+      \begin{bmatrix}
+        \gamma&-\beta\gamma&0&0\\
+        -\beta\gamma&\gamma&0&0\\
+        0&0&1&0\\
+        0&0&0&1
+      \end{bmatrix}
+      \cdot
+      \begin{pmatrix}
+        ct\\x\\y\\z
+      \end{pmatrix}\to
+      \begin{pmatrix}
+        c\d t'\\\d x'\\\d y'\\\d z'
+      \end{pmatrix}
+      =
+      \begin{bmatrix}
+        \gamma&-\beta\gamma&0&0\\
+        -\beta\gamma&\gamma&0&0\\
+        0&0&1&0\\
+        0&0&0&1
+      \end{bmatrix}
+      \cdot
+      \begin{pmatrix}
+        c\d t\\\d x\\\d y\\\d z
+      \end{pmatrix}
+    \end{align*}
+  #+END_SRC
+  d'où
+  #+BEGIN_SRC latex
+    \begin{align*}
+      v_x'&=\frac{\d x'}{\d t'}=\frac{-\beta c\d t+\d x}{\d t - \nicefrac{\beta}{c}\d x}=\frac{v_x-V}{1-\nicefrac{v_xV}{c^2}}\\
+      v_{y,z}'&=\frac{\d(y,z)'}{\d t'}=\frac{\d(y,z)}{\gamma(\d t-\nicefrac{\beta}{c}\d x)}=\frac{v_{y,z}}{\gamma(1-\nicefrac{v_xV}{c^2})}
+    \end{align*}
+  #+END_SRC
+  Dans le cas non-relativiste /i.e./ $v, V\ll c$, on retrouve bien la loi de composition des vitesses
+  galiléenne $v_x=v_x'+V$, $v_y=v_y'$ et $v_z=v_z'$.
+
+- *Méthode dérivée de la quadri-vitesse $(\gamma c, \gamma\vv{v})$*
+
+  #+BEGIN_SRC latex
+    \begin{align*}
+    \frac{1}{\surd1-\nicefrac{v'^2}{c^2}}
+      \begin{pmatrix}
+        c\\v_x'\\v_y'\\v_z'
+      \end{pmatrix}
+      =
+      \begin{bmatrix}
+        \gamma&-\beta\gamma&0&0\\
+        -\beta\gamma&\gamma&0&0\\
+        0&0&1&0\\
+        0&0&0&1
+      \end{bmatrix}
+      \cdot
+      \begin{pmatrix}
+        c\\v_x\\v_y\\v_z
+      \end{pmatrix}\times\frac{1}{\surd1-\nicefrac{v^2}{c^2}}
+    \end{align*}
+  #+END_SRC
+
+  #+BEGIN_SRC latex
+    \begin{align}
+      \frac{c}{\surd1-\nicefrac{v'^2}{c^2}}&=\frac{\gamma c-\beta\gamma v_x}{\surd1-\nicefrac{v^2}{c^2}}\\
+      \frac{v_x'}{\surd1-\nicefrac{v'^2}{c^2}}&=\frac{-\beta\gamma c+\gamma v_x}{\surd1-\nicefrac{v^2}{c^2}}
+    \end{align}
+  #+END_SRC
+  En calculant le rapport (2)/(1), on obtient
+  #+BEGIN_SRC latex
+    \begin{align*}
+      \frac{v_x'}{c}&=\frac{-\beta\gamma c+\gamma v_x}{\gamma c-\beta\gamma v_x}\\
+      v_x'&=\frac{v_x-V}{1-\nicefrac{v_xV}{c^2}}
+    \end{align*}
+  #+END_SRC
+
 #+BEGIN_QUESTION
 2) [@2] On considère deux particules (1 et 2) animées de vitesses constantes $\vv{~v}$ et $\vv{V}$
    dans le laboratoire. On définit la vitesse relative $\vv{v}_\text{rel.}$ de 1 par rapport à 2
@@ -290,6 +370,16 @@ même instant $t'_{T_1}=t'_{T_2}$, la position de l'extrémité $T_2$ est à la 
      \end{align*}
    #+END_SRC
 #+END_QUESTION
+
+#+BEGIN_SRC latex
+  \begin{align*}
+    \left\Vert\vv{v}'\right\Vert^2=v^2_\text{rel.}&=v_x'^2+v_y'^2+v_z'^2\\
+    &=\frac{1}{\left(1-\nicefrac{v_xV}{c^2}\right)^2}\left\{(v_x-V)^2+\frac{v_y^2+v_z^2}{\gamma^2}\right\}\text{avec}\;\frac{1}{\gamma^2}=1-\frac{V^2}{c^2}\\
+    &=\frac{1}{\left(1-\nicefrac{\vv{v}.\vv{V}}{c^2}\right)^2}\left\{v_x^2+v_y^2+v_z^2-2v_xV+V^2-\frac{1}{c^2}(v_y^2+v_z^2)V^2\right\}\\
+    &=\frac{1}{\left(1-\nicefrac{\vv{v}.\vv{V}}{c^2}\right)^2}\left\{(\vv{v}-\vv{V})^2-\frac{1}{c^2}(\vv{v}\wedge\vv{V})^2\right\}
+  \end{align*}
+#+END_SRC
+
 ** Expérience de Fizeau
 #+BEGIN_QUESTION
 On considère le dispositif expérimental illustré par le schéma ci-contre: une source lumineuse
