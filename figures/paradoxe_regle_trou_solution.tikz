@@ -1,0 +1,41 @@
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+    fill=black,circle}%
+}
+\begin{tikzpicture}
+  \sf
+  \definecolor{red}{RGB}{221,42,43}
+  \definecolor{green}{RGB}{105,182,40}
+  \definecolor{blue}{RGB}{0,51,153}
+  \definecolor{orange}{RGB}{192,128,64}
+  \definecolor{gray}{RGB}{107,108,110}
+
+  %% some definitions
+
+  %% characteristic points
+  %% \coordinate[mark coordinate] (O) at (0,0) node[below right] {$\mathbf{O}$};
+
+  \draw[->] (0,-1) -- (0,2) node[above] {$y'$};
+  \draw[->] (-3,0) -- (3,0) node[above] {$x'$};
+
+  \begin{scope}[xshift=-2cm, font=\scriptsize]
+    \draw[dashed] (1.5, -1) node[below left] {trajectoire de $T_1$} -- (0,0) -- (-1.5, 1);
+    \coordinate[mark coordinate] (T1) at (0,0) node[below left] {$-\frac{\gamma L_0}{2}$};
+  \end{scope}
+  \begin{scope}[xshift=+2cm, font=\scriptsize]
+    \draw[dashed] (1.5, -1) node[below left] {trajectoire de $T_2$} -- (0,0) -- (-3, 2);
+    \coordinate[mark coordinate] (T2) at (0,0) node[above right] {+$\frac{\gamma L_0}{2}$};
+    \draw[->] (-0.75,0) arc(180:153:1) node[midway, left] {$\theta$};
+  \end{scope}
+
+  \begin{scope}[font=\scriptsize]
+    \coordinate[mark coordinate] (T) at (0,1.333);
+    \draw (T) node[above right] {$\frac{uL_0}{2V}$};
+    \draw[very thick, |-|, blue] (-1,0) node[above left] {$-\frac{L_0}{2}$} -- (+1,0) node[below right] {$+\frac{L_0}{2}$};
+  \end{scope}
+\end{tikzpicture}

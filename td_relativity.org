@@ -247,8 +247,8 @@ avec $x_{T_1}=-\tfrac{L_0}{2}$ et $x_{T_2}=+\tfrac{L_0}{2}$. De la première éq
 d'où
 #+BEGIN_SRC latex
   \begin{align*}
-    x'_{T_1}&=-Vt'_{T_1}-\frac{L_0}{2\gamma}\\
-    y'_{T_1}&=-\frac{u}{\gamma}t'_{T_1}-\frac{u\beta}{c}\frac{L_0}{2}
+    x'_{T_1}&=\gamma\left[-V\times\left(\frac{t'_{T_1}}{\gamma}-\frac{\beta}{c}\frac{L_0}{2}\right)-\frac{L_0}{2}\right]=-Vt'_{T_1}-\frac{L_0}{2\gamma}\\
+    y'_{T_1}&=\frac{u}{\gamma}t'_{T_1}-\frac{u\beta}{c}\frac{L_0}{2}
   \end{align*}
 #+END_SRC
 et
@@ -267,8 +267,17 @@ ci-dessus, on obtient la position de $y'_{T_{1,2}}$ en fonction de $x'_{T_{1,2}}
     y'_{T_2}&=-\frac{u}{V}\left(\frac{x'_{T_2}}{\gamma}-\frac{L_0}{2}\right)
   \end{align*}
 #+END_SRC
-Lorsque $y'_{T_1}=0$, $x'_{T_1}=-\tfrac{\gamma L_0}{2}$ et $t'_{T_1}=\tfrac{L_0V\gamma}{2c^2}$. Au
-même instant $t'_{T_1}=t'_{T_2}$, la position de l'extrémité $T_2$ est à la position
+
+[[file:figures/paradoxe_regle_trou_solution.pdf]]
+
+L'angle $\theta$ est ainsi égal à
+#+BEGIN_SRC latex
+  \begin{align*}
+    \tan\theta&=\frac{y'_{T_2}(x'_{T_2}=0)}{x'_{T_2}(y'_{T_2}=0)}=\frac{uL_0}{2V}\times\frac{2}{\gamma L_0}=\frac{u}{\gamma V}=\frac{u}{\gamma\beta c}
+  \end{align*}
+#+END_SRC
+Dans la limite où $V\to c$, $\beta\to1$ et $\gamma\to\infty$ si bien que $\tan\theta\sim\theta\to0$.
+
 
 ** Composition des vitesses
 #+BEGIN_QUESTION
@@ -322,7 +331,10 @@ même instant $t'_{T_1}=t'_{T_2}$, la position de l'extrémité $T_2$ est à la 
     \end{align*}
   #+END_SRC
   Dans le cas non-relativiste /i.e./ $v, V\ll c$, on retrouve bien la loi de composition des vitesses
-  galiléenne $v_x=v_x'+V$, $v_y=v_y'$ et $v_z=v_z'$.
+  galiléenne $v_x=v_x'+V$, $v_y=v_y'$ et $v_z=v_z'$. D'autre part, les coordonnées de la vitesse $v$
+  s'expriment en fonction des coordonnées de $v'$ en changeant uniquement les signes $-$ en signes
+  $+$ (du point de vue du référentiel $\mathcal{R}'$, c'est le référentiel $\mathcal{R}$ qui se
+  déplace à une vitesse $-V\vv{u_x}$).
 
 - *Méthode dérivée de la quadri-vitesse $(\gamma c, \gamma\vv{v})$*
 
@@ -402,10 +414,85 @@ distinguer les deux vitesses possibles de l’écoulement : $\pm V$.
    chemins possibles (on notera \lambda la longueur d’onde de la lumière). Donner la valeur prédite
    par la mécanique classique.
 
-   1) Dans son expérience de 1851, Fizeau utilisa un montage pour lequel $L$ = 1.487\nbsp{}m, $V$ =
-      7.059\nbsp{}m/s, \lambda = 0.526\nbsp{}µm et $n$ = 1.333. Il obtint $\nicefrac{\Delta\phi}{2n}$ =
-      0.23, cela permet-il de trancher entre l'approche relativiste et l'approche classique ?
+3) Dans son expérience de 1851, Fizeau utilisa un montage pour lequel $L$ = 1.487\nbsp{}m, $V$ =
+   7.059\nbsp{}m/s, \lambda = 0.526\nbsp{}µm et $n$ = 1.333. Il obtint $\nicefrac{\Delta\phi}{2n}$ =
+   0.23, cela permet-il de trancher entre l'approche relativiste et l'approche classique ?
 #+END_QUESTION
+
+1) En utilisant la loi de composition des vitesses, on obtient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       v_\pm&=\frac{v'\pm V}{1\pm\nicefrac{v'V}{c^2}}
+     \end{align*}
+   #+END_SRC
+   Dans la mesure où $V\ll c$ et que $v'=\nicefrac{c}{n}$, les vitesses $v_\pm$ sont, au premier
+   ordre en $\nicefrac{V}{c}$, égales à
+   #+BEGIN_SRC latex
+     \begin{align*}
+       v_\pm&\simeq(v'\pm V)\left(1\mp\nicefrac{v'V}{c^2}\right)\\
+       &\simeq v'\pm V\mp\frac{v'^2V}{c^2}\\
+       &\simeq v'\pm V\left(1-\frac{c^2}{c^2n^2}\right)\\
+       &\simeq \frac{c}{n}\pm V\left(1-\frac{1}{n^2}\right)
+     \end{align*}
+   #+END_SRC
+
+2) La différence de phase $\Delta\phi$ est égale à $\omega\left(t_--t_+\right)$ étant donné que
+   $t_->t_+$. Sachant que le déphasage est uniquement induit par la différence de temps lorsque la
+   lumière traverse l'écoulement, on peut donc écrire
+   #+BEGIN_SRC latex
+     \begin{align*}
+       t_\pm&=\frac{2L}{v_\pm}\\
+     \end{align*}
+   #+END_SRC
+   En réalisant le développement limité de $\nicefrac{1}{v_\pm}$ au premier ordre en
+   $\nicefrac{V}{c}$, on obtient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{1}{v_\pm}&=\frac{1\pm\nicefrac{v'V}{c^2}}{v'\pm V}\\
+       &=\frac{1}{v'}\times\frac{1\pm\nicefrac{v'V}{c^2}}{1\pm\nicefrac{V}{v'}}\\
+       &\simeq\frac{1}{v'}\times\left(1\pm\frac{v'V}{c^2}\right)\times\left(1\mp\frac{V}{v'}\right)\\
+       &\simeq\frac{n}{c}\times\left(1\pm\frac{V}{nc}\right)\times\left(1\mp\frac{nV}{c}\right)\\
+       &\simeq\frac{n}{c}\times\left(1\pm\frac{V}{nc}\mp\frac{nV}{c}\right)\\
+       &\simeq\frac{n}{c}\times\left(1\mp\frac{nV}{c}\left(1-\frac{1}{n^2}\right)\right)
+     \end{align*}
+   #+END_SRC
+   Le déphasage $\Delta\phi$ s'écrit ainsi
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \Delta\phi&=\omega 2L\left(\frac{1}{v_-}-\frac{1}{v_+}\right)\\
+       &\simeq\omega2L\left(\frac{2n}{c}\times\frac{nV}{c}\left(1-\frac{1}{n^2}\right)\right)\\
+       &\simeq\frac{2\pi c}{\lambda}\times2L\times\frac{2n^2V}{c^2}\times\left(1-\frac{1}{n^2}\right)\\
+       &\simeq\frac{8\pi}{\lambda}\times L\times\frac{n^2V}{c}\times\left(1-\frac{1}{n^2}\right)\\
+       &\simeq8\pi\frac{L}{\lambda}\times\frac{V}{c}\times\left(n^2-1\right)\\
+     \end{align*}
+   #+END_SRC
+
+   Du point de vue galiléen, la loi de composition des vitesses se limite à $v_\pm=v'\pm V$. En
+   faisant le développement limité comme précédemment, on trouve alors un déphasage
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \Delta\phi_\text{gal.}&\simeq8\pi\frac{L}{\lambda}\times\frac{V}{c}\times n^2\\
+       \frac{\Delta\phi}{\Delta\phi_\text{gal.}}&=\frac{n^2-1}{n^2}
+     \end{align*}
+   #+END_SRC
+   soit, pour de l'eau $n$ = 1.333, une différence de 44% entre les deux mesures.
+
+3) *Application numérique*
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{\Delta\phi}{2\pi}&=4\times(1.333^2-1)\times\frac{7.059}{3\cdot10^{8}}\times\frac{1.487}{0.526\cdot10^{-6}}=0.23\\
+       \frac{\Delta\phi_\text{gal.}}{2\pi}&=0.47
+     \end{align*}
+   #+END_SRC
+
+
+#+BEGIN_REMARK
+Dans son papier de 1905, Einstein décrit les fondements de la relativité restreinte en l'appliquant
+notamment au problème de l'abérration stellaire. Il ne fait nullement mention de l'expérience de
+Fizeau dont il avait eu connaissance (contrairement à l'expérience de Michelson & Morley qu'il
+décrouvrira après 1905 en lisant Lorentz). Les raisons de cette omission sont détaillées dans ce
+long article https://arxiv.org/abs/1204.3390.
+#+END_REMARK
 
 * Footnotes
 
