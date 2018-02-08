@@ -278,7 +278,6 @@ L'angle $\theta$ est ainsi égal à
 #+END_SRC
 Dans la limite où $V\to c$, $\beta\to1$ et $\gamma\to\infty$ si bien que $\tan\theta\sim\theta\to0$.
 
-
 ** Composition des vitesses
 #+BEGIN_QUESTION
 1) On considère une transformation de Lorentz entre deux référentiels. L'un $(\mathcal{R})$ est
@@ -494,6 +493,67 @@ décrouvrira après 1905 en lisant Lorentz). Les raisons de cette omission sont 
 long article https://arxiv.org/abs/1204.3390.
 #+END_REMARK
 
+** Expérience d'Hafele et Keating
+#+BEGIN_QUESTION
+En 1971 Hafele et Keating [[[https://www.uam.es/personal_pdi/ciencias/jcuevas/Teaching/Hafele-Keating-Science-1972b.pdf][J. C. Hafele et R. E. Keating, Science 177, 166 (1972)]]] ont réalisé une
+expérience se rapprochant de celle du paradoxe des jumeaux en synchronisant plusieurs horloges
+atomiques puis en embarquant certaines d'entre elles pour des tours du monde soit vers l'est, soit
+vers l'ouest. Lorsque les horloges sont de nouveau réunies, on compare les temps mesurés,
+c'est-à-dire leurs temps propres.
+
+On donne : vitesse typique d’un avion de ligne par rapport au sol $V$ = 900 km/h, rayon terrestre:
+$R$ = 6380 km, durée typique du vol lors de l’expérience: $T_\text{vol} = \nicefrac{2\pi R}{V}$ =
+45\nbsp{}h.
+
+1) Par une simple estimation basée sur la dilatation des durées, estimer le décalage temporel entre
+   une horloge au sol et une horloge embarquée dans un avion de ligne, initialement
+   synchronisées. De combien un pilote de ligne rajeunit-il en effectuant 1000 h de vol par an sur
+   une carrière de 30 ans ? Même question pour un étudiant qui fait l’aller-retour Paris-Orsay en
+   RER 200 fois par an pendant 5 ans.
+#+END_QUESTION
+
+L'horloge embarquée dans l'avion subit une dilatation du temps relativement à celle restée au
+sol. Ainsi, le temps mesuré dans l'avion sera plus court par rapport au temps mesuré au sol
+$t_\text{vol}=\nicefrac{t_\text{sol}}{\gamma}$ d'où une différence $\Delta t$ égale à
+#+BEGIN_SRC latex
+  \begin{align*}
+  \Delta t = t_\text{vol}-t_\text{sol}&=\frac{t_\text{sol}}{\gamma}-t_\text{sol}\\
+  &=\left(\sqrt{1-\frac{V^2}{c^2}}-1\right)\cdot t_\text{sol}\simeq-\frac{V^2}{2c^2}t_\text{sol}
+  \end{align*}
+#+END_SRC
+
+Pour un vol durant 45 heures au sol, le pilote mesurera une durée plus courte de
+#+BEGIN_SRC latex
+  \begin{align*}
+    \Delta t &= -\frac{1}{2}\left(\frac{\unit[900]{km/h}}{\unit[3\cdot10^5\times 3600]{km/h}}\right)^2\times45\times3600\\
+    &=\unit[-5.8\cdot10^{-8}]{s}=\unit[-56]{ns}
+  \end{align*}
+#+END_SRC
+ce qui, au regard des précisions sur les mesures de temps, est tout à fait estimable et mesurable.
+
+Un pilote de ligne effectuant 1000 h de vol par an rajeunira de 37.5 µs pendant ses 30 ans de
+carrière. Quant à un étudiant utilisant 200 fois le RER par an pendant 5 ans, on obtient en moyenne
+une vitesse du RER B de
+#+BEGIN_SRC latex
+  \begin{align*}
+    V_\text{RER}=\frac{d(\text{Paris-Orsay})=\unit[25]{km}}{\langle t\rangle=\unit[1]{h}}=\unit[25]{km/h}
+  \end{align*}
+#+END_SRC
+et donc un rajeunissement par trajet Paris-Orsay de
+#+BEGIN_SRC latex
+  \begin{align*}
+    \Delta t&=-\frac{1}{2}\left(\frac{\unit[25]{km/h}}{\unit[3\cdot10^5\times 3600]{km/h}}\right)^2\times1\times3600\\
+    &=\unit[-9.65\cdot10^{-13}]{s}=\unit[1]{ps}
+  \end{align*}
+#+END_SRC
+soit au total 1 nanoseconde pour 5 ans de RER à raison de 200 aller-retours par an.
+
+#+BEGIN_QUESTION
+2) [@2] Lors de l'expérience, les horloges voyageant vers l'est sont, comme attendu, en retard par
+   rapport à la sédentaire, mais celles voyageant vers l'ouest sont au contraire en avance, alors
+   que \gamma ne dépend pas de la direction de la vitesse, mais uniquement de son module. Comment
+   expliquer ce phénomène dans le cadre de la relativité restreinte ?
+#+END_QUESTION
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
