@@ -554,6 +554,64 @@ soit au total 1 nanoseconde pour 5 ans de RER à raison de 200 aller-retours par
    que \gamma ne dépend pas de la direction de la vitesse, mais uniquement de son module. Comment
    expliquer ce phénomène dans le cadre de la relativité restreinte ?
 #+END_QUESTION
+
+Le référentiel lié au sol n'est pas interiel/galiléen car il a lui-même un mouvement et donc une
+vitesse par rapport au référentuel géocentrique. La Terre a une vitesse de rotation
+$v_\text{rot.}=\nicefrac{2\pi
+R}{\unit[24]{h}}\simeq\nicefrac{\unit[4\cdot10^4]{km}}{\unit[24]{h}}=\unit[1670]{km/h}$ du même
+ordre de grandeur que celle de l'avion. Le temps mesuré au sol est ainsi plus court par rapport au
+temps géocentrique $t_\text{géo.}$ soit
+#+BEGIN_SRC latex
+  \begin{align*}
+    t_\text{sol}&=\frac{t_\text{géo.}}{\gamma_\text{rot.}}\simeq t_\text{géo.}\left[1-\frac{1}{2}\left(\frac{v_\text{rot.}}{c}\right)^2\right]
+  \end{align*}
+#+END_SRC
+De même la Terre tournant d'ouest en est, les temps mesurés $t_\text{est}$ et $t_\text{ouest}$
+s'expriment
+#+BEGIN_SRC latex
+  \begin{align*}
+    t_\text{est}&\simeq t_\text{géo.}\left[1-\frac{1}{2}\left(\frac{v_\text{rot.}+V}{c}\right)^2\right]\\
+    t_\text{ouest}&\simeq t_\text{géo.}\left[1-\frac{1}{2}\left(\frac{v_\text{rot.}-V}{c}\right)^2\right]
+  \end{align*}
+#+END_SRC
+où les vitesses de l'avion $V$ et de rotation de la Terre $v_\text{rot.}$ ont été sommées
+"galiléenement" étant donné que $V,v_\text{rot.}\ll c$.
+
+On déduit que
+#+BEGIN_SRC latex
+  \begin{align*}
+    t_\text{est}-t_\text{sol}&\simeq\frac{t_\text{géo.}}{2}\left[-\left(\frac{v_\text{rot.}+V}{c}\right)^2+\frac{v_\text{rot.}^2}{c^2}\right]\\
+    &\simeq-\frac{t_\text{géo.}}{2c^2}\left(V^2+2v_\text{rot.}V\right)\\
+    &\simeq-\frac{t_\text{géo.}}{2}\left(\frac{V}{c}\right)^2\left(1+2\frac{v_\text{rot.}}{V}\right)\\
+    \\
+    t_\text{ouest}-t_\text{sol}&\simeq\frac{t_\text{géo.}}{2}\left[-\left(\frac{v_\text{rot.}-V}{c}\right)^2+\frac{v_\text{rot.}^2}{c^2}\right]\\
+    &\simeq-\frac{t_\text{géo.}}{2}\left(\frac{V}{c}\right)^2\left(1-2\frac{v_\text{rot.}}{V}\right)
+  \end{align*}
+#+END_SRC
+
+En prenant $t_\text{géo.}\simeq t_\text{sol}=\unit[45]{h}$ on obtient que
+$\frac{t_\text{géo.}}{2}\left(\frac{V}{c}\right)^2=\unit[56]{ns}$ et
+$1\pm2\frac{v_\text{rot.}}{V}=^{+4.7}_{-2.7}$ d'où
+#+BEGIN_SRC latex
+  \begin{align*}
+    t_\text{est}-t_\text{sol}&\simeq\unit[-263]{ns}\\
+    t_\text{ouest}-t_\text{sol}&\simeq\unit[+150]{ns}
+  \end{align*}
+#+END_SRC
+
+Pour traiter complètement et correctement le problème, il faut également tenir compte du fait que le
+champ gravitationnel terrestre n'est pas le même au sol qu'en altitude : une horloge en altitude
+"compte" plus vite qu'au sol. Cette mesure est donc un test de relativité restreinte et de
+relativité générale (/cf./ [[https://en.wikipedia.org/wiki/Hafele%E2%80%93Keating_experiment][page Wikipedia]]).
+
+
+|--------------+------------------+------------------+-------------+-------------|
+|              | gravitation (RG) | cinématique (RR) |       total |      mesure |
+|              |              <r> |              <r> |         <r> |         <r> |
+| vers l'est   |     +144\pm14 ns |     -184\pm18 ns | -40\pm23 ns | -59\pm10 ns |
+| vers l'ouest |     +179\pm18 ns |       96\pm10 ns | 275\pm21 ns |  273\pm7 ns |
+|--------------+------------------+------------------+-------------+-------------|
+
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
