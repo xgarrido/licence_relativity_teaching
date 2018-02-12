@@ -1,0 +1,45 @@
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+    fill=black,circle}%
+}
+\begin{tikzpicture}
+  \sf
+  \definecolor{red}{RGB}{221,42,43}
+  \definecolor{green}{RGB}{105,182,40}
+  \definecolor{blue}{RGB}{0,51,153}
+  \definecolor{orange}{RGB}{192,128,64}
+  \definecolor{gray}{RGB}{107,108,110}
+
+  %% some definitions
+  \scriptsize
+  %% characteristic points
+  \coordinate[mark coordinate] (O) at (0,0) node[below left] {$\mathbf{O}$};
+  \coordinate[mark coordinate, fill=blue] (A) at (1,1.5);
+
+  \draw (A) node[above, blue] {$\mathbf{A}$};;
+
+  \draw[->] (0,0) -- (0,3) node[above] {$x^0=ct$};
+  \draw[->] (0,0) -- (3,0) node[right] {$x^1=x$};
+
+  \draw[dashed] (0,0) -- (3,3);
+
+  \draw (0,0) -- (2,3);
+
+  \draw[->] (0,1) arc(90:55:1) node[midway, above] {$\theta$};
+  \draw[->] (0,0.5) arc(90:65:1) node[midway, above] {$\nicefrac{\pi}{4}$};
+
+  \begin{scope}[xshift=1cm, yshift=1.5cm]
+    \draw (0,0) -- (-1, 1) node[red,above left] {$\mathbf{B}$};
+  \end{scope}
+  \draw[dashed] (A) -- (1.25, 1.25) node [right] {$\mathbf{H}$};
+
+  \coordinate[mark coordinate, fill=red] (B) at (0,2.5);
+  \begin{scope} [xshift=-0.25cm]
+    \draw[<->] (0,0) -- (0, 2.5) node[midway, above, rotate=90] {$c\Delta t$};
+  \end{scope}
+\end{tikzpicture}

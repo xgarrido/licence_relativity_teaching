@@ -414,7 +414,7 @@ distinguer les deux vitesses possibles de l’écoulement : $\pm V$.
    par la mécanique classique.
 
 3) Dans son expérience de 1851, Fizeau utilisa un montage pour lequel $L$ = 1.487\nbsp{}m, $V$ =
-   7.059\nbsp{}m/s, \lambda = 0.526\nbsp{}µm et $n$ = 1.333. Il obtint $\nicefrac{\Delta\phi}{2n}$ =
+   7.059\nbsp{}m/s, \lambda = 0.526\nbsp{}µm et $n$ = 1.333. Il obtint $\nicefrac{\Delta\phi}{2\pi}$ =
    0.23, cela permet-il de trancher entre l'approche relativiste et l'approche classique ?
 #+END_QUESTION
 
@@ -487,7 +487,7 @@ distinguer les deux vitesses possibles de l’écoulement : $\pm V$.
 
 #+BEGIN_REMARK
 Dans son papier de 1905, Einstein décrit les fondements de la relativité restreinte en l'appliquant
-notamment au problème de l'abérration stellaire. Il ne fait nullement mention de l'expérience de
+notamment au problème de l'aberration stellaire. Il ne fait nullement mention de l'expérience de
 Fizeau dont il avait eu connaissance (contrairement à l'expérience de Michelson & Morley qu'il
 décrouvrira après 1905 en lisant Lorentz). Les raisons de cette omission sont détaillées dans ce
 long article https://arxiv.org/abs/1204.3390.
@@ -514,10 +514,10 @@ $R$ = 6380 km, durée typique du vol lors de l’expérience: $T_\text{vol} = \n
 
 L'horloge embarquée dans l'avion subit une dilatation du temps relativement à celle restée au
 sol. Ainsi, le temps mesuré dans l'avion sera plus court par rapport au temps mesuré au sol
-$t_\text{vol}=\nicefrac{t_\text{sol}}{\gamma}$ d'où une différence $\Delta t$ égale à
+$t_\text{avion}=\nicefrac{t_\text{sol}}{\gamma}$ d'où une différence $\Delta t$ égale à
 #+BEGIN_SRC latex
   \begin{align*}
-  \Delta t = t_\text{vol}-t_\text{sol}&=\frac{t_\text{sol}}{\gamma}-t_\text{sol}\\
+  \Delta t = t_\text{avion}-t_\text{sol}&=\frac{t_\text{sol}}{\gamma}-t_\text{sol}\\
   &=\left(\sqrt{1-\frac{V^2}{c^2}}-1\right)\cdot t_\text{sol}\simeq-\frac{V^2}{2c^2}t_\text{sol}
   \end{align*}
 #+END_SRC
@@ -526,10 +526,11 @@ Pour un vol durant 45 heures au sol, le pilote mesurera une durée plus courte d
 #+BEGIN_SRC latex
   \begin{align*}
     \Delta t &= -\frac{1}{2}\left(\frac{\unit[900]{km/h}}{\unit[3\cdot10^5\times 3600]{km/h}}\right)^2\times45\times3600\\
-    &=\unit[-5.8\cdot10^{-8}]{s}=\unit[-56]{ns}
+    &=\unit[-5.6\cdot10^{-8}]{s}=\unit[-56]{ns}
   \end{align*}
 #+END_SRC
-ce qui, au regard des précisions sur les mesures de temps, est tout à fait estimable et mesurable.
+ce qui, au regard des précisions sur les mesures de temps par des horloges atomiques, est tout à
+fait estimable et mesurable.
 
 Un pilote de ligne effectuant 1000 h de vol par an rajeunira de 37.5 µs pendant ses 30 ans de
 carrière. Quant à un étudiant utilisant 200 fois le RER par an pendant 5 ans, on obtient en moyenne
@@ -543,10 +544,10 @@ et donc un rajeunissement par trajet Paris-Orsay de
 #+BEGIN_SRC latex
   \begin{align*}
     \Delta t&=-\frac{1}{2}\left(\frac{\unit[25]{km/h}}{\unit[3\cdot10^5\times 3600]{km/h}}\right)^2\times1\times3600\\
-    &=\unit[-9.65\cdot10^{-13}]{s}=\unit[1]{ps}
+    &=\unit[-9.65\cdot10^{-13}]{s}=-\unit[1]{ps}
   \end{align*}
 #+END_SRC
-soit au total 1 nanoseconde pour 5 ans de RER à raison de 200 aller-retours par an.
+soit au total 2 nanosecondes pour 5 ans de RER à raison de 200 aller-retours par an.
 
 #+BEGIN_QUESTION
 2) [@2] Lors de l'expérience, les horloges voyageant vers l'est sont, comme attendu, en retard par
@@ -555,8 +556,8 @@ soit au total 1 nanoseconde pour 5 ans de RER à raison de 200 aller-retours par
    expliquer ce phénomène dans le cadre de la relativité restreinte ?
 #+END_QUESTION
 
-Le référentiel lié au sol n'est pas interiel/galiléen car il a lui-même un mouvement et donc une
-vitesse par rapport au référentuel géocentrique. La Terre a une vitesse de rotation
+Le référentiel lié au sol n'est pas inertiel/galiléen car il a lui-même un mouvement et donc une
+vitesse par rapport au référentiel géocentrique. La Terre a une vitesse de rotation
 $v_\text{rot.}=\nicefrac{2\pi
 R}{\unit[24]{h}}\simeq\nicefrac{\unit[4\cdot10^4]{km}}{\unit[24]{h}}=\unit[1670]{km/h}$ du même
 ordre de grandeur que celle de l'avion. Le temps mesuré au sol est ainsi plus court par rapport au
@@ -612,6 +613,101 @@ relativité générale (/cf./ [[https://en.wikipedia.org/wiki/Hafele%E2%80%93Kea
 | vers l'ouest |     +179\pm18 ns |       96\pm10 ns | 275\pm21 ns |  273\pm7 ns |
 |--------------+------------------+------------------+-------------+-------------|
 
+** Bon anniversaire
+#+BEGIN_QUESTION
+L'astronaute Alice ($A$) quitte son ami Bob ($B$) pour un aller-retour vers un système solaire situé
+à 4 a.l. de la Terre. On suppose que l'aller et le retour s'effectuent à la même vitesse $v = 0.8 c$
+et on néglige le temps que met $A$ pour faire demi-tour.
+1) Quel est la durée de l'aller du point de vue de $A$ ? de $B$ resté sur Terre ?
+#+END_QUESTION
+
+Du point de vue de $B$, la distance de 8 a.l. est parcourue à $v=0.8c$ en un temps
+$t=\frac{d}{v}=\frac{\unit[8]{ans}\times c}{0.8c}=\unit[10]{ans}$. Pour Alice, son temps propre de
+parcours est plus court $t'=\frac{t}{\gamma}$ en raison de la dilatation des durées.
+
+*AN* : $\beta=0.8=\frac{4}{5}\to 1-\beta^2=\frac{25-16}{25}=\frac{9}{25}\to\gamma=\frac{5}{3}$ et
+$t'=\unit[6]{ans}$.
+
+#+BEGIN_QUESTION
+2) [@2] $A$ célèbre l'anniversaire de son départ en envoyant chaque année (selon son horloge) un
+   signal vers $B$. Pour $B$, quel intervalle de temps sépare la réception de deux signaux
+   successifs envoyés par $A$ durant le voyage aller ? Durant le voyage retour ? Combien de messages
+   $B$ reçoit-il en tout ?
+#+END_QUESTION
+
+Notons $\Delta t'$ = 1 an, l'intervalle de temps entre deux signaux pour Alice et $\Delta t$
+l'intervalle de réception des messages par Bob. La formule de l'effet Doppler quand la source (ici
+le vaisseau) s'éloigne en ligne droite donne $\omega = \omega'\sqrt{\frac{1-\beta}{1+\beta}}$ soit
+pour les intervalles de temps $\Delta t=\Delta t'\sqrt{\frac{1+\beta}{1-\beta}}$. Ainsi, Bob reçoit à
+l'aller les signaux tous les 3 ans. Lors de la phase retour, le vaisseau s'approche et il faut donc
+changer $\beta\to-\beta$ : $\Delta t=\frac{\Delta t'}{3}=\unit[4]{mois}$.
+
+Sans faire appel à l'effet Doppler, on peut retrouver géométriquement la relation entre $\Delta t$
+et $\Delta t'$. Pour cela nous allons représenter la position d'Alice ($A$) dans le diagramme
+espace-temps de Bob.
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[file:figures/alice_bob.pdf]]
+
+En cherchant à évaluer les coordonnées espace-temps de $A$ au bout d'une durée $\Delta t'$, on
+retrouve la dilation des durées puisque
+#+BEGIN_SRC latex
+  \begin{align*}
+    c\Delta t' &= \gamma(x^0-\beta x^1)\\
+    x^1&=\beta x^0
+  \end{align*}
+#+END_SRC
+d'où
+#+BEGIN_SRC latex
+  \begin{align*}
+    c\Delta t'&=\gamma(x^0-\beta^2x^0)\\
+    x^0=c\Delta t&=\frac{c\Delta t'}{\gamma(1-\beta^2)}=\gamma c\Delta t'
+  \end{align*}
+#+END_SRC
+
+La longueur $OA$ est donc égale à $\frac{\gamma c\Delta t'}{\cos\theta}$.
+
+Au bout de $\Delta t'$ = 1 an, Alice émet un signal lumineux en direction de Bob. Le signal lumineux
+se déplaçant à $c$, sa direction est donc orthogonale au cône de lumière.
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[file:figures/alice_bob_signaux.pdf]]
+
+On déduit que la distance $OH$ s'écrit
+#+BEGIN_SRC latex
+  \begin{align*}
+    OH&=OB\cos\frac{\pi}{4}=OA\cos\left(\frac{\pi}{4}-\theta\right)
+  \end{align*}
+#+END_SRC
+
+Sachant que
+$\cos\left(\frac{\pi}{4}-\theta\right)=\text{Re}\left(e^{i\frac{\pi}{4}}e^{-i\theta}\right)=\cos\frac{\pi}{4}\cos\theta+\sin\frac{\pi}{4}\sin\theta$,
+on obtient
+#+BEGIN_SRC latex
+  \begin{align*}
+  c\Delta t&=\frac{\gamma c\Delta t'}{\cos\theta}\left(\cos\theta+\sin\theta\right)\\
+  \Delta t&=\gamma\Delta t'\left(1+\tan\theta\right)
+  \end{align*}
+#+END_SRC
+et $\tan\theta=\frac{x^1}{x^0}=\beta$ soit au final
+#+BEGIN_SRC latex
+  \begin{align*}
+    \Delta t&=\Delta t'\cdot\frac{1+\beta}{\surd1-\beta^2}\\
+    &=\Delta t'\cdot\frac{1+\beta}{\surd1-\beta^2}\times\frac{\surd1+\beta}{\surd1+\beta}\\
+    &=\Delta t'\cdot\sqrt{\frac{1+\beta}{1-\beta}}
+  \end{align*}
+#+END_SRC
+#+BEGIN_QUESTION
+3) [@3] Si $B$ envoie, lui aussi, un signal à destination de $A$ chaque année, combien de messages
+   $A$ va-t-elle recevoir durant la phase aller de son voyage ? Durant la phase retour ? Combien de
+   messages reçoit-elle au total ?
+#+END_QUESTION
+
+Si $B$ envoie un message tous les ans, pendant la phase d'éloignement d'Alice, on a alors symétrie
+par au début de la question 2 car, du point de vue d'Alice, c'est Bob qui s'éloigne à une vitesse
+$0.8c$ : Alice reçoit donc un message tous les 3 ans. Or au bout de 3 ans, Alice commence son voyage
+de retour : elle reçoit donc les signaux tous les 4 mois. Ainsi Alice reçoit un signal pendant
+l'aller et 8 signaux pendant le retour.
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
