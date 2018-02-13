@@ -714,6 +714,11 @@ par au début de la question 2 car, du point de vue d'Alice, c'est Bob qui s'él
 $0.8c$ : Alice reçoit donc un message tous les 3 ans. Or au bout de 3 ans, Alice commence son voyage
 de retour : elle reçoit donc les signaux tous les 4 mois. Ainsi Alice reçoit un signal pendant
 l'aller et 8 signaux pendant le retour.
+
+#+CAPTION: *Diagrammes des signaux émis par Alice (figure de gauche) et par Bob (figure de droite).*
+#+ATTR_LATEX: :width \linewidth
+[[file:figures/alice_bob_signaux_1.pdf]]
+
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
