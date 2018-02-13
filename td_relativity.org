@@ -401,6 +401,9 @@ qu'il traverse, l'autre faisceau entre dans le dispositif par l’ouverture en b
 vitesse opposée à celle des écoulements qu'il traverse. Les faisceaux sortent du dispositif en se
 propageant tous deux vers la droite et se réunissent ensuite sur un écran où on les fait interférer.
 
+#+ATTR_LATEX: :width 0.7\linewidth
+[[file:figures/fizeau.pdf]]
+
 On note $v'$ la vitesse de la lumière par rapport à l'eau mesurée dans un référentiel où l'eau est
 immobile, et $v_\pm$ cette même vitesse mesurée dans le laboratoire. Il y a un indice \pm pour
 distinguer les deux vitesses possibles de l’écoulement : $\pm V$.
@@ -554,6 +557,9 @@ soit au total 2 nanosecondes pour 5 ans de RER à raison de 200 aller-retours pa
    rapport à la sédentaire, mais celles voyageant vers l'ouest sont au contraire en avance, alors
    que \gamma ne dépend pas de la direction de la vitesse, mais uniquement de son module. Comment
    expliquer ce phénomène dans le cadre de la relativité restreinte ?
+
+[[file:figures/calvin_hobbes.png]]
+
 #+END_QUESTION
 
 Le référentiel lié au sol n'est pas inertiel/galiléen car il a lui-même un mouvement et donc une
