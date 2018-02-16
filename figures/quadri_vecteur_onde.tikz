@@ -1,0 +1,40 @@
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+    fill=black,circle}%
+}
+\begin{tikzpicture}
+  \sf
+  \definecolor{red}{RGB}{221,42,43}
+  \definecolor{green}{RGB}{105,182,40}
+  \definecolor{blue}{RGB}{0,51,153}
+  \definecolor{orange}{RGB}{192,128,64}
+  \definecolor{gray}{RGB}{107,108,110}
+
+  %% some definitions
+  \scriptsize
+  %% characteristic points
+  \coordinate[mark coordinate, fill=blue] (A) at (0,0);
+  \coordinate[mark coordinate, fill=blue] (B) at (1.5,0);
+
+
+  \draw[->] (0,0) -- (0,3.5) node[above] {$x^0=ct$};
+  \draw[->] (0,0) -- (3,0) node[right] {$x^1=x$};
+
+  \draw[dashed] (0,0) -- (3,3) node[below right, rotate=45, xshift=-1cm] {\tiny cône de lumière};
+
+  \draw (A) -- (1,3) node[above] {$x_A=v_pt$};
+  \draw (B) -- (2.5,3) node[above] {$x_B=v_pt+\lambda$};
+
+  \draw[->] (A) -- (3, 1) node[right] {$t'=0$};
+
+  \coordinate[mark coordinate, fill=red] (C) at (1.6875,0.5625);
+  \draw (A) node[below, blue] {$\mathbf{A}$};
+  \draw (B) node[below, blue] {$\mathbf{B}$};
+  \draw (C) node[above left, red] {$\mathbf{C}$};
+
+\end{tikzpicture}

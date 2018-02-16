@@ -391,7 +391,8 @@ Dans la limite où $V\to c$, $\beta\to1$ et $\gamma\to\infty$ si bien que $\tan\
   \end{align*}
 #+END_SRC
 
-** Expérience de Fizeau
+** Expérien
+ce de Fizeau
 #+BEGIN_QUESTION
 On considère le dispositif expérimental illustré par le schéma ci-contre: une source lumineuse
 (située loin à droite sur la figure) émet un rayonnement que l'on scinde en deux parties qui suivent
@@ -715,9 +716,38 @@ $0.8c$ : Alice reçoit donc un message tous les 3 ans. Or au bout de 3 ans, Alic
 de retour : elle reçoit donc les signaux tous les 4 mois. Ainsi Alice reçoit un signal pendant
 l'aller et 8 signaux pendant le retour.
 
-#+CAPTION: *Diagrammes des signaux émis par Alice (figure de gauche) et par Bob (figure de droite).*
+#+CAPTION: *Diagrammes des signaux émis par Alice à gauche et par Bob à droite.* La représentation est telle que $\beta=\nicefrac{4}{5}$.
 #+ATTR_LATEX: :width \linewidth
 [[file:figures/alice_bob_signaux_1.pdf]]
+
+* TD2 : Optique et cinématique du point
+** Quadri-vecteur d'onde
+#+BEGIN_QUESTION
+Dans cet exercice nous allons démontrer que pour une onde de pulsation $\omega$, de vecteur d’onde
+$\vv{k}$ et de vitesse de phase $v_p$, la quantité ($\omega/c,\vv{k}$) est un "bon"
+quadri-vecteur. Pour simplifier, nous allons travailler avec une seule dimension d’espace.
+
+Dans le référentiel $\mathcal{R}$ du laboratoire, on définit la longueur d’onde $\lambda$ comme la
+distance (usuelle) entre deux évènements simultanés: deux maxima successifs de l'onde (/cf./ figure
+ci-contre). Dans $\mathcal{R}$, les maxima de l’onde se déplacent à la vitesse $v_p$, vitesse de
+phase telle que $v_p = \omega/k$.
+
+On considère un référentiel $\mathcal{R}'$ se déplaçant à la vitesse $V$ par rapport à $\mathcal{R}$
+selon l'axe $Ox$. On appelle $C$ le maximum plus proche voisin de $A$ qui est simultané avec $A$
+dans $\mathcal{R}'$. Le diagramme d’espace-temps correspondant est tracé sur la figure ci-contre.
+
+#+ATTR_LATEX: :width 0.7\linewidth
+[[file:figures/quadri_vecteur_onde.pdf]]
+
+Déterminer la coordonnée spatiale de $C$ dans $\mathcal{R}'$, en déduire la longeur d’onde
+$\lambda'$. En définissant $k'= 2\pi/\lambda'$ et $k = 2\pi/\lambda$, montrer que $k'$ s'exprime à
+partir de $k$ et $\omega$ comme s'y attend pour la composante spatiale d'un quadri-vecteur
+($\frac{\omega}{c}, k$).
+
+Vérifier que la partie temporelle a également la bonne loi de transformation. Pour cela il faudra
+définir la période comme l’intervalle temporel entre deux évènements (lesquels ?) puis utiliser une
+démarche similaire à celle qui a été suivie ci-dessus.
+#+END_QUESTION
 
 * Footnotes
 
