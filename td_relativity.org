@@ -749,6 +749,35 @@ définir la période comme l’intervalle temporel entre deux évènements (lesq
 démarche similaire à celle qui a été suivie ci-dessus.
 #+END_QUESTION
 
+** Mesure de vitesse
+#+BEGIN_QUESTION
+Une voiture, assimilée à un miroir, s'éloigne d'un gendarme en ligne droite, à vitesse constante
+$V$. Le gendarme émet un rayonnement lumineux de pulsation $\omega_i$ qui, après réflexion sur la
+voiture/miroir, revient vers le gendarme avec une pulsation $\omega_r$. Exprimer $\omega_r$ en
+fonction de $\omega_i$.
+
+/Indications : (1) Utiliser le quadri-vecteur d'onde. (2) On notera $\omega'_i$ et $\omega'_r$ les/
+/pulsations dans le référentiel $\mathcal{R}'$ lié au miroir et on justifiera par des arguments/
+/physiques que $\omega'_i=\omega'_r$/.
+#+END_QUESTION
+
+** Distribution spatiale des photons émis par une source en mouvement
+#+BEGIN_QUESTION
+Une source lumineuse émet des photons de manière isotrope dans son référentiel propre
+$\mathcal{R}'$, le nombre $\d N$ de photons émis dans un angle solide $\d\Omega'$ s'exprime en
+fonction du nombre total $N_0$ de photons émis dans tout l’espace à l’aide de la relation
+$\nicefrac{\d N}{N_0} = \nicefrac{\d\Omega'}{4\pi}$. Cette source est animée d'une vitesse $\vv{u}$
+constante par rapport à un référentiel galiléen $\mathcal{R}$. On appelle $\d N$ le nombre de
+photons émis dans un angle solide $\d\Omega$ compris entre les cônes de demi-angle au sommet
+$\theta$ et $\theta+\d\theta$, avec $\theta$ l'angle que forme la direction du photon émis par
+rapport à $\vv{u}$ dans le référentiel $\mathcal{R}$.
+
+Montrer que $\nicefrac{\d N}{N_0} = f(\theta)\cdot\nicefrac{\d\Omega}{4\pi}$, avec $f(\theta)$ une
+fonction représentant la distribution spatiale de l’émission des photons dans $\mathcal{R}$ que l'on
+exprimera en fonction de $\beta$ et $\theta$. Représenter $f(\theta)$ en coordonnées polaires pour
+$\beta = 1/2$. Montrer alors que la moitié des photons sont émis dans un cône de demi-angle au
+sommet valant 60° par rapport à $\mathcal{R}$.
+#+END_QUESTION
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
