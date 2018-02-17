@@ -787,6 +787,36 @@ soit la loi de transformation de la partie spatiale du quadri-vecteur $(\frac{\o
     \begin{pmatrix}\frac{\omega'}{c}\\\vv{k'}\end{pmatrix}=\begin{bmatrix}\gamma&-\beta\gamma\\-\beta\gamma&\gamma\end{bmatrix}\begin{pmatrix}\frac{\omega}{c}\\\vv{k}\end{pmatrix}
   \end{align*}
 #+END_SRC
+
+Pour ce qui concerne la composante temporelle $\omega/c$ et sa transformation, on se place à
+l'instant $ct_A=cT$. Le point $A$ a alors parcouru la distance $\lambda=v_pT$ dans
+$\mathcal{R}$. Dans $\mathcal{R}'$ sa position s'écrit
+#+BEGIN_SRC latex
+  \begin{align*}
+    x'_A&=\gamma\left(v_pT-\beta cT\right)\\
+    ct'_A&=\gamma\left(cT-\beta v_pT\right)
+  \end{align*}
+#+END_SRC
+avec $x'_A=v_p't'_A$ et $v'_p=\nicefrac{\omega'}{c}$. On obtient ainsi
+#+BEGIN_SRC latex
+  \begin{align*}
+    \frac{x'_A}{ct'_A}&=\frac{v_p'}{c}=\frac{\omega'}{k'c}=\frac{v_p-\beta c}{c-\beta v_p}\\
+    \frac{\omega'}{c}&=k'\frac{\nicefrac{v_p}{c}-\beta}{1-\nicefrac{\beta v_p}{c}}
+  \end{align*}
+#+END_SRC
+Sachant que
+#+BEGIN_SRC latex
+  \begin{align*}
+    k'&=\gamma\left(k-\beta\frac{\omega}{c}\right)=\gamma\frac{\omega}{v_p}\left(1-\beta\frac{v_p}{c}\right)
+  \end{align*}
+#+END_SRC
+on déduit finalement
+#+BEGIN_SRC latex
+  \begin{align*}
+  \frac{\omega'}{c}&=\gamma\frac{\omega}{v_p}\left(1-\beta\frac{v_p}{c}\right)\cdot\frac{v_p}{c}\cdot\frac{1-\frac{\beta c}{v_p}}{1-\frac{\beta v_p}{c}}\\
+  &=\gamma\frac{\omega}{c}\left(1-\frac{\beta c}{v_p}\right)=\gamma\left(\frac{\omega}{c}-\beta k\right)
+  \end{align*}
+#+END_SRC
 ** Mesure de vitesse
 #+BEGIN_QUESTION
 Une voiture, assimilée à un miroir, s'éloigne d'un gendarme en ligne droite, à vitesse constante
