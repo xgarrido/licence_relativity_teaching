@@ -713,8 +713,8 @@ et $\tan\theta=\frac{x^1}{x^0}=\beta$ soit au final
 Si $B$ envoie un message tous les ans, pendant la phase d'éloignement d'Alice, on a alors symétrie
 par au début de la question 2 car, du point de vue d'Alice, c'est Bob qui s'éloigne à une vitesse
 $0.8c$ : Alice reçoit donc un message tous les 3 ans. Or au bout de 3 ans, Alice commence son voyage
-de retour : elle reçoit donc les signaux tous les 4 mois. Ainsi Alice reçoit un signal pendant
-l'aller et 8 signaux pendant le retour.
+retour : elle reçoit donc les signaux tous les 4 mois. Ainsi Alice reçoit un signal pendant l'aller
+et 8 signaux pendant le retour.
 
 #+CAPTION: *Diagrammes des signaux émis par Alice à gauche et par Bob à droite.* La représentation est telle que $\beta=\nicefrac{4}{5}$.
 #+ATTR_LATEX: :width \linewidth
@@ -749,6 +749,44 @@ définir la période comme l’intervalle temporel entre deux évènements (lesq
 démarche similaire à celle qui a été suivie ci-dessus.
 #+END_QUESTION
 
+La distance $\lambda'$ correspond à la distance entre $A$ et $C$ mesurée dans $\mathcal{R}'$ au même
+instant $t'_C=t'_A=0$. Ce temps s'exprime /via/ la transformation de Lorentz du quadri-vecteur
+espace-temps de la façon suivante
+#+BEGIN_SRC latex
+  \begin{align*}
+    ct'&=\gamma\left(ct-\beta x\right)\\
+    t'_C&=\gamma\left(t_C-\frac{V}{c^2}x_C\right)=0\to t_C=\frac{Vx_C}{c^2}
+  \end{align*}
+#+END_SRC
+Or $x_C=v_pt_c+\lambda$ d'où $x_C=v_p\frac{Vx_C}{c^2}+\lambda$ soit
+#+BEGIN_SRC latex
+  \begin{align*}
+    x_c&=\frac{\lambda}{1-\frac{v_pV}{c^2}}\\
+    t_C&=\frac{Vx_c}{c^2}
+  \end{align*}
+#+END_SRC
+La coordonnée spatiale de $C$ dans $\mathcal{R}'$ devient
+#+BEGIN_SRC latex
+  \begin{align*}
+  x'_C=\lambda'&=\gamma(x_C-\beta ct_C)\\
+  \lambda'&=\frac{1}{\surd1-\frac{V^2}{c^2}}\cdot x_C\left(1-\frac{V^2}{c^2}\right)\\
+  &=\frac{1}{\gamma}\cdot\frac{\lambda}{1-\frac{v_pV}{c^2}}
+  \end{align*}
+#+END_SRC
+En définissant $k'=\frac{2\pi}{\lambda'}$ et $k==\frac{2\pi}{\lambda}$ et en utilisant le fait que
+$v_p=\frac{\omega}{k}$, on obtient finalement
+#+BEGIN_SRC latex
+  \begin{align*}
+    k'&=\gamma k\left(1-\frac{\omega}{k}\frac{V}{c^2}\right)\\
+    &=\gamma\left(k-\frac{V}{c}\frac{\omega}{c}\right)=\gamma\left(k-\beta\frac{\omega}{c}\right)
+  \end{align*}
+#+END_SRC
+soit la loi de transformation de la partie spatiale du quadri-vecteur $(\frac{\omega}{c},\vv{k})$
+#+BEGIN_SRC latex
+  \begin{align*}
+    \begin{pmatrix}\frac{\omega'}{c}\\\vv{k'}\end{pmatrix}=\begin{bmatrix}\gamma&-\beta\gamma\\-\beta\gamma&\gamma\end{bmatrix}\begin{pmatrix}\frac{\omega}{c}\\\vv{k}\end{pmatrix}
+  \end{align*}
+#+END_SRC
 ** Mesure de vitesse
 #+BEGIN_QUESTION
 Une voiture, assimilée à un miroir, s'éloigne d'un gendarme en ligne droite, à vitesse constante
