@@ -885,9 +885,9 @@ On retrouve bien l'expression calculée précédemment en considérant que $\ome
 ** Distribution spatiale des photons émis par une source en mouvement
 #+BEGIN_QUESTION
 Une source lumineuse émet des photons de manière isotrope dans son référentiel propre
-$\mathcal{R}'$, le nombre $\d N$ de photons émis dans un angle solide $\d\Omega'$ s'exprime en
+$\mathcal{R}^*$, le nombre $\d N$ de photons émis dans un angle solide $\d\Omega^*$ s'exprime en
 fonction du nombre total $N_0$ de photons émis dans tout l’espace à l’aide de la relation
-$\nicefrac{\d N}{N_0} = \nicefrac{\d\Omega'}{4\pi}$. Cette source est animée d'une vitesse $\vv{u}$
+$\nicefrac{\d N}{N_0} = \nicefrac{\d\Omega^*}{4\pi}$. Cette source est animée d'une vitesse $\vv{u}$
 constante par rapport à un référentiel galiléen $\mathcal{R}$. On appelle $\d N$ le nombre de
 photons émis dans un angle solide $\d\Omega$ compris entre les cônes de demi-angle au sommet
 $\theta$ et $\theta+\d\theta$, avec $\theta$ l'angle que forme la direction du photon émis par
@@ -899,6 +899,103 @@ exprimera en fonction de $\beta$ et $\theta$. Représenter $f(\theta)$ en coordo
 $\beta = 1/2$. Montrer alors que la moitié des photons sont émis dans un cône de demi-angle au
 sommet valant 60° par rapport à $\mathcal{R}$.
 #+END_QUESTION
+
+Dans cet exercice, la vitesse de déplacement du référentiel $\mathcal{R}^*$ par rapport à
+$\mathcal{R}$ est $\vv{u}=u\cdot\vv{u_z}$. Le nombre de photons émis dans tout l'espace /i.e./ dans
+4\pi stéradians est égal à $N_0$. La fraction $\d N$ de photons émis dans l'angle $\d \Omega^*$ est
+alors $\frac{\d N}{N_0}=\frac{\d \Omega^*}{4\pi}$ où $\d\Omega^*=\sin\theta^*\d\theta^*\d\phi^*$. Il
+faut donc pour exprimer ce même rapport $\frac{\d N}{N_0}$ en fonction de l'angle
+$\d\Omega=\sin\theta\d\theta\d\phi$, exprimer l'angle $\theta$ en fonction $\theta^*$ (les angles
+$\phi$ et $\phi^*$ sont identiques car représentant une grandeur transverse au déplacement et
+demeurant donc inchangée).
+
+Afin de mettre en évidence la relation entre $\theta$ et $\theta^*$, on peut calculer le
+quadri-vecteur énergie-impulsion $\underline{P}=\left(\nicefrac{E}{c},\vv{p}\right)$ dans chacun des
+référentiels en sachant que $\underline{P}.\underline{P}=0$ et donc que l'énergie d'un photon et
+plus généralement d'une particule sans masse est $E=pc$[fn:248c710448ab8f4]. Soit
+#+BEGIN_SRC latex
+  \begin{align*}
+    \underline{P}^*=\begin{pmatrix}\frac{E^*}{c}\\p_x^*\\p_y^*\\p_z^*\end{pmatrix}&=\begin{bmatrix}\gamma&0&0&-\beta\gamma\\0&1&0&0\\0&0&1&0\\-\beta\gamma&0&0&\gamma\end{bmatrix}\begin{pmatrix}\frac{E}{c}\\p_x\\p_y\\p_z\end{pmatrix}\\
+      \frac{E^*}{c}&=\gamma\frac{E}{c}-\beta\gamma p_z\\
+      p_x^*&=p_x\\
+      p_y^*&=p_y\\
+      p_z^*&=-\beta\gamma\frac{E}{c}+\gamma p_z
+  \end{align*}
+#+END_SRC
+où $p_z=p\cos\theta=\frac{E}{c}\cos\theta$ et
+$p_z^*=p^*\cos\theta^*=\frac{E^*}{c}\cos\theta$. La première équation s'écrit ainsi
+#+BEGIN_SRC latex
+  \begin{align*}
+    \frac{E^*}{c}&=\gamma\frac{E}{c}\left(1-\beta\cos\theta\right)
+  \end{align*}
+#+END_SRC
+tandis que la dernière devient
+#+BEGIN_SRC latex
+  \begin{align*}
+    \frac{E^*}{c}\cos\theta^*&=\gamma\frac{E}{c}\left(-\beta+\cos\theta\right)
+  \end{align*}
+#+END_SRC
+Ainsi,
+#+BEGIN_SRC latex
+  \begin{align*}
+    \cos\theta^*&=\frac{\cos\theta-\beta}{1-\beta\cos\theta}
+  \end{align*}
+#+END_SRC
+Par ailleurs, $p_x^*=p_x$ conduit à la relation suivante
+#+BEGIN_SRC latex
+\begin{align*}
+\frac{E^*}{c}\sin\theta^*\cos\phi^*&=\frac{E}{c}\sin\theta\cos\phi\\
+\gamma\frac{E}{c}\left(1-\beta\cos\theta\right)\sin\theta^*&=\frac{E}{c}\sin\theta\\
+\sin\theta^*&=\frac{\sin\theta}{\gamma(1-\beta\cos\theta)}
+\end{align*}
+#+END_SRC
+
+En différentialisant $\cos\theta^*$, on obtient
+#+BEGIN_SRC latex
+  \begin{align*}
+    \d(\cos\theta^*)=-\sin\theta^*\d\theta^*&=\d\left(\frac{\cos\theta-\beta}{1-\beta\cos\theta}\right)=\frac{\partial}{\partial\theta}\left(\frac{\cos\theta-\beta}{1-\beta\cos\theta}\right)\d\theta\\
+    &=\left(\frac{-\sin\theta}{1-\beta\cos\theta}-\frac{\cos\theta-\beta}{(1-\beta\cos\theta)^2}\beta\sin\theta\right)\d\theta\\
+  &=\left(\frac{-\sin\theta\cdot(1-\beta\cos\theta)-\beta\cos\theta\sin\theta+\beta^2\sin\theta}{(1-\beta\cos\theta)^2}\right)\d\theta\\
+  &=-\sin\theta\d\theta\left(\frac{1-\beta^2}{(1-\beta\cos\theta)^2}\right)
+  \end{align*}
+#+END_SRC
+
+On déduit ainsi que
+#+BEGIN_SRC latex
+  \begin{align*}
+    \d\Omega^*=\sin\theta^*\d\theta^*\d\phi^*&=\sin\theta\d\theta\d\phi\left(\frac{1-\beta^2}{(1-\beta\cos\theta)^2}\right)
+  \end{align*}
+#+END_SRC
+soit
+#+BEGIN_SRC latex
+  \begin{align*}
+    \frac{\d N}{N_0}&=\frac{1-\beta^2}{(1-\beta\cos\theta)^2}\cdot\frac{\d\Omega}{4\pi}
+  \end{align*}
+#+END_SRC
+
+#+BEGIN_SRC ipython :session :results raw drawer :exports results
+  %matplotlib inline
+  import numpy as np
+  def f(theta, beta):
+        return (1-beta**2)/(1-beta*np.cos(theta))**2
+
+  r = np.arange(0, 1, 0.0001)
+  theta = 2*np.pi*r
+
+  import matplotlib.pyplot as plt
+  ax = plt.subplot(111, projection="polar")
+  for beta in [0, 0.5, 0.8, 0.9]:
+        ax.plot(theta, f(theta, beta), label=r"$\beta$={}".format(beta))
+  ax.set_rticks([])
+  ax.legend()
+#+END_SRC
+
+#+RESULTS:
+:results:
+: <matplotlib.legend.Legend at 0x7f77ed426240>
+[[file:./obipy-resources/2169sMJ.png]]
+:end:
+
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
@@ -906,3 +1003,8 @@ $uds$. La terminologie d'étrangeté vient de la durée de vie particulièrement
 particules, caractéristique de désintégrations par interaction faible.
 
 [fn:55e25f58788cdf5] Attention ce n'est $\vv{v}-\vv{V}$ que dans la limite non relativiste !
+
+[fn:248c710448ab8f4] ce résultat s'obtient en calculant la norme du quadri-vecteur $\underline{P}$
+soit $\underline{P}.\underline{P}=\underline{P}^*.\underline{P}^*$ où $\underline{P}^*=(mc^2,
+\vv{0})$ par définition du référentiel propre de la particule. Ainsi,
+$\frac{E^2}{c^2}-\vv{p}^2=m^2c^4$ d'où $E=pc$ pour un photon de masse nulle.
