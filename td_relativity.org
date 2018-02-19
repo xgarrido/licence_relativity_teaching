@@ -829,6 +829,59 @@ fonction de $\omega_i$.
 /physiques que $\omega'_i=\omega'_r$/.
 #+END_QUESTION
 
+Dans le référentiel du miroir $\mathcal{R}'$, le problème se résume à un problème d'optique
+géométrique et l'on peut montrer sans difficultés (/cf./ TD "Reflexion totale et onde évanescente" en
+électromagnétisme) que la pulsation réfléchie $\omega'_r$ est égale à la pulsation incidente
+$\omega'_i$. Ainsi, les quadri-vecteurs d'onde $(\omega/c, \vv{k})$ s'écrivent dans $\mathcal{R}'$
+de la façon suivante
+#+BEGIN_SRC latex
+  \begin{align*}
+    \underline{k_i'}=\begin{pmatrix}\nicefrac{\omega_i'}{c}\\k'_i=\frac{\omega'_i}{c}\end{pmatrix}\quad\text{et}\quad
+    \underline{k_r'}=\begin{pmatrix}\nicefrac{\omega_i'}{c}\\k'_r=-k_i'=-\frac{\omega'_i}{c}\end{pmatrix}
+  \end{align*}
+#+END_SRC
+On obtient ainsi dans $\mathcal{R}$, les relations suivantes
+#+BEGIN_SRC latex
+  \begin{align*}
+    \underline{k_i}&=\begin{pmatrix}\nicefrac{\omega_i}{c}\\k_i\end{pmatrix}=\begin{bmatrix}\gamma&\beta\gamma\\\beta\gamma&\gamma\end{bmatrix}\begin{pmatrix}\nicefrac{\omega_i'}{c}\\k_i'\end{pmatrix}\\
+      \frac{\omega_i}{c}&=\gamma\left(\frac{\omega_i'}{c}+\beta k_i'\right)=\gamma\frac{\omega_i'}{c}(1+\beta)
+  \end{align*}
+#+END_SRC
+et
+#+BEGIN_SRC latex
+  \begin{align*}
+    \underline{k_r}&=\begin{pmatrix}\nicefrac{\omega_r}{c}\\k_r\end{pmatrix}=\begin{bmatrix}\gamma&\beta\gamma\\\beta\gamma&\gamma\end{bmatrix}\begin{pmatrix}\nicefrac{\omega_i'}{c}\\-k_i'\end{pmatrix}\\
+      \frac{\omega_r}{c}&=\gamma\frac{\omega_i'}{c}(1-\beta)
+  \end{align*}
+#+END_SRC
+soit
+#+BEGIN_SRC latex
+  \begin{align*}
+    \frac{\omega_r}{c}&=\gamma\frac{\omega_i}{c}\cdot\frac{1}{\gamma(1+\beta)}(1-\beta)\\
+    \omega_r&=\omega_i\frac{1-\beta}{1+\beta}
+  \end{align*}
+#+END_SRC
+
+On peut également résoudre le problème en faisant appel aux formules de l'effet Doppler en prenant
+garde toutefois de bien distinguer l'émetteur et le récepteur :
+
+- pour l'onde émise par le policier, ce dernier est l'émetteur dans $\mathcal{R}$, la voiture étant
+  le récepteur $\mathcal{R}'$. On obtient donc
+  #+BEGIN_SRC latex
+    \begin{align*}
+      \omega_i'=\omega_i\sqrt{\frac{1-\beta}{1+\beta}}
+    \end{align*}
+  #+END_SRC
+- pour l'onde réfléchie par la voiture/miroir, la voiture est l'émetteur tandis que le policier est
+  le récepteur soit
+  #+BEGIN_SRC latex
+    \begin{align*}
+      \omega_r=\omega_r'\sqrt{\frac{1-\beta}{1+\beta}}
+    \end{align*}
+  #+END_SRC
+
+On retrouve bien l'expression calculée précédemment en considérant que $\omega_i'=\omega_r'$.
+
 ** Distribution spatiale des photons émis par une source en mouvement
 #+BEGIN_QUESTION
 Une source lumineuse émet des photons de manière isotrope dans son référentiel propre
