@@ -711,10 +711,10 @@ et $\tan\theta=\frac{x^1}{x^0}=\beta$ soit au final
 #+END_QUESTION
 
 Si $B$ envoie un message tous les ans, pendant la phase d'éloignement d'Alice, on a alors symétrie
-par au début de la question 2 car, du point de vue d'Alice, c'est Bob qui s'éloigne à une vitesse
-$0.8c$ : Alice reçoit donc un message tous les 3 ans. Or au bout de 3 ans, Alice commence son voyage
-retour : elle reçoit donc les signaux tous les 4 mois. Ainsi Alice reçoit un signal pendant l'aller
-et 8 signaux pendant le retour.
+par rapport au début de la question 2 car, du point de vue d'Alice, c'est Bob qui s'éloigne à une
+vitesse $0.8c$ : Alice reçoit donc un message tous les 3 ans. Or au bout de 3 ans, Alice commence
+son voyage retour : elle reçoit donc les signaux tous les 4 mois. Ainsi Alice reçoit un signal
+pendant l'aller et 8 signaux pendant le retour.
 
 #+CAPTION: *Diagrammes des signaux émis par Alice à gauche et par Bob à droite.* La représentation est telle que $\beta=\nicefrac{4}{5}$.
 #+ATTR_LATEX: :width \linewidth
@@ -773,7 +773,7 @@ La coordonnée spatiale de $C$ dans $\mathcal{R}'$ devient
   &=\frac{1}{\gamma}\cdot\frac{\lambda}{1-\frac{v_pV}{c^2}}
   \end{align*}
 #+END_SRC
-En définissant $k'=\frac{2\pi}{\lambda'}$ et $k==\frac{2\pi}{\lambda}$ et en utilisant le fait que
+En définissant $k'=\frac{2\pi}{\lambda'}$ et $k=\frac{2\pi}{\lambda}$ et en utilisant le fait que
 $v_p=\frac{\omega}{k}$, on obtient finalement
 #+BEGIN_SRC latex
   \begin{align*}
@@ -973,8 +973,9 @@ soit
   \end{align*}
 #+END_SRC
 
-#+BEGIN_SRC ipython :session :results raw drawer :exports results
+#+BEGIN_SRC ipython :session :results raw drawer :exports none
   %matplotlib inline
+  %config InlineBackend.figure_format = "svg"
   import numpy as np
   def f(theta, beta):
         return (1-beta**2)/(1-beta*np.cos(theta))**2
@@ -988,14 +989,49 @@ soit
         ax.plot(theta, f(theta, beta), label=r"$\beta$={}".format(beta))
   ax.set_rticks([])
   ax.legend()
+  plt.savefig("./figures/photons_distribution.pdf")
 #+END_SRC
 
 #+RESULTS:
 :results:
-: <matplotlib.legend.Legend at 0x7f77ed426240>
-[[file:./obipy-resources/2169sMJ.png]]
+[[file:./obipy-resources/2169t_n.svg]]
 :end:
 
+[[file:figures/photons_distribution.pdf]]
+
+Depuis $\mathcal{R}$, les photons émis isotropiquement dans $\mathcal{R}^*$ apparaissent émis et
+focalisés vers l'avant : plus la vitesse $u$ de déplacement de la source lumineuse est grande, plus
+les photons sont boostés vers l'avant.
+
+D'autre part, on a
+#+BEGIN_SRC latex
+  \begin{align*}
+  \int_0^\pi\sin\theta^*\d\theta^*=2&=\int_0^\pi f(\theta)\sin\theta\d\theta\\
+  &=\int_0^\pi \frac{1-\beta^2}{(1-\beta\cos\theta)^2}\sin\theta\d\theta
+  \end{align*}
+#+END_SRC
+En posant $x=\cos\theta$, on a $\d x=-\sin\theta\d\theta$, on obtient bien
+#+BEGIN_SRC latex
+  \begin{align*}
+    \int_0^\pi \frac{1-\beta^2}{(1-\beta\cos\theta)^2}\sin\theta\d\theta&=\int_{-1}^1\frac{1-\beta^2}{(1-\beta x)^2}\d x\\
+    &=\frac{1-\beta^2}{\beta}\left[\frac{1}{1-\beta x}\right]_{-1}^1\\
+  &=\frac{1-\beta^2}{\beta}\left[\frac{1}{1-\beta}-\frac{1}{1+\beta}\right]=2
+  \end{align*}
+#+END_SRC
+
+L'angle $\theta_\text{lim.}$ pour lequel la moitié des photons sont émis est tel que
+#+BEGIN_SRC latex
+    \begin{align*}
+      \int_0^{\theta_\text{lim.}}f(\theta)\sin\theta\d\theta&=1\\
+      \frac{1-\beta^2}{\beta}\left[\frac{1}{1-\beta x}\right]_{\cos\theta_\text{lim.}}^1&=1\\
+      \frac{1-\beta^2}{\beta}\left[\frac{1}{1-\beta}-\frac{1}{1-\beta\cos\theta_\text{lim.}}\right]&=1\\
+      \frac{\cancel{(1-\beta)}(1+\beta)}{\cancel{\beta}}\left[\frac{\cancel{1}-\cancel{\beta}\cos\theta_\text{lim.}-\cancel{1}+\cancel{\beta}}{\cancel{(1-\beta)}(1-\beta\cos\theta_\text{lim.})}\right]&=1\\
+    \frac{(1+\beta)\cdot(1-\cos\theta_\text{lim.})}{1-\beta\cos\theta_\text{lim.}}&=1\\
+  1+\beta-\beta\cos\theta_\text{lim.}-\cos\theta_\text{lim.}&=1-\beta\cos\theta_\text{lim.}\\
+  \cos\theta_\text{lim.}&=\beta
+    \end{align*}
+#+END_SRC
+soit pour $\beta=\nicefrac{1}{2}$, $\theta_\text{lim.}=\nicefrac{\pi}{3}$ = 60°.
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
