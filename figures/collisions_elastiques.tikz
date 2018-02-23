@@ -1,0 +1,39 @@
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=5pt,
+    fill=black,circle}%
+}
+\begin{tikzpicture}
+  \sf
+  \definecolor{red}{RGB}{221,42,43}
+  \definecolor{green}{RGB}{105,182,40}
+  \definecolor{blue}{RGB}{0,51,153}
+  \definecolor{orange}{RGB}{192,128,64}
+  \definecolor{gray}{RGB}{107,108,110}
+
+  %% some definitions
+  \scriptsize
+  \draw[dashed] (-0.5,0) -- (3,0);
+
+  \coordinate[mark coordinate, fill=blue] (A) at (0,0) node[above] {$m$};
+  \coordinate[mark coordinate, fill=blue] (B) at (1,0.05);
+
+
+  \draw[->] (A) -- (0.5,0) node[above] {$\overrightarrow{v_1}$};
+
+  \draw[dashed] (1.5,0) -- (3,0.75);
+  \draw[dashed] (1.5,0) -- (3,-1.25);
+
+  \coordinate[mark coordinate, fill=red] (C) at (2.5,0.5);
+  \coordinate[mark coordinate, fill=red] (D) at (2.5,-0.8333);
+
+  \draw[->] (C) -- (3,0.75) node [above] {$\overrightarrow{v_1}'$};
+  \draw[->] (D) -- (3,-1.25) node [below] {$\overrightarrow{v_2}'$};
+
+  \draw[<->] ([shift=(-39.8:0.5)]1.5,0) arc(-39.8:26:0.5) node[midway, right, yshift=-0.5ex] {$\alpha$};
+
+\end{tikzpicture}

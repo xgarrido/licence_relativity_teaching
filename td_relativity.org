@@ -1032,6 +1032,31 @@ L'angle $\theta_\text{lim.}$ pour lequel la moitié des photons sont émis est t
     \end{align*}
 #+END_SRC
 soit pour $\beta=\nicefrac{1}{2}$, $\theta_\text{lim.}=\nicefrac{\pi}{3}$ = 60°.
+** Collisions élastiques
+#+BEGIN_QUESTION
+Une particule de masse $m$ et d’énergie cinétique $K$ entre en collision avec une autre particule de
+masse identique. On notera $\vv{e_x}$ la direction de la particule incidente. À l'issue de la
+collision, les deux particules ont des énergies inégales, et leur vecteurs vitesses $\vv{v_1}'$ et
+$\vv{v_2}'$ sont /a priori/ inégalement inclinés sur la direction de la particule incidente :
+$\vv{v_1}'.\vv{e_x}\neq\vv{v_2}'.\vv{e_x}$. On notera $\alpha$ l'angle entre $\vv{v_1}'$ et
+$\vv{v_2}'$.
+
+1) Montrer qu'en mécanique newtonienne $\alpha = \pi/2$.
+
+2) Montrer qu'en relativité restreinte $\alpha$ est un angle aigu (indication: exprimer $\cos\alpha$
+   en fonction de $\gamma_1'$ et $\gamma_2'$). Discuter les limites newtonienne et
+   ultra-relativiste. Monter que dans le cas d'une collision symétrique
+   ($\vv{v_1}'.\vv{e_x}\neq\vv{v_2}'.\vv{e_x}$) on a :
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \cos\alpha&=\frac{K}{K+4mc^2}.
+     \end{align*}
+   #+END_SRC
+#+END_QUESTION
+
+#+ATTR_LATEX: :width 0.5\linewidth
+[[file:figures/collisions_elastiques.pdf]]
+
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
