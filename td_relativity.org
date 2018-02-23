@@ -1045,8 +1045,8 @@ $\vv{v_2}'$.
 
 2) Montrer qu'en relativité restreinte $\alpha$ est un angle aigu (indication: exprimer $\cos\alpha$
    en fonction de $\gamma_1'$ et $\gamma_2'$). Discuter les limites newtonienne et
-   ultra-relativiste. Monter que dans le cas d'une collision symétrique
-   ($\vv{v_1}'.\vv{e_x}\neq\vv{v_2}'.\vv{e_x}$) on a :
+   ultra-relativiste. Montrer que dans le cas d'une collision symétrique
+   ($\vv{v_1}'.\vv{e_x}=\vv{v_2}'.\vv{e_x}$) on a :
    #+BEGIN_SRC latex
      \begin{align*}
        \cos\alpha&=\frac{K}{K+4mc^2}.
@@ -1057,6 +1057,73 @@ $\vv{v_2}'$.
 #+ATTR_LATEX: :width 0.5\linewidth
 [[file:figures/collisions_elastiques.pdf]]
 
+1) De façon générale, cette collision doit conserver l'énergie et l'impulsion. En mécanique
+   classique, ces deux lois de conservation s'expriment ainsi
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{1}{2}mv_1^2&=\frac{1}{2}mv_1'^2+\frac{1}{2}mv_2'^2\\
+       m\vv{v_1}&=m\vv{v_1}'+m\vv{v_2}'
+     \end{align*}
+   #+END_SRC
+   En élevant au carré la seconde équation, on obtient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       v_1^2&=v_1'^2+v_2'^2+2\vv{v_1}'.\vv{v_2}'\\
+       0&=2\vv{v_1}'.\vv{v_2}'
+     \end{align*}
+   #+END_SRC
+   L'angle \alpha formé par les deux vecteurs vitesses $\vv{v_1}'$ et $\vv{v_2}'$ est donc
+   nécessairement de 90°.
+
+2) En mécanique relativiste, la conservation de l'énergie et de l'impulsion s'écrivent au travers du
+   quadri-vecteur énergie-impulstion soit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \underline{P}_1+\underline{P}_2&=\underline{P}'_1+\underline{P}'_2
+     \end{align*}
+   #+END_SRC
+   où $\underline{P}=(\gamma mc,\gamma m\vv{v})$ sachant que
+   $\gamma=\frac{1}{\surd1-\frac{v^2}{c^2}}$. On a donc
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{v^2}{c^2}&=\frac{\gamma^2-1}{\gamma^2}\\
+       (\gamma\vv{v})^2&=c^2(\gamma^2-1)
+     \end{align*}
+   #+END_SRC
+   On obtient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \begin{pmatrix}\gamma_1 mc\\\gamma_1 m\vv{v_1}\end{pmatrix}+\begin{pmatrix}mc\\\vv{0}\end{pmatrix}&=
+       \begin{pmatrix}\gamma_1' mc\\\gamma_1'm\vv{v_1}'\end{pmatrix}+\begin{pmatrix}\gamma_2'mc\\\gamma_2'm\vv{v_2}'\end{pmatrix}\\
+         \gamma_1+1&=\gamma_1'+\gamma_2'\\
+         \gamma_1\vv{v_1}&=\gamma_1'\vv{v_1}'+\gamma_2'\vv{v_2}'
+     \end{align*}
+   #+END_SRC
+   Comme pour le calcul précédent, en prenant le carré de la seconde équation, on obtient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       (\gamma_1v_1)^2&=(\gamma_1'v_1')^2+(\gamma_2'v_2')^2+2\gamma_1'v_1'\gamma_2'v_2'\cos\alpha\\
+       \gamma_1^2\cancel{-1}&=\gamma_1'^2\cancel{-1}+\gamma_2'^2-1+2\frac{\gamma_1'v_1'\gamma_2'v_2'}{c^2}\cos\alpha\\
+       \gamma_1^2&=\gamma_1'^2+\gamma_2'^2-1+2\sqrt{\gamma_1'^2-1}\cdot\sqrt{\gamma_2'^2-1}\cos\alpha\\
+     \end{align*}
+   #+END_SRC
+   À l'aide de l'équation de conservation de l'énergie $\gamma_1+1=\gamma_1'+\gamma_2'$, on dérive
+   le résultat suivant
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \gamma_1^2&=\gamma_1'^2+\gamma_2'^2+2\gamma_1'\gamma_2'-2\gamma_1'-2\gamma_2'+1\\
+       \cancel{\gamma_1'^2}+\cancel{\gamma_2'^2}+2\gamma_1'\gamma_2'-2\gamma_1'-2\gamma_2'+1&=\cancel{\gamma_1'^2}+\cancel{\gamma_2'^2}-1+2\sqrt{\gamma_1'^2-1}\cdot\sqrt{\gamma_2'^2-1}\cos\alpha\\
+       (\gamma_1'-1)\cdot(\gamma_2'-1)&=\sqrt{\gamma_1'^2-1}\cdot\sqrt{\gamma_2'^2-1}\cos\alpha
+     \end{align*}
+   #+END_SRC
+   soit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \cos\alpha&=\frac{\gamma_1'-1}{\sqrt{\gamma_1'^2-1}}\cdot\frac{\gamma_2'-1}{\sqrt{\gamma_2'^2-1}}\\
+       &=\sqrt{\frac{\gamma_1'^2-1}{\gamma_1'+1}}\cdot\sqrt{\frac{\gamma_2'^2-1}{\gamma_2'^2+1}}\geq0\quad(\gamma\geq1)
+     \end{align*}
+   #+END_SRC
+   L'angle \alpha est donc aigu /i.e./ compris entre 0 et $\frac{\pi}{2}$.
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
