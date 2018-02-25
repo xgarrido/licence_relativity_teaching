@@ -1187,6 +1187,88 @@ $\vv{v_2}'$.
      \end{align*}
    #+END_SRC
 
+** COMMENT Cinématique des désintégrations en deux corps
+#+BEGIN_QUESTION
+1) Une particule de masse $M$ et de quadrivecteur énergie-impulsion $\underline{P} = (E/c, \vv{p})$
+   se désintègre en deux particules de masses $m_1$, $m_2$ et de quadrivecteurs $\underline{P}_1,
+   \underline{P}_2$ (on supposera $\vv{p}$ aligné suivant $Oz$).
+   1) Donner l’expression des énergies $E_1^*$ et $E_2^*$ des particules 1 et 2 et de leur impulsion
+      commune $\vv{p}^*$ dans le centre de masse de la désintégration.
+   2) Montrer que $\beta_\text{CM}$ relatif à la transformation de Lorentz du référentiel du
+      laboratoire à celui du centre de masse est égal à $p_zc/E$.
+   3) Exprimer $E-1$ -- énergie de la particule 1 dans le laboratoire -- en fonction de
+      $\beta_\text{CM}$, $E_1^*$, $p^*$ et de l'angle $\theta^*$ que fait dans le centre de masse
+      l’impulsion de la particule 1 avec l'axe des $z$.
+   4) On suppose la désintégration isotrope dans le centre de masse : $\nicefrac{\d
+      N}{\d(\cos\theta^*)=A=\text{constante}$. Déduire de (c) la distribution $\nicefrac{\d N}{\d
+      E_1}$ dans le laboratoire.
+#+END_QUESTION
+
+** Collision frontale
+#+BEGIN_QUESTION
+Collision frontale
+On étudie la collision élastique frontale d'une particule incidente de masse $M$ et de vitesse
+$\beta = v/c$ avec une particule immobile de masse $m$.
+1) Écrire les quadrivecteurs énergie-impulsion initiaux de chaque particule dans le référentiel du
+   laboratoire.
+2) Construire la transformation de Lorentz qui fait passer du référentiel du laboratoire au
+   référentiel $\mathcal{R}^*$ dans lequel la particule de masse $M$ est au repos. En déduire la
+   quadri-impulsion de chaque particule dans $\mathcal{R}^*$.
+#+END_QUESTION
+
+1) Dans le référentiel du laboratoire, les quadri-vecteurs énergie-impulsion de la particule lourde
+   et de la particule légère sont respectivement $(E_M/c, \vv{p}_M)=(\gamma Mc, \gamma
+   M\vv{v})=(\gamma Mc, \gamma M\beta c\vv{u}_x)$ et $(E_m/c, \vv{p}_m)=(mc, \vv{0})$.
+
+2) Dans le référentiel de la particule de masse $M$, cette dernière voit la particule de masse $m$
+   se déplacer avec une vitesse $v=-\beta c\vv{u}_x$. La transformation de Lorentz de chaque
+   quadri-vecteurs donne
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \begin{pmatrix}\frac{E_M^*}{c}\\p_M^*\end{pmatrix}&=\begin{bmatrix}\gamma&-\beta\gamma\\-\beta\gamma&\gamma\end{bmatrix}\begin{pmatrix}\gamma Mc\\\gamma Mc\beta\end{pmatrix}=\begin{pmatrix}Mc\\0\end{pmatrix}\\
+       \begin{pmatrix}\frac{E_m^*}{c}\\p_m^*\end{pmatrix}&=\begin{bmatrix}\gamma&-\beta\gamma\\-\beta\gamma&\gamma\end{bmatrix}\begin{pmatrix}mc\\0\end{pmatrix}=\begin{pmatrix}\gamma mc\\-\gamma mc\beta\end{pmatrix}
+     \end{align*}
+   #+END_SRC
+   On retrouve bien que la particule est au repos $\vv{p}_M^*=\vv{0}$ tandis que l'impulsion de $m$
+   est opposée à celle de $M$.
+#+BEGIN_QUESTION
+3) [@3] On se place dans le cas limite où $M\gg  m$.
+   1) En étudiant la cinématique d'une collision frontale dans $\mathcal{R}^*$, déterminer sans
+      aucun calcul l'impulsion finale maximale de la particule légère.
+   2) En revenant dans le référentiel du laboratoire, montrer alors que l'énergie cinétique finale maximale
+      transférée à la particule légère lors de la collision est
+      #+BEGIN_SRC latex
+        \begin{align*}
+          K=2mc^2\beta^2\gamma^2.
+        \end{align*}
+      #+END_SRC
+#+END_QUESTION
+3) [@3]
+   1) Après la collision, le cas où le transfert d'impulstion est le plus élevé correspond à la
+      rétrodiffusion de la particule $m$. Si $M\gg m$, on peut considérer que la particule de masse
+      $M$ ne se déplace quasiment pas après la collision (rebond sur un mur infiniment
+      lourd). Ainsi, toute l'impulsion initiale $p_m^*$ est transférée lors du rebond de la
+      particule $m$ : $p_m'=+\gamma mc\beta$. Le quadri-vecteur énergie-impulsion de la particule
+      $m$ après collision est donc
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \begin{pmatrix}\frac{E_m'^*}{c}\\p_m'^*\end{pmatrix}&=\begin{pmatrix}\gamma mc\\+\gamma mc\beta\end{pmatrix}
+        \end{align*}
+      #+END_SRC
+   2) En faisant la transformation de Lorentz inverse, on obtient
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \begin{pmatrix}\frac{E_m'}{c}\\p_m'\end{pmatrix}&=\begin{bmatrix}\gamma&\gamma\beta\\\gamma\beta&\gamma\end{bmatrix}\begin{pmatrix}\gamma mc\\\gamma mc\beta\end{pmatrix}
+        \end{align*}
+      #+END_SRC
+      soit
+      #+BEGIN_SRC latex
+        \begin{align*}
+          E_m'&=\gamma^2 mc^2+\gamma^2\beta^2 mc^2\\
+          T_m'&=E_m'-mc^2=(\underbrace{\gamma^2-1}_{\beta^2\gamma^2})mc^2+\gamma^2\beta^2mc^2\\
+          T_m'&=2mc^2\beta^2\gamma^2
+        \end{align*}
+      #+END_SRC
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
