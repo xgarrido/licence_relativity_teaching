@@ -1038,7 +1038,7 @@ Une particule de masse $m$ et d’énergie cinétique $K$ entre en collision ave
 masse identique. On notera $\vv{e_x}$ la direction de la particule incidente. À l'issue de la
 collision, les deux particules ont des énergies inégales, et leur vecteurs vitesses $\vv{v_1}'$ et
 $\vv{v_2}'$ sont /a priori/ inégalement inclinés sur la direction de la particule incidente :
-$\vv{v_1}'.\vv{e_x}\neq\vv{v_2}'.\vv{e_x}$. On notera $\alpha$ l'angle entre $\vv{v_1}'$ et
+$\vv{v_1}'.\vv{u_x}\neq\vv{v_2}'.\vv{u_x}$. On notera $\alpha$ l'angle entre $\vv{v_1}'$ et
 $\vv{v_2}'$.
 
 1) Montrer qu'en mécanique newtonienne $\alpha = \pi/2$.
@@ -1046,7 +1046,7 @@ $\vv{v_2}'$.
 2) Montrer qu'en relativité restreinte $\alpha$ est un angle aigu (indication: exprimer $\cos\alpha$
    en fonction de $\gamma_1'$ et $\gamma_2'$). Discuter les limites newtonienne et
    ultra-relativiste. Montrer que dans le cas d'une collision symétrique
-   ($\vv{v_1}'.\vv{e_x}=\vv{v_2}'.\vv{e_x}$) on a :
+   ($\vv{v_1}'.\vv{u_x}=\vv{v_2}'.\vv{u_x}$) on a :
    #+BEGIN_SRC latex
      \begin{align*}
        \cos\alpha&=\frac{K}{K+4mc^2}.
@@ -1075,8 +1075,8 @@ $\vv{v_2}'$.
    L'angle \alpha formé par les deux vecteurs vitesses $\vv{v_1}'$ et $\vv{v_2}'$ est donc
    nécessairement de 90°.
 
-2) En mécanique relativiste, la conservation de l'énergie et de l'impulsion s'écrivent au travers du
-   quadri-vecteur énergie-impulstion soit
+2) En mécanique relativiste, la conservation de l'énergie et de l'impulsion s'écrit au travers de la
+   conservation du quadri-vecteur énergie-impulstion soit
    #+BEGIN_SRC latex
      \begin{align*}
        \underline{P}_1+\underline{P}_2&=\underline{P}'_1+\underline{P}'_2
@@ -1120,10 +1120,73 @@ $\vv{v_2}'$.
    #+BEGIN_SRC latex
      \begin{align*}
        \cos\alpha&=\frac{\gamma_1'-1}{\sqrt{\gamma_1'^2-1}}\cdot\frac{\gamma_2'-1}{\sqrt{\gamma_2'^2-1}}\\
-       &=\sqrt{\frac{\gamma_1'^2-1}{\gamma_1'+1}}\cdot\sqrt{\frac{\gamma_2'^2-1}{\gamma_2'^2+1}}\geq0\quad(\gamma\geq1)
+       &=\sqrt{\frac{\gamma_1'-1}{\gamma_1'+1}}\cdot\sqrt{\frac{\gamma_2'-1}{\gamma_2'+1}}\geq0\quad(\gamma\geq1)
      \end{align*}
    #+END_SRC
    L'angle \alpha est donc aigu /i.e./ compris entre 0 et $\frac{\pi}{2}$.
+
+   Lorsque $v_1'$ et $v_2'$ tendent vers $c$, $\gamma_1'$ et $\gamma_2'$ \to \infty et
+   $\cos\alpha\to1;\alpha\to0$. /A contrario/, lorsque $v_1'$ et $v_2'\ll c$, les facteurs de Lorentz
+   $\gamma_{1,2}'\simeq1+\frac{v_{1,2}'^2}{2c^2}$ et $\cos\alpha$ s'écrit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \cos\alpha&\simeq\frac{\nicefrac{v_1'}{\sqrt{2}c}}{\sqrt{2}}\cdot\frac{\nicefrac{v_2'}{\sqrt{2}c}}{\sqrt{2}}=\frac{v_1'v_2'}{4c}
+     \end{align*}
+   #+END_SRC
+   En posant $\alpha=\frac{\pi}{2}-\epsilon$ et en développant autour de $\alpha_0=\frac{\pi}{2}$, on obtient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \cos\alpha&\simeq\cos\alpha_0-\sin\alpha_0(\alpha-\alpha_0)+...\\
+       &=-(\alpha-\frac{\pi}{2})=\epsilon=\frac{v_1'v_2'}{4c}
+     \end{align*}
+   #+END_SRC
+   Dans la limite non-relativiste, l'angle formé par les vecteurs vitesses $\vv{v_1}'$ et
+   $\vv{v_2}'$ est donc $\alpha=\frac{\pi}{2}-\frac{v_1'v_2'}{4c}$.
+
+   On peut également dérivé le résultat précédent à partir de l'équation
+   $(\underline{P}_1+\underline{P}_2)^2=(\underline{P}_1'+\underline{P}_2')^2$. Étant donné que
+   $\underline{P}^2=m^2c^2$ et que toutes les masses sont égales, on obtient que
+   $\underline{P}_1.\underline{P}_2=\underline{P}_1'.\underline{P}_2'$ soit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{E_1}{c}\cdot\frac{E_2}{c}&=\frac{E_1'}{c}\cdot\frac{E_2'}{c}-\vv{p_1}'.\vv{p_2}'
+     \end{align*}
+   #+END_SRC
+   Or $|\vv{p}c|=\sqrt{E^2-m^2c^4}$ et $E_1+mc^2=E_1'+E_2'$ d'où
+   #+BEGIN_SRC latex
+     \begin{align*}
+       (E_1'+E_2'-mc^2)\cdot mc^2&=E_1'E_2'-\cos\alpha\sqrt{E_1'^2-m^2c^4}\sqrt{E_2'-m^2c^4}\\
+       \cos\alpha&=\frac{E_1'E_2'-mc^2(E_1'+E_2'-mc^2)}{\sqrt{E_1'^2-m^2c^4}\sqrt{E_2'^2-m^2c^4}}\\
+       &=\frac{\gamma_1'\gamma_2'-(\gamma_1'+\gamma_2'-1)}{\sqrt{\gamma_1'^2-1}\sqrt{\gamma_2'^2-1}}\\
+       &=\sqrt{\frac{\gamma_1'-1}{\gamma_1'+1}}\cdot\sqrt{\frac{\gamma_2'-1}{\gamma_2'+1}}
+     \end{align*}
+   #+END_SRC
+
+   Dans le cas d'une collision symétrique $\vv{v_1}'.\vv{u}_x=\vv{v_2}'.\vv{u}_x$, la composante
+   selon $y$ des impulsions $\vv{p_1}'$ et $\vv{p_2}'$ est respectivement égale à
+   $p_1'\sin\theta=\gamma_1'mv_1'\sin\theta$ et
+   $-p_2'\sin\theta=\gamma_2'mv_2'\sin\theta$. Sa conservation implique que
+   #+BEGIN_SRC latex
+     \begin{align*}
+       0&=\gamma_1'mv_1'\sin\theta-\gamma_2'mv_2'\sin\theta\\
+       \gamma_1'v_1'&=c^2(\gamma_1'^2-1)=\gamma_2'v_2'=c^2(\gamma_2'^2-1)\\
+       \gamma_1'&=\gamma_2'=\gamma'
+     \end{align*}
+   #+END_SRC
+   d'où
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \cos\alpha&=\frac{\gamma'-1}{\gamma'+1}=\frac{\gamma'-1}{\gamma'+1}\cdot\frac{mc^2}{mc^2}\\
+       &=\frac{K'}{K'+2mc^2}
+     \end{align*}
+   #+END_SRC
+   En utilisant la conservation de l'énergie /i.e./ $K+2mc^2=2K'+2mc^2$, on a finalement
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \cos\alpha&=\frac{K}{K+4mc^2}
+     \end{align*}
+   #+END_SRC
+
 * Footnotes
 
 [fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
