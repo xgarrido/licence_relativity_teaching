@@ -1187,7 +1187,7 @@ $\vv{v_2}'$.
      \end{align*}
    #+END_SRC
 
-** COMMENT Cinématique des désintégrations en deux corps
+** Cinématique des désintégrations en deux corps
 #+BEGIN_QUESTION
 1) Une particule de masse $M$ et de quadrivecteur énergie-impulsion $\underline{P} = (E/c, \vv{p})$
    se désintègre en deux particules de masses $m_1$, $m_2$ et de quadrivecteurs $\underline{P}_1,
@@ -1196,14 +1196,31 @@ $\vv{v_2}'$.
       commune $\vv{p}^*$ dans le centre de masse de la désintégration.
    2) Montrer que $\beta_\text{CM}$ relatif à la transformation de Lorentz du référentiel du
       laboratoire à celui du centre de masse est égal à $p_zc/E$.
-   3) Exprimer $E-1$ -- énergie de la particule 1 dans le laboratoire -- en fonction de
+   3) Exprimer $E_1$ -- énergie de la particule 1 dans le laboratoire -- en fonction de
       $\beta_\text{CM}$, $E_1^*$, $p^*$ et de l'angle $\theta^*$ que fait dans le centre de masse
       l’impulsion de la particule 1 avec l'axe des $z$.
    4) On suppose la désintégration isotrope dans le centre de masse : $\nicefrac{\d
-      N}{\d(\cos\theta^*)=A=\text{constante}$. Déduire de (c) la distribution $\nicefrac{\d N}{\d
+      N}{\d\cos\theta^*}=A=\text{constante}$. Déduire de (c) la distribution $\nicefrac{\d N}{\d
       E_1}$ dans le laboratoire.
 #+END_QUESTION
 
+#+BEGIN_QUESTION
+2) [@2] Un \pi^{+} se désintègre en vol suivant le mode : $\pi^{+}\to\nu_\mu+\mu^+$ ($m_\pi$ =
+   140\nbsp{}MeV/c^{2}, $m_\mu$ = 106 MeV/c^{2} et $m_\nu$ = 0 eV/c^{2}).
+   1) Si l’énergie cinétique $K$ du \pi^{+} est de 140 MeV dans le laboratoire, combien vaut le
+      $\beta_\text{CM}$ relatif à la transformation du référentiel du laboratoire à celui du centre
+      de masse ?
+   2) On choisit l’axe des $z$ suivant la ligne de vol du \pi dans le laboratoire. Soit\nbsp\theta
+      (resp. \theta^{*}) l'angle sous lequel est émis le \mu par rapport à cet axe dans le
+      laboratoire (resp. dans le centre de masse). Montrer que
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \tan\theta&=\frac{1}{\gamma_\text{CM}}\frac{\sin\theta^*}{\cos\theta^*+\beta_\text{CM}\frac{m_\pi^2+m_\mu^2}{m_\pi^2-m_\mu^2}}
+        \end{align*}
+      #+END_SRC
+      En déduire que le \mu^{+} est émis dans le laboratoire dans un cône d'ouverture
+      \theta_{max} \simeq 9°.
+#+END_QUESTION
 ** Collision frontale
 #+BEGIN_QUESTION
 Collision frontale
@@ -1244,7 +1261,7 @@ $\beta = v/c$ avec une particule immobile de masse $m$.
       #+END_SRC
 #+END_QUESTION
 3) [@3]
-   1) Après la collision, le cas où le transfert d'impulstion est le plus élevé correspond à la
+   1) Après la collision, le cas où le transfert d'impulsion est le plus élevé correspond à la
       rétrodiffusion de la particule $m$. Si $M\gg m$, on peut considérer que la particule de masse
       $M$ ne se déplace quasiment pas après la collision (rebond sur un mur infiniment
       lourd). Ainsi, toute l'impulsion initiale $p_m^*$ est transférée lors du rebond de la
