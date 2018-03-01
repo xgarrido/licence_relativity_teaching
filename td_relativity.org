@@ -1204,6 +1204,89 @@ $\vv{v_2}'$.
       E_1}$ dans le laboratoire.
 #+END_QUESTION
 
+1)
+   1) Dans le référentiel du centre de masse de la désintégration, la particule de masse $M$ est au
+      repos et donc, par conservation de l'impulsion, on déduit
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \vv{p}_M^*&=\vv{0}=\vv{p_1}^*+\vv{p_2}^*\to|\vv{p_1}^*|=|\vv{p_2}^*|=p^*
+        \end{align*}
+      #+END_SRC
+      D'autre part, la conservation de l'énergie implique
+      #+BEGIN_SRC latex
+        \begin{align*}
+          Mc^2&=E_1^*+E_2^*
+        \end{align*}
+      #+END_SRC
+      et
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \underline{P}_1^*.\underline{P}_1^*&=m_1^2c^2=\frac{E_1^{*2}}{c^2}-p^{*2}\\
+          \underline{P}_2^*.\underline{P}_2^*&=m_2^2c^2=\frac{E_2^{*2}}{c^2}-p^{*2}
+        \end{align*}
+      #+END_SRC
+      soit
+      #+BEGIN_SRC latex
+        \begin{align*}
+          E_1^{*2}-E_2^{*2}&=(m_1^2-m_2^2)c^4\\
+          E_1^{*2}-(Mc^2-E_1^*)^2&=(m_1^2-m_2^2)c^4\\
+          -M^2c^4+2E_1^*Mc^2=&=(m_1^2-m_2^2)c^4\\
+          E_1^*&=\frac{(m_1^2-m_2^2+M^2)c^4}{2Mc^2}\\
+          E_2^*=Mc^2-E_1^*&=\frac{(-m_1^2+m_2^2+M^2)c^4}{2Mc^2}
+        \end{align*}
+      #+END_SRC
+      On déduit que l'impulsion mutuelle $p^*$ est égale à
+      #+BEGIN_SRC latex
+        \begin{align*}
+          p^{*2}c^2&=E_1^{*2}-m_1^2c^4=\frac{(M^2+m_1^2-m_2^2)^2c^8}{4M^2c^4}-\frac{4M^2m_1^2c^8}{4M^2c^4}\\
+          &=\frac{\left[M^4+(m_1^2-m_2^2)^2+2M^2(m_1^2-m_2^2)-4M^2m_1^2\right]c^4}{4M^2}\\
+          &=\frac{\left[M^4+(m_1^2-m_2^2)^2-2M^2(m_1^2+m_2^2)\right]c^4}{4M^2}\\
+          &=\frac{c^4}{4M^2}\underbrace{\left[M^2-(m_1+m_2)^2\right]}_{\text{nul si $M=m_1+m_2;(Q=0)$}}\cdot\underbrace{\left[M^2-(m_1-m_2)^2\right]}_{\neq 0\text{ car } M>m_1\text{ ou }m_2}\\
+        \end{align*}
+      #+END_SRC
+   2) La transformation du 4-vecteur énergie-impulsion s'exprime ainsi
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \underline{P}^*&=\begin{bmatrix}\gamma_\text{\tiny CM}&0&0&-\beta_\text{\tiny CM}\gamma_\text{\tiny CM}\\0&1&0&0\\0&0&1&0\\-\beta_\text{\tiny CM}\gamma_\text{\tiny CM}&0&0&\gamma_\text{\tiny CM}\end{bmatrix}\underline{P}\\
+        \end{align*}
+      #+END_SRC
+      où $\underline{P}^*=(Mc, \vv{0})$ et $\underline{P}=(\nicefrac{E}{c}, p_z\vv{u}_z)$. On
+      obtient donc
+      #+BEGIN_SRC latex
+        \begin{align*}
+          p_z^*=0&=\gamma_\text{\tiny CM}\left(-\beta_\text{\tiny CM}\frac{E}{c}+p_z\right)\\
+          \beta_\text{\tiny CM}&=\frac{p_zc}{E}
+        \end{align*}
+      #+END_SRC
+
+   3) La transformation de Lorentz inverse permet d'exprimer le 4-vecteur énergie-impulsion
+      $\underline{P}_1$ en fonction de $\underline{P}_1^*$
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \underline{P}_1&=\begin{pmatrix}\frac{E_1}{c}\\p^*\end{pmatrix}=\begin{bmatrix}\gamma_\text{\tiny CM}&0&0&\beta_\text{\tiny CM}\gamma_\text{\tiny CM}\\0&1&0&0\\0&0&1&0\\\beta_\text{\tiny CM}\gamma_\text{\tiny CM}&0&0&\gamma_\text{\tiny CM}\end{bmatrix}\underline{P}_1^*\\
+        \end{align*}
+      #+END_SRC
+      soit
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \frac{E_1}{c}&=\gamma_\text{\tiny CM}\left(\frac{E_1^*}{c}+\beta_\text{\tiny CM}p_{1z}^*\right)\\
+          &=\frac{1}{\surd1-\beta_\text{\tiny CM}^2}\left(\frac{E_1^*}{c}+\beta_\text{\tiny CM}p^*\cos\theta^*\right)
+        \end{align*}
+      #+END_SRC
+
+   4) Dans le référentiel du centre de masse, l'isotropie de la désintégration implique que le
+      nombre d'événement $\d N$ dans l'angle solide $\d\Omega^*$ est constant : $\d N =
+      B\d\Omega^*$ avec $\d\Omega^*=\sin\theta^*\d\theta^*\d\phi^*$. En intégrant $\phi^*$ (symétrie
+      de révolution), on obtient donc $\d N=A\d(\cos\theta^*)$ avec $A = -2\pi B$. Par suite, le
+      rapport $\nicefrac{\d N}{\d E_1}$ peut s'écrire
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \frac{\d N}{\d E_1}&=\frac{\d N}{\d(\cos\theta^*)}\times\frac{\d(\cos\theta^*)}{\d E_1}\\
+          &=A\times\frac{1}{\gamma_\text{\tiny CM}\beta_\text{\tiny CM}p^*c}
+        \end{align*}
+      #+END_SRC
+      Le nombre d'événements par intervalle d'énergie $\d E_1$ est ainsi indépendant de la valeur
+      $E_1$.
 #+BEGIN_QUESTION
 2) [@2] Un \pi^{+} se désintègre en vol suivant le mode : $\pi^{+}\to\nu_\mu+\mu^+$ ($m_\pi$ =
    140\nbsp{}MeV/c^{2}, $m_\mu$ = 106 MeV/c^{2} et $m_\nu$ = 0 eV/c^{2}).
