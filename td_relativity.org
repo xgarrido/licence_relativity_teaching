@@ -1304,6 +1304,19 @@ $\vv{v_2}'$.
       En déduire que le \mu^{+} est émis dans le laboratoire dans un cône d'ouverture
       \theta_{max} \simeq 9°.
 #+END_QUESTION
+
+2) [@2]
+   1) On a préalablement vu que $\beta_\text{\tiny CM}=\frac{p_\pi c}{E_\pi}$. Or $E_\pi=K_\pi+m_\pi
+      c^2$ et $p_\pi c=\sqrt{E_\pi^2-m_\pi^2c^4}=\sqrt{K_\pi(K_\pi+2m_\pi c^2)}$ d'où
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \beta_\text{\tiny CM}&=\frac{p_\pi c}{E_\pi}=\frac{\sqrt{K_\pi(K_\pi+m_\pi c^2)}}{K_\pi+m_\pi c^2}=\frac{\sqrt{3}}{2}=0.87
+        \end{align*}
+      #+END_SRC
+      On peut retrouver le résultat précédent en calculant le facteur de Lorentz $\gamma_\text{\tiny
+      CM}$ à partir de l'équation $E_\pi=\gamma_\text{\tiny CM}m_\pi c^2\to\gamma_\text{\tiny
+      CM}=2$.
+
 ** Collision frontale
 #+BEGIN_QUESTION
 Collision frontale
