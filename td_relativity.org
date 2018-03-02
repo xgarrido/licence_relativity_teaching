@@ -1316,6 +1316,75 @@ $\vv{v_2}'$.
       On peut retrouver le résultat précédent en calculant le facteur de Lorentz $\gamma_\text{\tiny
       CM}$ à partir de l'équation $E_\pi=\gamma_\text{\tiny CM}m_\pi c^2\to\gamma_\text{\tiny
       CM}=2$.
+   2) Par rapport au début de l'exercice, en associant la particule 1 au muon et la particule 2 au
+      neutrino, on a alors
+      #+BEGIN_SRC latex
+        \begin{align*}
+          E_\mu^*&=\frac{m_\pi^2+m_\mu^2}{2m_\pi}c^2\\
+          p_\mu^*&=\frac{m_\pi^2-m_\mu^2}{2m_\pi}c
+        \end{align*}
+      #+END_SRC
+
+      #+ATTR_LATEX: :width 0.7\linewidth
+      [[file:figures/pion_decay.pdf]]
+
+      De plus,
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \underline{P}_\mu&=\begin{bmatrix}\gamma_\text{\tiny CM}&0&0&\beta_\text{\tiny CM}\gamma_\text{\tiny CM}\\0&1&0&0\\0&0&1&0\\\beta_\text{\tiny CM}\gamma_\text{\tiny CM}&0&0&\gamma_\text{\tiny CM}\end{bmatrix}\underline{P}_\mu^*\\
+        \end{align*}
+      #+END_SRC
+      soit
+      #+BEGIN_SRC latex
+        \begin{align*}
+          E_\mu&=\gamma_\text{\tiny CM}(E_\mu^*+\beta_\text{\tiny CM}p_{\mu z}c)\\
+          p_{\mu x}&=p_{\mu x}^*\\
+          p_{\mu z}&=\gamma_\text{\tiny CM}\left(\beta_\text{\tiny CM}\frac{E_\mu^*}{c}+p_{\mu z}^*\right)\\
+        \end{align*}
+      #+END_SRC
+      On obtient ainsi
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \tan\theta&=\frac{p_{\mu x}}{p_{\mu z}}=\frac{p_\mu^*\sin\theta^*}{\gamma_\text{\tiny CM}\left(\beta_\text{\tiny CM}\frac{E_\mu^*}{c}+p_\mu^*\cos\theta^*\right)}\\
+          &=\frac{1}{\gamma_\text{\tiny CM}}\times\frac{p_\mu^*\sin\theta^*}{p_\mu^*\left(\beta_\text{\tiny CM}\frac{m_\pi^2+m_\mu^2}{m_\pi^2-m_\mu^é}+\cos\theta^*\right)}\\
+          &=\frac{1}{\gamma_\text{\tiny CM}}\times\frac{\sin\theta^*}{\left(\beta_\text{\tiny CM}\frac{m_\pi^2+m_\mu^2}{m_\pi^2-m_\mu^é}+\cos\theta^*\right)}
+        \end{align*}
+      #+END_SRC
+
+      *Application :* Dans notre cas, $m_\pi c^2$ = 140 MeV et $m_\mu c^2$ = 106 MeV soit
+      $\frac{m_\pi^2+m_\mu^2}{m_\pi^2-m_\mu^2}=3.67$. Par ailleurs, $\gamma_\text{\tiny CM}=2$ si
+      bien que $\tan\theta=\frac{\sin\theta^*}{2\cos\theta^*+D}$ avec $D\simeq6.386$. En posant
+      $f(x) = \frac{\sin x}{2\cos x+D}$, on obtient que $f'(x)=\frac{\cos x}{2\cos x+D}+\frac{2\sin
+      x\sin x}{(2\cos x+D)^2}=\frac{2+D\cos x}{(2\cos x+D)^2}$ qui s'annule pour $x=x_0\to\cos
+      x_0=-\nicefrac{2}{D}$ et
+      $f(x_0)=0.165$. $\tan\theta_\text{max}=0.165\to\theta_\text{max}\simeq$ 9°.
+
+      #+BEGIN_SRC ipython :session :results raw drawer :exports none
+        %matplotlib inline
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        D = 6.386
+        f = lambda x : np.sin(x)/(2*np.cos(x)+D)
+        x = np.linspace(0, np.pi, 100)
+        y = f(x)
+
+        plt.plot(x, y)
+        plt.xlabel(r"$\theta^*$")
+        plt.ylabel(r"$\tan\theta=\frac{\sin\theta^*}{2\cos\theta^*6.386}$")
+        plt.xticks([0, np.pi/4, np.pi/2, 3*np.pi/4, np.pi],
+                   [0, r"$\frac{\pi}{4}$", r"$\frac{\pi}{2}$", r"$\frac{3\pi}{4}$", r"$\pi$"])
+        x0 = np.arccos(-2/D)
+        plt.plot(x0, f(x0), "o")
+        plt.annotate("0.165", xy=(x0, f(x0)), color="C1")
+      #+END_SRC
+
+      #+RESULTS:
+      :results:
+      : Text(1.88934,0.164888,'0.165')
+      [[file:./obipy-resources/1735ETt.png]]
+      :end:
+
 
 ** Collision frontale
 #+BEGIN_QUESTION
