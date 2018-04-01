@@ -1612,20 +1612,71 @@ Une généralisation relativiste de la relation fondamentale de la dynamique est
 où $K^\mu$ est appelée quadri-force. Nous allons dans ce qui suit étudier quelles sont les
 propriétés de cette quadri-force.
 
-1) En étudiant la composante spatiale de \ref{eq:mink} justifier que l'on puisse noter
+1) En étudiant la composante spatiale de l'équation \ref{eq:mink} justifier que l'on puisse noter
    $\vv{K}=\gamma\vv{F}$ où $\vv{F}$ est l'analogue de la force newtonienne et
    $\gamma=\nicefrac{1}{\sqrt{1-v^2/c^2}}$.
+#+END_QUESTION
 
-2) Montrer que le produit scalaire de $\underline{P}$ et $\underline{K}$ est nul. En déduire la
+1) En remplaçant $\d\tau$ par $\frac{\d t}{\gamma}$ et en rappelant que
+   $P^\mu=(\frac{E}{c},\vv{p})$, la composante spatialle de l'équation \ref{eq:mink} devient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \gamma\frac{\d\vv{p}}{\d t}&=\vv{K}
+     \end{align*}
+   #+END_SRC
+   On peut alors poser que $\vv{K}=\gamma\vv{F}$ de telle sorte à retrouver le Principe Fondamentale
+   de la Dynamique $\frac{\d\vv{p}}{\d t}=\vv{F}$.
+
+#+BEGIN_QUESTION
+2) [@2] Montrer que le produit scalaire de $\underline{P}$ et $\underline{K}$ est nul. En déduire la
    relation (quel nom lui donner ?)
    #+BEGIN_SRC latex
      \begin{align*}
        \frac{\d}{\d t}(\gamma mc^2)=\vv{F}.\vv{v}.
      \end{align*}
    #+END_SRC
+#+END_QUESTION
 
-3) On suppose que la force dérive d'un potentiel $V(\vv{r})$. Écrire la conservation de l’énergie
-   totale. Montrer alors que la dynamique du système correspond au lagrangien
+2) [@2] Pour rappel, le produit scalaire $P_\mu.P^\mu$ est égal à
+   #+BEGIN_SRC latex
+        \begin{align*}
+     P_\mu.P^\mu&=(\frac{E}{c},-\vv{p}).(\frac{E}{c},\vv{p})\\
+     &=\frac{E^2}{c^2}-\vv{p}^2=m^2c^2=\text{constante}
+        \end{align*}
+   #+END_SRC
+   En dérivant ce produit par rapport à $\tau$, on obtient de fait
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{\d P_\mu.P^\mu}{\d\tau}&=\frac{\d\underline{P}^2}{\d\tau}=2P_\mu\frac{\d P^\mu}{\d\tau}=0\\
+       P_\mu.K^\mu&=\underline{P}.\underline{K}=0\\
+     \end{align*}
+   #+END_SRC
+   soit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \gamma mc K^0-\vv{p}.\vv{K}&=0\\
+       \gamma mc K^0-\gamma m\vv{v}.\gamma\vv{F}&=0
+     \end{align*}
+   #+END_SRC
+   Par ailleurs, de la relation de Minkowski, on a également
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \gamma\frac{\d(\gamma mc)}{\d t}&=K^0
+     \end{align*}
+   #+END_SRC
+   d'où finalement
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \gamma\frac{\d(\gamma mc)}{\d t}.\gamma mc&=m\gamma^2\vv{F}.\vv{v}\\
+       \frac{\d(\gamma mc^2)}{\d t}&=\vv{F}.\vv{v}
+     \end{align*}
+   #+END_SRC
+   /i.e./ le théorème de l'énergie cinétique confirmant que l'expression de $\vv{K}=\gamma\vv{F}$
+   donne un sens cohérent à la force $\vv{F}$.
+
+#+BEGIN_QUESTION
+3) [@3] On suppose que la force dérive d'un potentiel $V(\vv{r})$. Écrire la conservation de
+   l’énergie totale. Montrer alors que la dynamique du système correspond au lagrangien
    #+BEGIN_SRC latex
      \begin{align*}
        \mathcal{L}(\vv{r},\vv{v})=-mc^2\sqrt{1-\vv{v}^2/c^2}-V(\vv{r}).
@@ -1633,11 +1684,54 @@ propriétés de cette quadri-force.
    #+END_SRC
    Expliquer alors pourquoi le concept de force et de potentiel semble délicat à définir
    correctement en mécanique relativiste.
+#+END_QUESTION
 
-4) D'après la relation d'orthogonalité $K^\mu U_\mu=0$ démontrée à la question 2), la quadri-force ne
-   peut pas être indépendante de la vitesse. Pour faire au plus simple, on cherche une relation
-   linéaire entre les deux quantités de la forme $K^\mu=F^{\mu\nu}U_\nu$ où $F^{\mu\nu}(\vv{r},t)$
-   est un "champ tensoriel".
+3) [@3] Si $\vv{F}=-\vv{\nabla}V(\vv{r})=-\frac{\d V(\vv{r})}{d\vv{r}}$, on peut ainsi écrire que
+   $\vv{F}.\frac{\d\vv{r}}{\d t}=\vv{F}.\vv{v}=-\frac{\d V(\vv{r})}{\d t}$ impliquant que le
+   théorème de l'énergie cinétique devienne
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{\d}{\d t}(\gamma mc^2)&=-\frac{\d V(\vv{r})}{\d t}\\
+       \gamma mc^2+V(\vv{r})&=\text{constante}
+     \end{align*}
+   #+END_SRC
+   Le résultat et la dynamique seront les mêmes avec le langrangien
+   $\mathcal{L}=-mc^2\sqrt{1-v^2/c^2}-V(\vv{r})$. En effet, l'impulsion s'écrit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \vv{p}&=\vv{\nabla}_{\vv{v}}\mathcal{L}=-mc^2\cdot\frac{1}{2}\cdot\frac{1}{\surd{1-\frac{\vv{v}^2}{c^2}}}\cdot-2\frac{\vv{v}}{c^2}\\
+       &=\gamma m\vv{v}
+     \end{align*}
+   #+END_SRC
+   et l'équation du mouvement est bien
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{\d \vv{p}}{\d t}=\vv{\nabla}_{\vv{r}}\mathcal{L}=-\vv{\nabla}V=\vv{F}
+     \end{align*}
+   #+END_SRC
+   Enfin, l'énergie qui est une quantité conservée devient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       E &= \vv{p}.\vv{v}-\mathcal{L}=\gamma m\vv{v}^2+mc^2+V(\vv{r})\\
+       &=\gamma mc^2\left(\frac{\vv{v}^2}{c^2}+\frac{1}{\gamma^2}\right)+V(\vv{r})\\
+       &=\gamma mc^2\left(\frac{\vv{v}^2}{c^2}+1-\frac{\vv{v}^2}{c^2}\right)+V(\vv{r})\\
+       &=\gamma mc^2+V(\vv{r})
+     \end{align*}
+   #+END_SRC
+   On retrouve donc également la partie "temporelle" des équations de Minkowski.
+
+   Toute la difficulté en mécanique relativiste tient au choix et à la définition du potentiel
+   $V(\vv{r})$ car l'action $S=\int\mathcal{L}\d t$ doit être un invariant de Lorentz (cette
+   affirmation découle du premier postulat d'Einstein où toutes les lois de la physique sont les
+   mêmes quelque soit le référentiel). Adopter l'expression d'un lagrangien de la forme
+   $-mc^2\sqrt{1-\frac{v^2}{c^2}}-V(\vv{r})$ se fait donc toujours dans le cadre d'une
+   approximation.
+
+#+BEGIN_QUESTION
+4) [@4] D'après la relation d'orthogonalité $K^\mu U_\mu=0$ démontrée à la question 2), la
+   quadri-force ne peut pas être indépendante de la vitesse. Pour faire au plus simple, on cherche
+   une relation linéaire entre les deux quantités de la forme $K^\mu=F^{\mu\nu}U_\nu$ où
+   $F^{\mu\nu}(\vv{r},t)$ est un "champ tensoriel".
    1) Montrer alors que la relation d'orthogonalité est vérifiée si $F^{\mu\nu}$ est anti-symétrique
       sous l'échange de ses indices. Ce qu'on supposera désormais.
    2) On décide alors de paramétriser $F^{\mu\nu}$ sous la forme[fn:1abe39dd815778cf] :
@@ -1658,6 +1752,50 @@ propriétés de cette quadri-force.
         \end{align*}
       #+END_SRC
 #+END_QUESTION
+
+4) [@4]
+   1) On sait que $K^\mu.P_\mu=\underline{K}.\underline{P}=0$ et $\underline{P}=(E/c,
+      \vv{p})=(\gamma mc, \gamma m\vv{v})$. Étant donné que $U_\mu=(\gamma c, -\gamma\vv{v})$, on
+      déduit donc que le produit $K^\mu.U_\mu$ est également nul. On peut alors écrire
+      #+BEGIN_SRC latex
+        \begin{align*}
+          K^\mu U_\mu&=F^{\mu\nu}U_\nu U_\mu=F^{\nu\mu}U_\mu U_\nu\\
+          &=\frac{1}{2}\left(F^{\mu\nu}+F^{\nu\mu}\right)U_\mu U_\nu
+        \end{align*}
+      #+END_SRC
+      dont le résultat sera automatiquemnt nul dès lors que $F^{\mu\nu}$ est antisymétrique.
+
+   2) La relation de Minkowski s'écrit
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \frac{\d P^\mu}{\d\tau}&=K^\mu\\
+          \gamma m\frac{\d U^\mu}{\d t}&=F^{\mu\nu}U_\nu
+        \end{align*}
+      #+END_SRC
+      Pour $\mu=1$, on a
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \gamma\frac{\d p_x}{\d t}&=F^{10}U_0+F^{11}U_1+F^{12}U_2+F^{13}U_3\\
+          &=\frac{E_x}{c}\gamma c+B_z\gamma v_y - B_y\gamma v_z\\
+          \frac{\d p_x}{\d t}&=E_x+(\vv{v}\times\vv{B})_x
+        \end{align*}
+      #+END_SRC
+      En généralisant aux autres indices, on obtient $\frac{\d\vv{p}}{\d
+      t}=\vv{E}+\vv{v}\times\vv{B}$, équation à laquelle manque la charge électrique $q$ et qui
+      différencie les trajectoires des charges positives de celles des charges négatives.
+
+   3) Un changement de référentiel occasionne la transformation du quadri-vecteur vitesse
+      $U'_\nu=\Lambda_\nu^\beta U_\beta$. Pour avoir $K'^\mu=\Lambda^\mu_\alpha K^\alpha$ il faut
+      nécessairement que $F^{\mu\nu}$ se transforme de manière adéquate. On peut vérifier qu'avec
+      $F'^{\mu\nu}=\Lambda^\mu_\alpha\Lambda^\nu_\beta F^{\alpha\beta}$ la transformation est alors
+      correcte. En effet on peut écrire
+      #+BEGIN_SRC latex
+        \begin{align*}
+          K'^{\mu}&=F'^{\mu\nu}U'_\nu=\Lambda^\mu_\alpha\Lambda^\nu_\beta F^{\alpha\beta}\Lambda^\beta_\nu U_\beta\\
+          \text{or }&\Lambda^\nu_\beta\Lambda^\beta_\nu=\delta^\beta_\beta=1\\
+          \text{donc }&K'^\mu=\Lambda^\mu_\alpha F^{\alpha\beta}U_\beta=\Lambda^\mu_\alpha K^\alpha
+        \end{align*}
+      #+END_SRC
 
 * Footnotes
 
