@@ -1,0 +1,48 @@
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=5pt,
+    fill=black,circle}%
+}
+\begin{tikzpicture}
+  \sf
+  \definecolor{red}{RGB}{221,42,43}
+  \definecolor{green}{RGB}{105,182,40}
+  \definecolor{blue}{RGB}{0,51,153}
+  \definecolor{orange}{RGB}{192,128,64}
+  \definecolor{gray}{RGB}{107,108,110}
+
+  %% some definitions
+  \scriptsize
+  \draw[dashed,->] (0,0) -- (3,0) node[right] {$z$};
+  \draw[dashed,->] (0.5,-0.5) -- (0.5,1.5) node[left] {$x$};
+
+  \coordinate[mark coordinate, fill=blue] (A) at (1,0);
+
+  \draw[->] (A) -- (2,0.75) node [midway, above left] {$\overrightarrow{p_\mu}$};
+  \draw[->] (A) -- (2,-1.25) node [midway, below left] {$\overrightarrow{p_\nu}$};
+
+  \draw[] ([shift=(0:0.5)]1.25,0) arc(0:55:0.5) node[midway, right] {$\theta$};
+
+
+  \begin{scope}[xshift=-4cm]
+    \draw[dashed,->] (-0.5,0) -- (3,0) node[right] {$z^*$};
+    \draw[dashed,->] (0,-0.5) -- (0,1.5) node[left] {$x^*$};
+
+    \coordinate[mark coordinate, fill=blue] (A) at (1,0);
+
+    \draw[->] (A) -- (2,1) node [midway, above left] {$\overrightarrow{p_\mu}^*$};
+    \draw[->] (A) -- (-0.5,-1.5) node [midway, right] {$\overrightarrow{p_\nu}^*$};
+
+    \draw[] ([shift=(0:0.5)]1.25,0) arc(0:65:0.5) node[midway, right] {$\theta^*$};
+
+  \end{scope}
+
+-\end{tikzpicture}
+%% Configure (x)emacs for this file ...
+%% Local Variables:
+%% mode: latex
+%% End:

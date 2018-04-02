@@ -1618,7 +1618,7 @@ propriétés de cette quadri-force.
 #+END_QUESTION
 
 1) En remplaçant $\d\tau$ par $\frac{\d t}{\gamma}$ et en rappelant que
-   $P^\mu=(\frac{E}{c},\vv{p})$, la composante spatialle de l'équation \ref{eq:mink} devient
+   $P^\mu=(\frac{E}{c},\vv{p})$, la composante spatiale de l'équation \ref{eq:mink} devient
    #+BEGIN_SRC latex
      \begin{align*}
        \gamma\frac{\d\vv{p}}{\d t}&=\vv{K}
@@ -1781,7 +1781,7 @@ propriétés de cette quadri-force.
         \end{align*}
       #+END_SRC
       En généralisant aux autres indices, on obtient $\frac{\d\vv{p}}{\d
-      t}=\vv{E}+\vv{v}\times\vv{B}$, équation à laquelle manque la charge électrique $q$ et qui
+      t}=\vv{E}+\vv{v}\times\vv{B}$, équation à laquelle manque la charge électrique $q$ qui
       différencie les trajectoires des charges positives de celles des charges négatives.
 
    3) Un changement de référentiel occasionne la transformation du quadri-vecteur vitesse
@@ -1796,6 +1796,75 @@ propriétés de cette quadri-force.
           \text{donc }&K'^\mu=\Lambda^\mu_\alpha F^{\alpha\beta}U_\beta=\Lambda^\mu_\alpha K^\alpha
         \end{align*}
       #+END_SRC
+
+** Synchrotron à protons
+#+BEGIN_QUESTION
+Un synchrotron est un accélérateur de particules qui permet de maintenir les particules sur une
+trajectoire circulaire fixe. Pour cela, une série d'électroaimants créent un champ magnétique
+$\vv{B}$ uniforme, perpendiculaire au plan de la trajectoire et variant lentement avec le temps de
+façon à maintenir le rayon $R$ constant pendant toute la montée en énergie des protons dans le cas
+considéré ici. Ces protons sont accélérés dans une cavité accélératrice où le champ électrique qui
+leur est appliqué varie avec une fréquence $f$ multiple de la fréquence de rotation $\nu$ des
+protons. On notera $k = K/mc^2$ l’énergie cinétique réduite des protons, avec $mc^2$ = 0.938 GeV
+pour un proton.
+
+1) Pour une valeur de $k$ donnée, exprimer la valeur du champ magnétique $B$ et de la fréquence
+   $\nu$ maintenant les protons sur la trajectoire circulaire de rayon $R$ donné.
+#+END_QUESTION
+
+1) Pour $k=\frac{K}{mc^2}=\gamma-1$ donné, on déduit que le facteur de Lorentz est alors fixe et que
+   la norme de la vitesse reste inchangée. En revanche, l'orientation du vecteur vitesse change
+   constamment et est dirigée suivant $\vv{u}_\theta$. Ainsi, le principe fondamental de la
+   dynamique (relativiste) implique
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{\d\vv{p}}{\d t}&=\vv{F}=q\vv{v}\times\vv{B}\\
+       \frac{\d\gamma m\vv{v}}{\d t}&=qR\omega B\vv{u}_\theta\times\vv{u}_z\\
+       \gamma m R\omega \frac{\d\vv{u}_\theta}{\d t}&=qBR\omega\vv{u}_r\\
+       \gamma mR\omega^2&=qBR\omega\\
+       R &= \frac{\gamma mv}{qB}
+     \end{align*}
+   #+END_SRC
+   Ainsi, au fur et à mesure que l'énergie augmente, l'impulsion grandit de même que le rayon de
+   Larmor des particules de charge $q$. Le principe d'un synchrotron est donc de compenser
+   l'augmentation d'énergie cinétique en augmentant le champ magnétique de telle sorte à maintenir
+   $R$ constant.
+
+   Sachant que $\gamma = 1+k$ et que la vitesse
+   $\beta=\frac{v}{c}=\frac{\sqrt{\gamma^2-1}}{\gamma}=\frac{\sqrt{k^2+2k}}{1+k}$, on obtient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       B&=\frac{\gamma mv}{qR}\\
+       &=\frac{mc}{qR}\cdot\left(1+k\right)\cdot\frac{\sqrt{k^2+2k}}{1+k}\\
+       &=\frac{mc}{qR}\sqrt{k^2+2k}
+     \end{align*}
+   #+END_SRC
+
+   La fréquence $\nu$ de rotation des particules $q$ est égale à $\nu=\frac{1}{T}=\frac{v}{2\pi R}$
+   d'où
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \nu&=\frac{v}{2\pi R}\\
+       &=\frac{c}{2\pi R}\cdot\frac{\sqrt{k^2+2k}}{1+k}
+     \end{align*}
+   #+END_SRC
+
+
+#+BEGIN_QUESTION
+2) [@2] On suppose qu'à chaque tour, l'énergie des protons augmente d'une quantité $\Delta E_0$
+   constante. En assimilant la variation d'énergie à une variation continue, établir la loi de
+   variation du champ magnétique $B$ avec le temps. En déduire celle de $k$ et de $\nu$ en fonction
+   du temps.
+#+END_QUESTION
+
+#+BEGIN_QUESTION
+3) [@3] A.N. : Au Super Proton Synchrotron (SPS) du CERN à Genève, les protons sont injectés avec une
+   impulsion initiale $p_i$ = 26 GeV/c, le rayon du synchrotron vaut $R$ = 1100 m, $\Delta E_0$ = 50
+   keV et le champ magnétique final $B_\text{f}$ = 1.21 T. Calculer l'énergie finale des protons,
+   leur impulsion finale $P_\text{f}$ , la durée de la montée en énergie, le nombre de tours
+   effectués, la distance parcourue par les protons pendant cette phase d'accélération et les
+   fréquences extrêmes.
+#+END_QUESTION
 
 * Footnotes
 
