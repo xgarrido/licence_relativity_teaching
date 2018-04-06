@@ -1712,7 +1712,7 @@ propriétés de cette quadri-force.
    Enfin, l'énergie qui est une quantité conservée devient
    #+BEGIN_SRC latex
      \begin{align*}
-       E &= \vv{p}.\vv{v}-\mathcal{L}=\gamma m\vv{v}^2+mc^2+V(\vv{r})\\
+       E &= \vv{p}.\vv{v}-\mathcal{L}=\gamma m\vv{v}^2+\frac{mc^2}{\gamma}+V(\vv{r})\\
        &=\gamma mc^2\left(\frac{\vv{v}^2}{c^2}+\frac{1}{\gamma^2}\right)+V(\vv{r})\\
        &=\gamma mc^2\left(\frac{\vv{v}^2}{c^2}+1-\frac{\vv{v}^2}{c^2}\right)+V(\vv{r})\\
        &=\gamma mc^2+V(\vv{r})
@@ -1849,7 +1849,6 @@ pour un proton.
      \end{align*}
    #+END_SRC
 
-
 #+BEGIN_QUESTION
 2) [@2] On suppose qu'à chaque tour, l'énergie des protons augmente d'une quantité $\Delta E_0$
    constante. En assimilant la variation d'énergie à une variation continue, établir la loi de
@@ -1857,13 +1856,162 @@ pour un proton.
    du temps.
 #+END_QUESTION
 
+2) [@2] À chaque tour, le proton augmente son énergie cinétique de $\Delta E_0$. Ainsi,
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{\d E}{\d t}&=\frac{\d K}{\d t}\simeq\frac{\Delta E_0}{T}=\nu\Delta E_0
+     \end{align*}
+   #+END_SRC
+   et $k=\frac{K}{mc^2}$, on obtient en fonction de $k$, l'équation différentielle du premier ordre
+   suivante
+   #+BEGIN_SRC latex
+     \begin{align*}
+       mc^2\frac{\d k}{\d t}&=\frac{c}{2\pi R}\cdot\frac{\sqrt{k^2+2k}}{1+k}\Delta E_0
+     \end{align*}
+   #+END_SRC
+   La loi de variation de $B$ en fonction du temps s'exprime ensuite sous la forme suivante
+   #+BEGIN_SRC latex
+        \begin{align*}
+          \frac{\d B}{\d t}&=\frac{\d B}{\d k}\cdot\frac{\d k}{\d t}\\
+     &=\frac{mc}{qR}\frac{1}{2}\frac{1}{\sqrt{k^2+2k}}\left(2k+2\right)\cdot\frac{1}{mc^2}\frac{c}{2\pi R}\cdot\frac{\sqrt{k^2+2k}}{1+k}\Delta E_0\\
+     &=\frac{\Delta E_0}{2\pi q R^2}
+        \end{align*}
+   #+END_SRC
+   d'où l'expression de $B(t)$
+   #+BEGIN_SRC latex
+     \begin{align*}
+       B(t) - B(0) = \frac{\Delta E_0}{2\pi qR^2}t
+     \end{align*}
+   #+END_SRC
+   Le gain en énergie $k$ devient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       B(t)&=\frac{mc}{qR}\sqrt{k^2+2k}\\
+       k^2+2k&=\left(\frac{qR B(t)}{mc}\right)^2=\alpha^2\\
+       k^2+2k-\alpha^2&=0
+     \end{align*}
+   #+END_SRC
+   soit les solutions suivantes de l'équation du second degré
+   #+BEGIN_SRC latex
+     \begin{align*}
+       k&=\frac{-2\pm\sqrt{4+4\alpha^2}}{2}\\
+       &=-1\pm\sqrt{1+\alpha^2}
+     \end{align*}
+   #+END_SRC
+   Sachant que le gain en énergie doit être positif, l'unique solution physique est
+   #+BEGIN_SRC latex
+     \begin{align*}
+       k(t)&=-1 + \sqrt{1+\left[\frac{qR}{mc}\left(\frac{\Delta E_0}{2\pi qR^2}t+B(0)\right)\right]^2}
+     \end{align*}
+   #+END_SRC
+   La fréquence $\nu(t)$ s'écrit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \nu(t)&=\frac{c}{2\pi R}\cdot\frac{\sqrt{k^2+2k}}{1+k}\\
+       &=\frac{c}{2\pi R}\cdot\frac{qRB(t)}{mc}\frac{1}{1+k}\\
+       &=\frac{q}{2\pi m}\cdot\frac{\frac{\Delta E_0}{2\pi qR^2}t+B(0)}{\sqrt{1+\left[\frac{qR}{mc}\left(\frac{\Delta E_0}{2\pi qR^2}t+B(0)\right)\right]^2}}
+     \end{align*}
+   #+END_SRC
+
 #+BEGIN_QUESTION
 3) [@3] A.N. : Au Super Proton Synchrotron (SPS) du CERN à Genève, les protons sont injectés avec une
    impulsion initiale $p_i$ = 26 GeV/c, le rayon du synchrotron vaut $R$ = 1100 m, $\Delta E_0$ = 50
    keV et le champ magnétique final $B_\text{f}$ = 1.21 T. Calculer l'énergie finale des protons,
-   leur impulsion finale $P_\text{f}$ , la durée de la montée en énergie, le nombre de tours
+   leur impulsion finale $p_\text{f}$ , la durée de la montée en énergie, le nombre de tours
    effectués, la distance parcourue par les protons pendant cette phase d'accélération et les
    fréquences extrêmes.
+#+END_QUESTION
+
+3) [@3] L'impulsion initiale $p_i$ = 26 GeV/c implique que l'énergie cinétique des protons est
+   grandement supérieure à l'énergie de masse. Le proton se comporte comme une particule
+   ultra-relativite où $E \simeq pc$ et $\gamma_i\simeq\frac{p_ic}{mc^2}\simeq26$. La fréquence de
+   rotation $\nu$ devient quasi-indépendante de $k$ et donc du temps :
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \nu(t)&=\frac{c}{2\pi R}\cdot\frac{\sqrt{k^2+2k}}{1+k}\simeq\frac{c}{2\pi R}
+     \end{align*}
+   #+END_SRC
+   De même $k$ est directement proportionnel à $B$
+   #+BEGIN_SRC latex
+        \begin{align*}
+     B&=\frac{mc}{qR}\sqrt{k^2+2k}\\
+     k&\simeq\frac{qBR}{mc}=\frac{BRc}{\left.mc^2\right|_\text{eV}}
+        \end{align*}
+   #+END_SRC
+   Ainsi, l'énergie cinétique réduite $k_\text{f}$ est égale à
+   #+BEGIN_SRC latex
+     \begin{align*}
+       k&\simeq=\frac{B_\text{f}Rc}{\left.mc^2\right|_\text{eV}}=\frac{\unit[1.21]{T}\cdot\unit[1100]{m}\cdot\unit[3\,10^8]{m/s}}{\unit[0.938\,10^9]{eV}}=425
+     \end{align*}
+   #+END_SRC
+   L'énergie finale $E_\text{f}=p_\text{f}c=k_\text{f}mc^2=\unit[400]{GeV}$ et la durée de la montée
+   en énergie $\Delta t$ est égale à
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \Delta t&=\frac{2\pi qR^2}{\Delta E_0}\left(B_\text{f}-B_\text{i}\right)
+     \end{align*}
+   #+END_SRC
+   avec $B_\text{i}=B(0)=\frac{\left.mc^2\right|_\text{eV}}{Rc}\cdot k_i=\unit[7.87\,10^{-2}]{T}$
+   soit $\Delta t=\unit[172]{s}$. Enfin le nombre de tours effectués $n$ est égal au gain en énergie
+   divisé par l'augmentation d'énergie $\Delta E_0$ à chaque tour soit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       n&=\frac{E_\text{f}-E_\text{i}}{\Delta E_0}=\unit[7.48\,10^6]{tours}
+     \end{align*}
+   #+END_SRC
+   et la distance parcourue $\ell = n\cdot2\pi R=\unit[5.16\,10^{10}]{m}$.
+
+* TD4 : Électrodynamique relativiste
+** Charge ponctuelle en mouvement rectiligne uniforme
+#+BEGIN_QUESTION
+Soit une particule $P$ de charge $q$ qui se déplace selon $Ox$ à la vitesse uniforme $\vv{v}=
+v\vv{e}_x$ par rapport à un référentiel $\mathcal{R}$ et qui passe à l'origine à l’instant
+initial. On désigne par $\mathcal{R}'$ le référentiel propre associé à cette particule. Soit $M$ un
+point de coordonnées $(x, y, z)$ dans $\mathcal{R}$.
+
+1) Évaluer dans $\mathcal{R}'$ le quadripotentiel du champ créé en $M$. En déduire les expressions
+   de $\vv{E}'$ et $\vv{B}'$. Exprimer dans $\mathcal{R}$ le quadripotentiel en fonction de $(x, y,
+   z, t)$.
+#+END_QUESTION
+
+1) Dans le référentiel propre $\mathcal{R}'$, les composantes du quadri-potentiel
+   $\underline{A}'=(\frac{\phi'}{c}, \vv{A}')$ sont d'une part le potentiel coulombien /i.e./
+   $\phi'=\frac{1}{4\pi\epsilon_0}\cdot\frac{q}{r'}$ et d'autre part, le potentiel-vecteur
+   $\vv{A}'=\vv{0}$ en l'absence de déplacement. Le champ électrique $\vv{E}'$ est alors radial
+   $\frac{1}{4\pi\epsilon_0}\cdot\frac{q}{r'^2}\vv{u}_r'$ et le champ magnétique est nul.
+
+   Le quadri-potentiel dans $\mathcal{R}$ s'exprime par le biais de la transformation de Lorentz du
+   quadri-potentiel dans $\mathcal{R}'$ soit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \underline{A}=\begin{pmatrix}\frac{\phi}{c}\\A_x\\A_y\\A_z\end{pmatrix}&=\begin{bmatrix}\gamma&\beta\gamma&0&0\\\beta\gamma&\gamma&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix}\begin{pmatrix}\frac{\phi'}{c}\\0\\0\\0\end{pmatrix}
+     \end{align*}
+   #+END_SRC
+   d'où $\phi=\gamma\phi'$ et
+   $\vv{A}=A_x\vv{u}_x=\beta\gamma\frac{\phi'}{c}=\beta\frac{\phi}{c}\vv{u}_x$. Pour exprimer le
+   potentiel en fonction $(x,y,z,t)$, il faut transformer le quadri-vecteur position pour convertir
+   la distance $r'=\sqrt{x'^2+y'^2+z'^2}$. On obtient alors que $x'=\gamma(-\beta ct+x)=\gamma(x-vt)$ tandis que
+   les dimensions transverses au déplacement restent inchangées soit $y'=y$ et $z'=z$. Soit le
+   potentiel $\phi(\vv{r},t)$
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \phi(\vv{r},t)&=\gamma\phi'=\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{1}{\sqrt{\gamma^2(x-vt)^2+y^2+z^2}}
+     \end{align*}
+   #+END_SRC
+
+#+BEGIN_QUESTION
+
+#+ATTR_LATEX: :width 0.6\linewidth
+[[file:figures/charge_tru.pdf]]
+
+2) [@2] On ne considérera plus désormais que le référentiel $\mathcal{R}$. Démontrer que le
+   potentiel scalaire peut se mettre sous la forme (les notations sont définies sur la figure):
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \phi(\vv{r},t)&=\frac{q}{4\pi\epsilon_0}\frac{1}{R(1-\beta^2\sin^2\psi)^{1/2}}.
+     \end{align*}
+   #+END_SRC
+
 #+END_QUESTION
 
 * Footnotes
