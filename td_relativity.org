@@ -1989,10 +1989,10 @@ point de coordonnées $(x, y, z)$ dans $\mathcal{R}$.
    #+END_SRC
    d'où $\phi=\gamma\phi'$ et
    $\vv{A}=A_x\vv{u}_x=\beta\gamma\frac{\phi'}{c}=\beta\frac{\phi}{c}\vv{u}_x$. Pour exprimer le
-   potentiel en fonction $(x,y,z,t)$, il faut transformer le quadri-vecteur position pour convertir
-   la distance $r'=\sqrt{x'^2+y'^2+z'^2}$. On obtient alors que $x'=\gamma(-\beta ct+x)=\gamma(x-vt)$ tandis que
-   les dimensions transverses au déplacement restent inchangées soit $y'=y$ et $z'=z$. Soit le
-   potentiel $\phi(\vv{r},t)$
+   potentiel en fonction de $(x,y,z,t)$, il faut transformer le quadri-vecteur position pour
+   convertir la distance $r'=\sqrt{x'^2+y'^2+z'^2}$. On obtient alors que $x'=\gamma(-\beta
+   ct+x)=\gamma(x-vt)$ tandis que les dimensions transverses au déplacement restent inchangées soit
+   $y'=y$ et $z'=z$. Soit le potentiel $\phi(\vv{r},t)$
    #+BEGIN_SRC latex
      \begin{align*}
        \phi(\vv{r},t)&=\gamma\phi'=\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{1}{\sqrt{\gamma^2(x-vt)^2+y^2+z^2}}
@@ -2011,8 +2011,93 @@ point de coordonnées $(x, y, z)$ dans $\mathcal{R}$.
        \phi(\vv{r},t)&=\frac{q}{4\pi\epsilon_0}\frac{1}{R(1-\beta^2\sin^2\psi)^{1/2}}.
      \end{align*}
    #+END_SRC
-
 #+END_QUESTION
+
+2) [@2] Au regard de la figure ci-dessus, on peut établir que
+   #+BEGIN_SRC latex
+     \begin{align*}
+       R^2&=(x-vt)^2+y^2+z^2\\
+       R\cos\psi&=x-vt
+     \end{align*}
+   #+END_SRC
+   On déduit ainsi que
+   #+BEGIN_SRC latex
+     \begin{align*}
+       R^2&=R^2\cos^2\psi+y^2+z^2\\
+       R^2&=R^2(1-\sin^2\psi)+y^2+z^2\\
+       y^2+z^2&=R^2\sin^2\psi
+     \end{align*}
+   #+END_SRC
+   d'où le potentiel-scalaire $\phi(\vv{r},t)$
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \phi(\vv{r},t)&=\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{1}{\sqrt{\gamma^2(x-vt)^2+y^2+z^2}}\\
+       &=\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{1}{\gamma\sqrt{(x-vt)^2+\frac{y^2+z^2}{\gamma^2}}}\\
+       &=\frac{q}{4\pi\epsilon_0}\cdot\frac{1}{\sqrt{(x-vt)^2+(1-\beta^2)(y^2+z^2)}}\\
+       &=\frac{q}{4\pi\epsilon_0}\cdot\frac{1}{\sqrt{R^2-\beta^2R^2\sin^2\psi}}\\
+       &=\frac{q}{4\pi\epsilon_0}\cdot\frac{1}{R\sqrt{1-\beta^2\sin^2\psi}}\\
+     \end{align*}
+   #+END_SRC
+
+#+BEGIN_QUESTION
+3) [@3] On désigne par $t_r$ le "temps retardé" qui est défini comme suit: un photon émis par $P$ à
+   l’instant $t_r$ arrive en $M$ à l'instant $t$. On note $\vv{R}_r=\vv{P(t_r)M}$. Démontrer que
+   $\sin\alpha=\beta\sin\psi$. En déduire
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \phi(\vv{r},t)=\frac{q/4\pi\epsilon_0}{R_r\left(1-\hat{R}_r.\vv{\beta}\right)},\;\text{où}\;\left\{\begin{array}{l}\hat{R}_r=\vv{R}_r/R_r\\\vv{\beta}=\frac{v}{c}\vv{u}_x\end{array}\right..
+     \end{align*}
+   #+END_SRC
+#+END_QUESTION
+
+3) [@3] Pour rappel, $h=A\sin\hat{B}=B\sin\hat{A}$ et donc
+   $\frac{\sin\hat{A}}{A}=\frac{\sin\hat{B}}{B}=\text{constante}$.
+
+   #+ATTR_LATEX: :width 0.4\linewidth
+   [[file:figures/egalite_triangulaire.pdf]]
+
+   Ainsi, $\frac{\sin\alpha}{\beta R_r}=\frac{\sin(\pi-\psi)}{R_r}=\frac{\sin\psi}{R_r}$ et donc
+   $\sin\alpha=\beta\sin\psi$. Le potentiel-scalaire devient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \phi(\vv{r},t)&=\frac{q}{4\pi\epsilon_0}\cdot\frac{1}{R\sqrt{1-\beta^2\sin^2\psi}}\\
+       &=\frac{q}{4\pi\epsilon_0}\cdot\frac{1}{R\sqrt{1-\sin^2\alpha}}\\
+       &=\frac{q}{4\pi\epsilon_0}\cdot\frac{1}{R\cos\alpha}\\
+     \end{align*}
+   #+END_SRC
+
+   #+ATTR_LATEX: :width 0.4\linewidth
+   [[file:figures/charge_tru2.pdf]]
+
+   L'expression $R\cos\alpha$ est égale à $HM$. On peut alors écrire
+   #+BEGIN_SRC latex
+     \begin{align*}
+       R\cos\alpha&=HM=P(t_r)M - P(t_r)H\\
+       &=R_r-\beta R_r\cos(\vv{P(t_r)P(t)},\vv{P(t_r)H})\\
+       &=R_r-\beta R_r\frac{\vv{R_r}}{R_r}.\vv{u}_x\\
+       &=R_r\left(1-\hat{R}_r.\vv{\beta}\right)
+     \end{align*}
+   #+END_SRC
+   et
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \phi(\vv{r},t)&=\frac{q}{4\pi\epsilon_0}\cdot\frac{1}{R_r\left(1-\hat{R}_r.\vv{\beta}\right)}\\
+     \end{align*}
+   #+END_SRC
+
+
+#+BEGIN_QUESTION
+4) [@4] Exprimer $\vv{E}$ en fonction de $x, y, z, t$. Étudier les variations de $E_x$ et de
+   $E_{y,z}$ en fonction de $\xi = x − vt$, en particulier pour $\beta\simeq0$ et pour
+   $\beta\to1$. Commenter. Tracer les lignes de champ. Exprimer $\vv{B}$. Montrer que
+   $\vv{B}=\vv{\beta}\times\vv{E}/c=\hat{R}_r\times\vv{E}/c$.
+#+END_QUESTION
+
+4) [@4] On a $\phi(\vv{r},t)=\frac{\gamma
+   q}{4\pi\epsilon_0}\cdot\frac{1}{\sqrt{\gamma^2(x-vt)+y^2+z^2}}$ et
+   $\vv{A}(\vv{r},t)=\frac{\beta}{c}\phi(\vv{r},t)\vv{u_x}$. Par ailleurs, le champ électrique
+   $\vv{E}(\vv{r},t)$ est égal à $-\grad{\phi}-\frac{\partial\vv{A}}{\partial t}$ soit, pour la
+   composante du champ électrique selon $Ox$
 
 * Footnotes
 

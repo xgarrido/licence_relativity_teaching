@@ -1,0 +1,36 @@
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=5pt,
+    fill=black, circle}%
+}
+\begin{tikzpicture}
+  \sf
+  \definecolor{red}{RGB}{221,42,43}
+  \definecolor{green}{RGB}{105,182,40}
+  \definecolor{blue}{RGB}{0,51,153}
+  \definecolor{orange}{RGB}{192,128,64}
+  \definecolor{gray}{RGB}{107,108,110}
+
+  %% some definitions
+  \scriptsize
+
+  %% \coordinate[mark coordinate, draw, fill=white] (A) at (0,0);
+  \coordinate[mark coordinate, draw, fill=white] (B) at (4,0);
+  \coordinate[mark coordinate, draw, fill=white] (D) at (5,3);
+  \coordinate[mark coordinate, draw, fill=white] (A) at (8,0);
+  \coordinate[mark coordinate] (C) at (5,0);
+
+  \draw (B) -- (D) node[midway, left] {$B$};
+  \draw (A) -- (D) node[midway, above right] {$A$};
+  \draw[dashed] (C) -- (D) node[midway, right] {$h$};
+  \draw (A) -- (B);
+
+
+  \draw[<->] ([shift=(0:0.6)]4,0) arc(0:70:0.6) node[midway, above right] {$\hat{A}$};
+  \draw[<->] ([shift=(135:0.6)]8,0) arc(135:180:0.6) node[midway, above left] {$\hat{B}$};
+
+\end{tikzpicture}

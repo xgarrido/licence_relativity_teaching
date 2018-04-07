@@ -1,0 +1,40 @@
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=5pt,
+    fill=black, circle}%
+}
+\begin{tikzpicture}
+  \sf
+  \definecolor{red}{RGB}{221,42,43}
+  \definecolor{green}{RGB}{105,182,40}
+  \definecolor{blue}{RGB}{0,51,153}
+  \definecolor{orange}{RGB}{192,128,64}
+  \definecolor{gray}{RGB}{107,108,110}
+
+  %% some definitions
+  \scriptsize
+
+  \coordinate[mark coordinate, draw, fill=white] (A) at (0,0);
+  \coordinate[mark coordinate, draw, fill=white] (B) at (4,0);
+  \coordinate[mark coordinate, draw, fill=white] (D) at (5,3);
+
+  \draw (A) node[below left] {$P(t_r)$} -- (B) node[below right] {$P(t)$};
+  \draw (A) -- (D) node[above right] {$M$};
+  \draw (B) -- (D) node[midway, right] {$R$};
+  \draw[dashed] (B) -- (2.77,1.70) node[above] {$H$};
+
+  \begin{scope}[yshift=-10pt]
+    \draw[<->] (0,0) -- (4,0) node[midway, fill=white] {$v(t-t_r)=\beta R_r$};
+  \end{scope}
+
+  \begin{scope}[xshift=-8pt, yshift=10pt]
+    \draw[<->] (0,0) -- (5,3) node[midway, fill=white, rotate=31] {$R_r=c(t-t_r)$};
+  \end{scope}
+
+  \draw[<->] ([shift=(-150:0.6)]5,3) arc(-150:-110:0.6) node[midway, below left] {$\alpha$};
+
+\end{tikzpicture}
