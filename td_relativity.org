@@ -2088,16 +2088,130 @@ point de coordonnées $(x, y, z)$ dans $\mathcal{R}$.
 
 #+BEGIN_QUESTION
 4) [@4] Exprimer $\vv{E}$ en fonction de $x, y, z, t$. Étudier les variations de $E_x$ et de
-   $E_{y,z}$ en fonction de $\xi = x − vt$, en particulier pour $\beta\simeq0$ et pour
+   $E_{y,z}$ en fonction de $\xi = x-vt$, en particulier pour $\beta\simeq0$ et pour
    $\beta\to1$. Commenter. Tracer les lignes de champ. Exprimer $\vv{B}$. Montrer que
    $\vv{B}=\vv{\beta}\times\vv{E}/c=\hat{R}_r\times\vv{E}/c$.
 #+END_QUESTION
 
 4) [@4] On a $\phi(\vv{r},t)=\frac{\gamma
-   q}{4\pi\epsilon_0}\cdot\frac{1}{\sqrt{\gamma^2(x-vt)+y^2+z^2}}$ et
+   q}{4\pi\epsilon_0}\cdot\frac{1}{\sqrt{\gamma^2(x-vt)^2+y^2+z^2}}$ et
    $\vv{A}(\vv{r},t)=\frac{\beta}{c}\phi(\vv{r},t)\vv{u_x}$. Par ailleurs, le champ électrique
    $\vv{E}(\vv{r},t)$ est égal à $-\grad{\phi}-\frac{\partial\vv{A}}{\partial t}$ soit, pour la
    composante du champ électrique selon $Ox$
+   #+BEGIN_SRC latex
+     \begin{align*}
+       E_x(\vv{r},t)=&-\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{-1}{2}\cdot\frac{1}{(\gamma^2(x-vt)^2+y^2+z^2)^{3/2}}\cdot\gamma^2\cdot2(x-vt)\\
+       &-\frac{\beta}{c}\cdot\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{-1}{2}\cdot\frac{1}{(\gamma^2(x-vt)^2+y^2+z^2)^{3/2}}\cdot\gamma^2\cdot2(x-vt)\cdot(-v)\\
+       =&\frac{\gamma^3q}{4\pi\epsilon_0}\cdot\frac{x-vt}{(\gamma^2(x-vt)^2+y^2+z^2)^{3/2}}\cdot(1-\beta^2)\\
+       =&\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{x-vt}{(\gamma^2(x-vt)^2+y^2+z^2)^{3/2}}
+     \end{align*}
+   #+END_SRC
+   Pour $E_y$ et $E_z$, le résultat est similaire à savoir
+   #+BEGIN_SRC latex
+     \begin{align*}
+       E_y(\vv{r},t)=&\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{y}{(\gamma^2(x-vt)^2+y^2+z^2)^{3/2}}\\
+       E_z(\vv{r},t)=&\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{z}{(\gamma^2(x-vt)^2+y^2+z^2)^{3/2}}
+     \end{align*}
+   #+END_SRC
+   si bien que le champ électrique
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \vv{E}(\vv{r},t)=&\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{\vv{R}}{(\gamma^2(x-vt)^2+y^2+z^2)^{3/2}}
+     \end{align*}
+   #+END_SRC
+   est toujours *radial* et d'amplitude d'autant plus grande que la vitesse $\beta$ est proche de $c$
+   ($\gamma\to\infty$).
+
+   Pour étudier les variations de $E_x$ en fonction de la variable $\xi=x-vt$, on peut calculer la
+   dérivée $\nicefrac{\d E_x}{\d\xi}$ soit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{\d E_x}{\d\xi}&=\frac{\gamma q}{4\pi\epsilon_0}\left[\frac{1}{(\gamma^2\xi^2+y^2+z^2)^{3/2}}+\frac{\xi}{(\gamma^2\xi^2+y^2+z^2)^{5/2}}\cdot-\frac{3}{2}\cdot\gamma^2\cdot2\xi\right]\\
+       &=\frac{\gamma q}{4\pi\epsilon_0}\frac{1}{(\gamma^2\xi^2+y^2+z^2)^{5/2}}\left[\gamma^2\xi^2+y^2+z^2-3\gamma^2\xi^2\right]\\
+       &=\frac{\gamma q}{4\pi\epsilon_0}\frac{1}{(\gamma^2\xi^2+y^2+z^2)^{5/2}}\left[-2\gamma^2\xi^2+y^2+z^2\right]
+     \end{align*}
+   #+END_SRC
+   La dérivée s'annule ainsi pour $\xi_0=\pm\sqrt{\frac{y^2+z^2}{2\gamma^2}}$ et
+   $E_x(\xi_0)=\pm\frac{q}{4\pi\epsilon_0}\sqrt{\frac{4}{27}}\frac{1}{y^2+z^2}$, quantité
+   indépendante de la vitesse $v$.
+
+   Pour les composantes $E_{y,z}$, on a
+   #+BEGIN_SRC latex
+     \begin{align*}
+       E_{y,z}&=\frac{\gamma q}{4\pi\epsilon_0}\cdot\frac{y,z}{(\gamma^2\xi^2+y^2+z^2)^{3/2}}
+     \end{align*}
+   #+END_SRC
+   soit pas tout à fait une distribution de Lorentz /i.e./ $\frac{1}{1+x^2}$.
+
+   #+BEGIN_SRC ipython :session :results raw drawer :exports results
+     import numpy as np
+
+     y, z = 5, 5
+     xi = np.arange(-10, 10, 0.01)
+
+     def Ex(beta=0):
+          return (1-beta**2)*xi/np.power(xi**2+(1-beta**2)*(y**2+z**2),3/2)
+     def Eyz(beta=0):
+         return (1-beta**2)*y/np.power(xi**2+(1-beta**2)*(y**2+z**2),3/2)
+
+     %matplotlib inline
+     import matplotlib.pyplot as plt
+
+     fig, ax = plt.subplots(2, sharex="col")
+
+     for b in (0, 0.75, 0.9, 0.99):
+          ax[0].plot(xi, Ex(b), label=r"$\beta={}$".format(b))
+          ax[1].plot(xi, Eyz(b), label=r"$\beta={}$".format(b))
+     ax[0].set_ylabel(r"$E_x$")
+     ax[1].set_ylabel(r"$E_{y,z}$")
+     ax[1].set_xlabel(r"$\xi$")
+     ax[0].set_yticks([])
+     ax[1].set_yticks([])
+     _ = ax[1].legend()
+   #+END_SRC
+
+   #+RESULTS:
+   :results:
+   [[file:./obipy-resources/2255YRy.png]]
+   :end:
+
+   Les lignes de champ électrique sont radiales et quasiment isotrope dans le plan $(yO\xi)$ pour
+   $\beta\simeq0$. En revanche, dès lors que $\beta\to1$, le champ électrique se trouve focalisé.
+
+   Calcul du champ $\vv{B}=\rot\vv{A}$ :
+   #+BEGIN_SRC latex
+     \begin{align*}
+       B_x&=\frac{\partial A_z}{\partial y}-\frac{\partial A_y}{\partial z}=0\\
+       B_y&=\frac{\partial A_x}{\partial z}-\frac{\partial A_z}{\partial x}=\frac{\beta}{c}\frac{\partial \phi}{\partial z}=\frac{\beta}{c}\cdot\frac{\gamma q}{4\pi\epsilon_0}\frac{-z}{(\gamma^2(x-vt)^2+y^2+z^2)^{3/2}}\\
+       B_z&=\frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y}=-\frac{\beta}{c}\frac{\partial \phi}{\partial y}=\frac{\beta}{c}\cdot\frac{\gamma q}{4\pi\epsilon_0}\frac{y}{(\gamma^2(x-vt)^2+y^2+z^2)^{3/2}}\\
+     \end{align*}
+   #+END_SRC
+   On note que $B_y=-\frac{\beta}{c}E_z$ et que $B_z=\frac{\beta}{c}E_y$ d'où
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \vv{B}&=\vv{\beta}\times\frac{\vv{E}}{c}=\begin{pmatrix}\beta\\0\\0\end{pmatrix}\times\begin{pmatrix}\nicefrac{E_x}{c}\\\nicefrac{E_y}{c}\\\nicefrac{E_z}{c}\end{pmatrix}
+     \end{align*}
+   #+END_SRC
+   D'autre part, on a $\vv{P(t_r)P(t)}=\vv{P(t_r)M}-\vv{MP(t)}$ soit $\vv{\beta}R_r=\vv{R_r}-\vv{R}$
+   et donc $\vv{\beta}=\hat{R_r}-\frac{\vv{R}}{R_r}$. Sachant que le champ électrique est radial, le
+   produit vectoriel de $\frac{\vv{R}}{R_r}$ par $\vv{E}$ est nul d'où
+   $\vv{B}=\hat{R_r}\times\frac{\vv{E}}{c}$.
+
+** Force entre deux électrons qui se déplacent côte à côte
+#+BEGIN_QUESTION
+Dans le référentiel $\mathcal{R}$, deux électrons $M_1$ et $M_2$ se déplacent côte à côte à vitesse constante $v$ sur
+deux droites parallèles distantes de $d$. Soit $\mathcal{R}'$ le référentiel dans lequel ils sont immobiles.
+1) Calculer dans $\mathcal{R}'$ les champs $\vv{E}'$ et $\vv{B}'$ créés par $M_1$ au point $M_2$. En
+   déduire la force qui s’exerce sur $M_2$.
+#+END_QUESTION
+
+
+
+#+BEGIN_QUESTION
+2) Répondre aux mêmes questions dans $\mathcal{R}$. On calculera les champs $\vv{E}$ et $\vv{B}$
+   créés par $M_1$ au point $M_2$ de deux manière différentes. On vérifiera la nature covariante de
+   la force de Lorentz.
+#+END_QUESTION
 
 * Footnotes
 
