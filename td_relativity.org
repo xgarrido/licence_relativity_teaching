@@ -1963,6 +1963,10 @@ pour un proton.
 
 * TD4 : Électrodynamique relativiste
 ** Charge ponctuelle en mouvement rectiligne uniforme
+:PROPERTIES:
+:CUSTOM_ID: sec::charge_tru
+:END:
+
 #+BEGIN_QUESTION
 Soit une particule $P$ de charge $q$ qui se déplace selon $Ox$ à la vitesse uniforme $\vv{v}=
 v\vv{e}_x$ par rapport à un référentiel $\mathcal{R}$ et qui passe à l'origine à l’instant
@@ -2205,13 +2209,79 @@ deux droites parallèles distantes de $d$. Soit $\mathcal{R}'$ le référentiel 
    déduire la force qui s’exerce sur $M_2$.
 #+END_QUESTION
 
+#+ATTR_LATEX: :width 0.7\linewidth
+[[file:figures/electron_cote_a_cote.pdf]]
 
+1) Soit $\mathcal{R}'$ le référentiel où les particules sont au repos. Le champ électrique exercé
+   sur $M_2$ par $M_1$ s'écrit
+   #+BEGIN_SRC latex
+     \begin{equation*}
+       \vv{E}'(M_2) = \frac{q_1}{4\pi\epsilon_0}\times\frac{\vv{M_1M_2}}{M_1M_2^3}=-\frac{e}{4\pi\epsilon_0\,d^2}\vv{u}_{z'}
+     \end{equation*}
+   #+END_SRC
+   /i.e./ le champ électrique coulombien. Les particules étant au repos, il n'y a pas de déplacement
+   de charge donc $\vv{B}'(M_2)=\vv{0}$. La force (coulombienne) qui s'exerce sur l'électron en
+   $M_2$ est
+   #+BEGIN_SRC latex
+     \begin{equation*}
+       \vv{F}'(M_2)=-e\vv{E}'(M_2)-e\vv{v}\times\vv{B}'(M_2)=\frac{e^2}{4\pi\epsilon_0\,d^2}\vv{u}_{z'}=-\vv{F}'(M_1)
+     \end{equation*}
+   #+END_SRC
+   soit une force répulsive.
 
 #+BEGIN_QUESTION
-2) Répondre aux mêmes questions dans $\mathcal{R}$. On calculera les champs $\vv{E}$ et $\vv{B}$
-   créés par $M_1$ au point $M_2$ de deux manière différentes. On vérifiera la nature covariante de
-   la force de Lorentz.
+2) [@2] Répondre aux mêmes questions dans $\mathcal{R}$. On calculera les champs $\vv{E}$ et
+   $\vv{B}$ créés par $M_1$ au point $M_2$ de deux manière différentes. On vérifiera la nature
+   covariante de la force de Lorentz.
 #+END_QUESTION
+
+2) [@2] À partir des résultats établis lors de l'exercice [[#sec::charge_tru]], on sait qu'une charge en
+   translation rectiligne uniforme génère un champ électromagnétique $(\vv{E},\vv{B})$ à une
+   distance $d$ de la forme
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \vv{E}(M_2)&=-\frac{\gamma e}{4\pi\epsilon_0}\frac{d}{d^3}\vv{u_z}=-\frac{\gamma e}{4\pi\epsilon_0d^2}\vv{u_z}=\gamma\vv{E}'(M_2)\\
+       \vv{B}(M_2)&=\vv{\beta}\times\frac{\vv{E}(M_2)}{c}=-\frac{v}{c^2}\cdot\frac{\gamma e}{4\pi\epsilon_0d^2}\vv{u}_x\times\vv{u_z}=\frac{v}{c^2}\cdot\frac{\gamma e}{4\pi\epsilon_0d^2}\vv{u}_y
+     \end{align*}
+   #+END_SRC
+   La force de Lorentz qui qu'exerce $M_1$ sur $M_2$ devient
+   #+BEGIN_SRC latex
+        \begin{align*}
+     \vv{F}(M_2)&=-e\vv{E}(M_2)-e\vv{v}\times\vv{B}(M_2)\\
+     \vv{F}(M_2)&=-e\vv{E}(M_2)-ev\cdot\frac{v}{c^2}E(M_2)\vv{u}_x\times\vv{u}_y\\
+     &=-e\vv{E}(M_2)\cdot\left(1-\frac{v^2}{c^2}\right)=-e\frac{\vv{E}(M_2)}{\gamma^2}=\frac{\vv{F}'(M_2)}{\gamma}
+        \end{align*}
+   #+END_SRC
+   La force de répulsion est donc $\gamma$ fois plus faible en raison du champ magnétique induit par
+   le déplacement des charges. Dans la limite où $v\to c$, $\gamma\to\infty$, les charges ne se
+   repoussent plus.
+
+   On peut retrouver ce résultat à partir de la transformation des champs électriques et magnétiques
+   soit pour la composante longitudinale au déplacement $\vv{E}'_\parallel=\vv{E}_\parallel=\vv{0}$ et
+   $\vv{B}'_\parallel=\vv{B}_\parallel=\vv{0}$ et pour la composante transverse
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \vv{E}_\perp&= \gamma\,\left(\vv{E}'_\perp-\vv{v}\times\vv{B}'_\perp\right)\\
+       \vv{B}_\perp&= \gamma\,\left(\vv{B}'_\perp+\vv{v}\times\frac{\vv{E}'_\perp}{c^2}\right)
+     \end{align*}
+   #+END_SRC
+   On déduit que
+   #+BEGIN_SRC latex
+     \begin{equation*}
+       \vv{E}_\perp=\gamma\left(\vv{E}'_\perp-\vv{v}\times\vv{B}'_\perp\right)=\gamma\vv{E}'_\perp=-\frac{\gamma e}{4\pi\epsilon_0\,d^2}\vv{u_z}
+     \end{equation*}
+   #+END_SRC
+   sachant que $\vv{u_z}=\vv{u_{z'}}$.
+
+   Le champ magnétique $\vv{B}_\perp$ est égal à $\gamma\vv{v}\times\frac{\vv{E}'_\perp}{c^2}$ soit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \vv{B}_\perp&=\frac{\gamma\,vE'_\perp}{c^2}\,\vv{u}_x\times\vv{u}_z=-\frac{\gamma\,vE'_\perp}{c^2}\,\vv{u}_y\\
+       &=\frac{\gamma v}{c^2}\times\frac{e}{4\pi\epsilon_0\,d^2}\,\vv{u}_y\text{ avec } \mu_0\epsilon_0c^2=1\\
+       &=\frac{\mu_0\gamma ve}{4\pi d^2}\vv{u}_y
+     \end{align*}
+   #+END_SRC
+
 
 * Footnotes
 
