@@ -2244,7 +2244,7 @@ deux droites parallèles distantes de $d$. Soit $\mathcal{R}'$ le référentiel 
        \vv{B}(M_2)&=\vv{\beta}\times\frac{\vv{E}(M_2)}{c}=-\frac{v}{c^2}\cdot\frac{\gamma e}{4\pi\epsilon_0d^2}\vv{u}_x\times\vv{u_z}=\frac{v}{c^2}\cdot\frac{\gamma e}{4\pi\epsilon_0d^2}\vv{u}_y
      \end{align*}
    #+END_SRC
-   La force de Lorentz qui qu'exerce $M_1$ sur $M_2$ devient
+   La force de Lorentz qu'exerce $M_1$ sur $M_2$ devient
    #+BEGIN_SRC latex
         \begin{align*}
      \vv{F}(M_2)&=-e\vv{E}(M_2)-e\vv{v}\times\vv{B}(M_2)\\
