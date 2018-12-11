@@ -1,7 +1,8 @@
-#+TITLE:  Travaux Dirigés de Relativité Restreinte -- Licence 3
-#+AUTHOR: Xavier Garrido
+#+TITLE:  Relativité Restreinte -- Licence 3
+#+SUBTITLE: Travaux Dirigés du Magistère de Physique Fondamentale d'Orsay
+#+AUTHOR: Xavier Garrido, Nicolas Pavloff, Laurent Verstraete
 #+EMAIL:  xavier.garrido@u-psud.fr
-#+OPTIONS: ^:{} toc:2 tags:t author:t email:t split:html
+#+OPTIONS: ^:{} toc:2 tags:t author:nil email:nil split:html
 #+LATEX_CLASS: teaching-class
 # #+LATEX_CLASS_OPTIONS: [novc]
 
@@ -67,7 +68,7 @@ et la distance moyenne parcourue
   \end{align*}
 #+END_SRC
 
-#+CAPTION: *Photographies de deux événements faisant apparaître la désintégration de deux particules $\bm{V}$*
+#+CAPTION: *Photographies de deux événements faisant apparaître la désintégration de deux particules $\bm{V}$ dont un $\bm{\Lambda_{0}}$*
 #+CAPTION: (référence [[http://www.nature.com/physics/looking-back/rochester/index.html][Rochester G. D. & Butler C. C. 1947]])
 [[file:figures/v_particles.jpg]]
 
@@ -391,8 +392,7 @@ Dans la limite où $V\to c$, $\beta\to1$ et $\gamma\to\infty$ si bien que $\tan\
   \end{align*}
 #+END_SRC
 
-** Expérien
-ce de Fizeau
+** Expérience de Fizeau
 #+BEGIN_QUESTION
 On considère le dispositif expérimental illustré par le schéma ci-contre: une source lumineuse
 (située loin à droite sur la figure) émet un rayonnement que l'on scinde en deux parties qui suivent
