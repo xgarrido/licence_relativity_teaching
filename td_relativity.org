@@ -1575,7 +1575,7 @@ l'origine des coordonnées avec une vitesse nulle.
      \begin{align*}
        x(t^*)&=\frac{c^2}{a_0}\left(\sqrt{1+\text{sh}^2\left(\frac{a_0t^*}{c}\right)}-1\right)\\
        &=\frac{c^2}{a_0}\left(\text{ch}\left(\frac{a_0t^*}{c}\right)-1\right)\\
-       \frac{a_0t^*}{c}&=1+\frac{a_0x}{c^2}\\
+       \text{ch}\left(\frac{a_0t^*}{c}\right)&=1+\frac{a_0x}{c^2}\\
        t^*&=\frac{c}{a_0}\text{argch}\left(1+\frac{a_0x}{c^2}\right)
      \end{align*}
    #+END_SRC
@@ -1589,7 +1589,7 @@ l'origine des coordonnées avec une vitesse nulle.
        &=\unit[1.002]{a.l./a^2}
      \end{align*}
    #+END_SRC
-   et $c=\unit[1]{a.l.}{a.}$. Le temps propre $t^*$ exprimé en années est alors égal à
+   et $c=\unit[1]{a.l./a.}$. Le temps propre $t^*$ exprimé en années est alors égal à
    $\text{argch}\left(1+\unit[x]{[a.l.]}\right)$ et le temps terrestre $t$ devient $\text{sh}t^*$.
 
    |-----------------+-------------+---------------+------------+-----------------|
