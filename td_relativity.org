@@ -1961,6 +1961,102 @@ pour un proton.
    #+END_SRC
    et la distance parcourue $\ell = n\cdot2\pi R=\unit[5.16\,10^{10}]{m}$.
 
+** Particule chargée dans un champ électromagnétique
+#+BEGIN_QUESTION
+On étudie le mouvement d'une particule de masse $m$ et de charge $q$ dans un référentiel
+$\mathcal{R}$ où règne un champ électromagnétique uniforme et statique, décrit par
+$\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
+
+1) Écrire les équations du mouvement en donnant explicitement l'expression des dérivées des
+   composantes $U_\mu$ de la quadri-vitesse par rapport au temps propre $\tau$ en fonction de
+   $E,B,m,q$ et des $U_\nu$.
+#+END_QUESTION
+
+1) Étant donné les valeurs des champs $\vv{E}$ et $\vv{B}$, le tenseur électromagnétique
+   $F^{\mu\nu}$ s'écrit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       F^{\mu\nu}=\begin{bmatrix}
+       0&0&-E/c&0\\
+       0&0&-B&0\\
+       E/c&B&0&0\\
+       0&0&0&0
+       \end{bmatrix}
+     \end{align*}
+   #+END_SRC
+   Le principe fondamental de la dynamique s'écrit
+   #+BEGIN_SRC latex
+     \begin{align*}
+       m\frac{\d U^\mu}{\d\tau}=qF^{\mu\nu}U_\nu
+     \end{align*}
+   #+END_SRC
+   où $U_\nu=(\gamma, -\gamma\vv{v})=(U_0, U_1, U_2, U_3)$ et $U^\mu=(\gamma c,
+   \gamma\vv{v})=(U_0,-U_1,-U_2,-U_3)$ soit les 4 équations du mouvement
+   #+BEGIN_SRC latex
+     \begin{align*}
+       m\frac{\d U_0}{\d\tau}&=-\frac{qE}{c}U_2\\
+       -m\frac{\d U_1}{\d\tau}&=-qBU_2\\
+       -m\frac{\d U_2}{\d\tau}&=\frac{qE}{c}U_0+qBU_1\\
+       -m\frac{\d U_3}{\d\tau}&=0
+     \end{align*}
+   #+END_SRC
+
+#+BEGIN_QUESTION
+2) [@2] Déduire des équations du mouvement que la quantité
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \Omega=BcU_0+EU_1
+     \end{align*}
+   #+END_SRC
+   est conservée au cours du temps, On exprimera $\Omega$ en fonction de la vitesse initiale.
+#+END_QUESTION
+
+2) [@2] En dérivant $\Omega$ par rapport au temps propre, on obtient
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{\d\Omega}{\d\tau}&=Bc\frac{\d U_0}{\d\tau}+E\frac{\d U_1}{\d\tau}\\
+       &=Bc\times-\frac{qE}{mc}U_2+E\times\frac{qB}{m}U_2=0
+     \end{align*}
+   #+END_SRC
+   La quantité $\Omega$ est donc constante et sachant que $\U_\nu=\gamma(c, -\vv{v})$, on peut alors
+   écrire
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \Omega = \gamma_0(Bc^2-Ev_{x0})
+     \end{align*}
+   #+END_SRC
+
+#+BEGIN_QUESTION
+3) [@3] On suppose désormais que $U_3=0$
+   1) Montrer que cette hypothèse est compatible avec les équations du mouvemnt.
+   2) En utilisant les équations du mouvement et la normalisation de la quadri-vitesse, démontrer
+      l'identité
+      #+BEGIN_SRC latex
+        \begin{align*}
+          (EU_0+BcU_1)^2-(E^2-B^2c^2)(U_2)^2=\Omega^2+(E^2-B^2c^2)c^2.
+        \end{align*}
+      #+END_SRC
+#+END_QUESTION
+
+3) [@3]
+   1) L'équation du mouvement selon $U_3$ indique que $U_3$ est une constante que l'on choisit nulle
+      en supposant qu'effectivement $v_{z0}=0$.
+   2) La normalisation de la quadri-vitesse $\underline{U}^2=U^\mu.U_\nu=c^2$. Soit étant donné que
+      $U_3=0$, la relation
+      #+BEGIN_SRC latex
+        \begin{align*}
+          U_0^2-U_1^2-U_2^2&=c^2
+        \end{align*}
+      #+END_SRC
+      On a ainsi
+      #+BEGIN_SRC latex
+        \begin{align*}
+          (EU_0+BcU_1)^2-&(E^2-B^2c^2)(U_2)^2\\
+          &=E^2U_0^2+B^2c^2U_1^2+2EBcU_0U_1-(E^2-B^2c^2)(U_0^2-U_1^2-c^2)\\
+          &=\underbrace{B^2c^2U_0^2+E^2U_1^2+2EBcU_0U_1}_{\Omega^2}+(E^2-B^2c^2)c^2
+        \end{align*}
+      #+END_SRC
+
 * TD4 : Électrodynamique relativiste
 ** Charge ponctuelle en mouvement rectiligne uniforme
 :PROPERTIES:
@@ -2281,7 +2377,6 @@ deux droites parallèles distantes de $d$. Soit $\mathcal{R}'$ le référentiel 
        &=\frac{\mu_0\gamma ve}{4\pi d^2}\vv{u}_y
      \end{align*}
    #+END_SRC
-
 
 * Footnotes
 
