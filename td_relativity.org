@@ -2211,6 +2211,30 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
       temps. Donner sa valeur.
 #+END_QUESTION
 
+6) [@6]
+   1) Le champ électromagnétique $(\vv{E}, \vv{B})$ est statique et donc indépendant du temps. on
+      peut donc considérer le potentiel vecteur $\vv{A}$ également indépendant du temps. Le champ
+      $\vv{E}=E\vv{u}_y$ s'écrit alors $-\vv{\nabla}\phi$ et $\phi=-Ey+\text{constante}$ où l'on
+      choisit la constante comme nulle.
+   2) L'énergie totale de la particule devient
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \mathcal{E}&=\gamma mc^2+q\phi\\
+          &=mcU_0-qEy\\
+          &=\frac{mc^2}{B^2c^2-E^2}(B^2c^2-E^2\cos\omega\tau)-q\frac{E^2}{\surd B^2c^2-E^2}\,\frac{c}{\omega}(1-\cos\omega\tau)\\
+          &=\frac{mc^2\,B^2c^2}{B^2c^2-E^2}-q\frac{E^2}{\surd B^2c^2-E^2}\,\frac{c}{\omega}+\cos\omega\tau\left(q\frac{E^2c}{\omega\surd B^2c^2-E^2}-\frac{E^2mc^2}{B^2c^2-E^2}\right)
+        \end{align*}
+      #+END_SRC
+      Or $\omega=\frac{q}{mc}\sqrt{B^2c^2-E^2}$, la dépendance temporelle $\cos\omega\tau$ est donc
+      nulle ce qui implique que $\mathcal{E}$ ne dépende pas du temps. Finalement,
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \mathcal{E}&=\frac{mc^2\,B^2c^2}{B^2c^2-E^2}-q\frac{E^2}{\surd B^2c^2-E^2}\,\frac{c}{\omega}\\
+          &=mc^2
+        \end{align*}
+      #+END_SRC
+      résultat attendu puisque à $\tau = 0$, la vitesse initiale de la particule est nulle
+      ($\gamma=1$) et $y=0$ (donc $\phi=0$).
 * TD4 : Électrodynamique relativiste
 ** Charge ponctuelle en mouvement rectiligne uniforme
 :PROPERTIES:
