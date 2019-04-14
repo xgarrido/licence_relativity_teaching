@@ -2057,6 +2057,160 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
         \end{align*}
       #+END_SRC
 
+#+BEGIN_QUESTION
+4) [@4] Si $Bc>E$ (ce qu'on supposera désormais) on peut utiliser la paramétrisation
+   #+BEGIN_SRC latex
+     \begin{align*}
+       EU_0+BcU_1=\mu\cos\chi, \quad \sqrt{B^2c^2-E^2}U_2=\mu\sin\chi\text{ avec }\mu>0.
+     \end{align*}
+   #+END_SRC
+   1) Montrer que $\mu$ et $\omega\equiv-\d\chi/\d\tau$ sont des constantes indépendantes de $\tau$
+      et donner leur expression. Démontrer que $\omega$ et $\chi$ sont des scalaires de
+      Lorentz. Montrer que $\omega>0$ si $q>0$ (ce qu'on supposera désormais).
+   2) On se place dans le cas particulier où la vitesse initiale de la particule est nulle, avec
+      $E\neq0$. Écrire explicitement les composantes de la quadri-vitesse en fonction du temps
+      propre. Au bout de quel temps propre $\tau^*$ la vitesse s'annulle-t-elle à nouveau ?
+   3) Exprimer le temps $t$ dans le référentiel $\mathcal{R}$ en fonction du temps propre $\tau$ (on
+      prendra $t=0$ à $\tau=0$). /Indication: commencer par exprimer $\d t$ en fonction de $\d\tau$
+      et $\tau$. Au bout de quel temps $t^*$ (dans $\mathcal{R}$) la vitesse de la particule
+      d'annule-t-elle de nouveau ?
+#+END_QUESTION
+
+4) [@4]
+   1) Si $Bc>E$ alors
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \Omega^2+(E^2-B^2c^2)c^2=(EU_0+BU_1)^2+(B^2c^2-E^2)(U_2)^2=\text{constante}>0
+        \end{align*}
+      #+END_SRC
+      soit
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \Omega^2+(E^2-B^2c^2)c^2=\mu^2\cos^2\chi+\mu^2\sin^2\chi=\mu^2=\text{constante}
+        \end{align*}
+      #+END_SRC
+      Par ailleurs, en dérivant la relation $\mu\sin\chi$ on obtient
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \sqrt{B^2c^2-E^2}\frac{\d U_2}{\d\tau}&=\mu\cos\chi\frac{\d\chi}{\d\tau}\\
+          -\sqrt{B^2c^2-E^2}\times\frac{q}{m}(-\frac{E}{c}U_0+BU_1)&=(EU_0+BcU_1)\frac{\d\chi}{\d\tau}\\
+          \omega=-\frac{\d\chi}{\d\tau}&=\frac{q}{mc}\sqrt{B^2c^2-E^2}>0\text{ si } q>0
+        \end{align*}
+      #+END_SRC
+      $omega$ est un invariant de Lorentz du fait que $q, m, c$ et $B^2c^2-E^2$ sont eux-mêmes des
+      invariants de Lorentz.
+
+   2) On se place dans le cas où $U_1(\tau=0)=U_2(\tau=0)=0$ soit $v_{x0}=0$ et $\gamma_0=1$,
+      $\Omega=Bc^2$ et $\mu^2=E^2c^2$. De plus,
+      $\omega=-\frac{\d\chi}{\d\tau}\to\chi=-\omega\tau$. On déduit $U_2$
+      #+BEGIN_SRC latex
+        \begin{align*}
+          U_2&=\frac{1}{\surd{B^2c^2-E^2}}\,\mu\sin\chi\\
+          &=-\frac{Ec}{\surd{B^2c^2-E^2}}\sin\omega\tau
+        \end{align*}
+      #+END_SRC
+      On a par ailleurs le système de deux équations à deux inconnues $U_0$ et $U_1$
+      #+BEGIN_SRC latex
+        \begin{align*}
+          BcU_0+EU_1&=\Omega=Bc^2\\
+          EU_0+BcU_1&=\mu\cos\chi=Ec\cos\omega\tau
+        \end{align*}
+      #+END_SRC
+      qui devient
+      #+BEGIN_SRC latex
+        \begin{align*}
+          (B^2c^2-E^2)U_0&=B^2c^3-E^2c\cos\omega\tau\\
+          (B^2c^2-E^2)U_1&=BEc^2\cos\omega\tau-BEc^2
+        \end{align*}
+      #+END_SRC
+      soit
+      #+BEGIN_SRC latex
+        \begin{align*}
+          U_0&=\frac{c}{B^2c^2-E^2}(B^2c^2-E^2\cos\omega\tau)\\
+          U_1&=\frac{BEc^2}{B^2c^2-E^2}(\cos\omega\tau-1)
+        \end{align*}
+      #+END_SRC
+      La vitesse s'annule dès lors que $\tau=\frac{2\pi}{\omega}$.
+
+   3) L'intervalle de temps propre $\d\tau$ est égal à $\frac{\d t}{\gamma}$. Or $U^\mu=(U^0,
+      \vv{U})=(\gamma c, \gamma\vv{v})$ d'où $\gamma=\frac{U_0}{c}$. Ainsi
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \d t&=\gamma\d\tau=\frac{U_0}{c}\d\tau=\frac{B^2c^2-E^2\cos\omega\tau}{B^2c^2-E^2}\d\tau
+        \end{align*}
+      #+END_SRC
+      En intégrant et sachant que $t=0$ à $\tau=0$, on obtient finalement
+      #+BEGIN_SRC latex
+        \begin{align*}
+          t=\frac{B^2c^2\tau-E^2/\omega\sin\omega\tau}{B^2c^2-E^2}
+        \end{align*}
+      #+END_SRC
+
+#+BEGIN_QUESTION
+5) [@5] On fixe l'origine des coordonnées comme étant la position de la particule à l'instant
+   $t=0$. Montrer alors que l'équation de la trajectoire de la particule est
+   #+BEGIN_SRC latex
+     \begin{align*}
+       x(\tau)=\frac{EBc}{B^2c^2-E^2}\,\frac{c}{\omega}\left(\omega\tau-\sin\omega\tau\right), y(\tau)=\frac{E}{\surd B^2c^2-E^2}\,\frac{c}{\omega}(1-\cos\omega\tau)
+     \end{align*}
+   #+END_SRC
+   Tracer son allure dans le plan $xOy$. Pour simplifier le graphe on pourra utiliser des unités
+   adaptées pour chaque coordonnéee (pas nécessairement les mêmes sur les deux axes).
+#+END_QUESTION
+
+5) [@5] On a
+   #+BEGIN_SRC latex
+     \begin{align*}
+       U_1&=\frac{\d X_1}{\d\tau}=-\frac{\d x}{\d\tau}=\frac{EBc^2}{B^2c^2-E^2}(\cos\omega\tau-1)\\
+       U_2&=\frac{\d X_2}{\d\tau}=-\frac{\d y}{\d\tau}=-\frac{Ec}{\surd B^2c^2-E^2}\sin\omega\tau
+     \end{align*}
+   #+END_SRC
+   En prenant $x(\tau=0)=y(\tau=0)=0$, on obtient les expressions suivantes
+   #+BEGIN_SRC latex
+     \begin{align*}
+       x(\tau)&=\frac{EBc}{B^2c^2-E^2}\,\frac{c}{\omega}(\omega\tau-\sin\omega\tau)\\
+       y(\tau)&=\frac{E}{\surd B^2c^2-E^2}\,\frac{c}{\omega}(1-\cos\omega\tau)
+     \end{align*}
+   #+END_SRC
+   Les facteurs $\nicefrac{EBc}{B^2c^2-E^2}$ et $\nicefrac{E}{\surd B^2c^2-E^2}$ sont sans dimension
+   tandis que $\nicefrac{c}{\omega}$ est une longueur. La représentation
+   $Y=\nicefrac{y}{\frac{c}{\omega}\,\frac{E}{\surd B^2c^2-E^2}}$ en fonction de
+   $X=\nicefrac{x}{\frac{c}{\omega}\,\frac{EBc}{B^2c^2-E^2}}$
+
+   #+BEGIN_SRC ipython :session :results raw drawer :exports results
+     %matplotlib inline
+     import matplotlib.pyplot as plt
+     import numpy as np
+     tau = np.arange(0, 25, 0.01)
+     X = tau - np.sin(tau)
+     Y = 1 - np.cos(tau)
+     plt.plot(X, Y, label=r"$\omega=1, q>0$")
+     plt.xlabel(r"$X$")
+     plt.ylabel(r"$Y$")
+     plt.xticks([0, 2*np.pi, 4*np.pi, 6*np.pi, 8*np.pi],
+                [0, r"$2\pi$", r"$4\pi$", r"$6\pi$", r"$8\pi$" ])
+     _ = plt.legend(title=r"$\uparrow\vec{E}\odot\vec{B}$", loc="upper left", bbox_to_anchor=(1,1))
+   #+END_SRC
+
+   #+RESULTS:
+   :results:
+   # Out[90]:
+   [[file:./obipy-resources/XClz7Q.png]]
+   :end:
+
+   La particule intialement au repos en $O$ est dans un premier temps accélérée par le champ
+   électrique $q\vv{E}\parallel\vv{u}_y$ puis subit la force magnétique $q\vv{v}\times\vv{B}$ qui
+   infléchit son mouvement vers la droite.
+
+#+BEGIN_QUESTION
+6) [@6] On veut vérifier la conservation de l'énergie totale des la particule au cours du mouvement.
+   1) Justifier rapidemnt que pour le champ électromagnétique considéré dans ce problème on peut
+      choisir un potentiel vecteur $\vv{A}$ ne dépendant pas du temps. Donner alors l'expression du
+      potentiel scalaire $\phi$.
+   2) Vérifer que l'énergie totale de la particule[fn:883299da15d8a45] ne dépend pas du
+      temps. Donner sa valeur.
+#+END_QUESTION
+
 * TD4 : Électrodynamique relativiste
 ** Charge ponctuelle en mouvement rectiligne uniforme
 :PROPERTIES:
@@ -2394,3 +2548,14 @@ $\frac{E^2}{c^2}-\vv{p}^2=m^2c^4$ d'où $E=pc$ pour un photon de masse nulle.
 [fn:1abe39dd815778cf] On prend la convention : le premier indice est l'indice de ligne et le second
 est l'indice de colonne. Attention, les indices varient de 0 à 3 : la colonne d'indice 1 est donc la
 seconde colonne.
+
+[fn:883299da15d8a45] L'énergie totale d'une particule de masse $m$ et de charge $q$ plongée dans un
+champ électromagnétique et suivant une trajectoire $\vv{r}(t)$ (vitesse $\vv{v}(t)=\dot{\vv{r}}$)
+est
+#+BEGIN_SRC latex
+  \begin{align*}
+    \mathcal{E}=\frac{mc^2}{\surd 1 - \vv{v}^2(t)/c^2}+q\phi(\vv{r}(t),t),
+  \end{align*}
+#+END_SRC
+où $\phi$ est le potentiel scalaire : $\vv{E}(\vv{r},t)=-\vv{\nabla}\phi-\partial_t\vv{A}$ et
+$\vv{B}(\vv{r},t)=\vv{\nabla}\times\vv{A}$.
