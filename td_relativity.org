@@ -4,9 +4,12 @@
 #+EMAIL:  xavier.garrido@u-psud.fr
 #+OPTIONS: ^:{} toc:2 tags:t author:nil email:nil split:html
 #+LATEX_CLASS: teaching-class
-# #+LATEX_CLASS_OPTIONS: [novc]
+#+LATEX_CLASS_OPTIONS: [novc]
+#+LATEX_HEADER: \usepackage{svg}
 
-* TD1 : Principe de relativité et premières conséquences
+#+PROPERTY: header-args:jupyter-python :session relativity :exports both
+
+* COMMENT TD1 : Principe de relativité et premières conséquences
 ** Désintégration
 #+BEGIN_QUESTION
 Le \Lambda_{0} est un baryon de masse 1115 MeV/c^{2} qui se désintègre en une paire proton-pion :
@@ -177,7 +180,7 @@ différentes.
       \end{pmatrix}
     \end{align*}
   #+END_SRC
-  La différence $x_A'-x_B'$ est alors égale à $\gamma(x_A'-x_B')$ d'où $L'=\gamma L$. On notera par
+  La différence $x_A'-x_B'$ est alors égale à $\gamma(x_A-x_B)$ d'où $L'=\gamma L$. On notera par
   ailleurs que les événements $E_A'$ et $E_B'$ ne sont pas simultanés dans $\mathcal{R}'$
   ($ct_A'-ct_B'=\gamma\beta(x_B-x_A)\neq 0$).
 
@@ -692,7 +695,8 @@ $\cos\left(\frac{\pi}{4}-\theta\right)=\text{Re}\left(e^{i\frac{\pi}{4}}e^{-i\th
 on obtient
 #+BEGIN_SRC latex
   \begin{align*}
-  c\Delta t&=\frac{\gamma c\Delta t'}{\cos\theta}\left(\cos\theta+\sin\theta\right)\\
+    OB=c\Delta t&=\frac{OH}{\cos\frac{\pi}{4}}=\frac{OA}{\cos\frac{\pi}{4}}\cos\left(\frac{\pi}{4}-\theta\right)\\
+    &=\frac{\gamma c\Delta t'}{\cos\theta}\left(\cos\theta+\sin\theta\right)\\
   \Delta t&=\gamma\Delta t'\left(1+\tan\theta\right)
   \end{align*}
 #+END_SRC
@@ -720,7 +724,7 @@ pendant l'aller et 8 signaux pendant le retour.
 #+ATTR_LATEX: :width \linewidth
 [[file:figures/alice_bob_signaux_1.pdf]]
 
-* TD2 : Optique et cinématique du point
+* COMMENT TD2 : Optique et cinématique du point
 ** Quadri-vecteur d'onde
 #+BEGIN_QUESTION
 Dans cet exercice nous allons démontrer que pour une onde de pulsation $\omega$, de vecteur d’onde
@@ -797,7 +801,7 @@ $\mathcal{R}$. Dans $\mathcal{R}'$ sa position s'écrit
     ct'_A&=\gamma\left(cT-\beta v_pT\right)
   \end{align*}
 #+END_SRC
-avec $x'_A=v_p't'_A$ et $v'_p=\nicefrac{\omega'}{c}$. On obtient ainsi
+avec $x'_A=v_p't'_A$ et $v'_p=\nicefrac{\omega'}{k'}$. On obtient ainsi
 #+BEGIN_SRC latex
   \begin{align*}
     \frac{x'_A}{ct'_A}&=\frac{v_p'}{c}=\frac{\omega'}{k'c}=\frac{v_p-\beta c}{c-\beta v_p}\\
@@ -830,7 +834,7 @@ fonction de $\omega_i$.
 #+END_QUESTION
 
 Dans le référentiel du miroir $\mathcal{R}'$, le problème se résume à un problème d'optique
-géométrique et l'on peut montrer sans difficultés (/cf./ TD "Reflexion totale et onde évanescente" en
+géométrique et l'on peut montrer sans difficultés (/cf./ TD "Réflexion totale et onde évanescente" en
 électromagnétisme) que la pulsation réfléchie $\omega'_r$ est égale à la pulsation incidente
 $\omega'_i$. Ainsi, les quadri-vecteurs d'onde $(\omega/c, \vv{k})$ s'écrivent dans $\mathcal{R}'$
 de la façon suivante
@@ -973,7 +977,8 @@ soit
   \end{align*}
 #+END_SRC
 
-#+BEGIN_SRC ipython :session :results raw drawer :exports none
+#+BEGIN_SNIPPET
+#+BEGIN_SRC jupyter-python
   %matplotlib inline
   %config InlineBackend.figure_format = "svg"
   import numpy as np
@@ -988,16 +993,13 @@ soit
   for beta in [0, 0.5, 0.8, 0.9]:
         ax.plot(theta, f(theta, beta), label=r"$\beta$={}".format(beta))
   ax.set_rticks([])
-  ax.legend()
-  plt.savefig("./figures/photons_distribution.pdf")
+  ax.legend(bbox_to_anchor=(1.5, 1));
 #+END_SRC
 
 #+RESULTS:
-:results:
-[[file:./obipy-resources/2169t_n.svg]]
-:end:
+[[file:./.ob-jupyter/ed0d0e1f1d43164d178ec40995f43e0a1e92d82d.svg]]
 
-[[file:figures/photons_distribution.pdf]]
+#+END_SNIPPET
 
 Depuis $\mathcal{R}$, les photons émis isotropiquement dans $\mathcal{R}^*$ apparaissent émis et
 focalisés vers l'avant : plus la vitesse $u$ de déplacement de la source lumineuse est grande, plus
@@ -1187,6 +1189,67 @@ $\vv{v_2}'$.
      \end{align*}
    #+END_SRC
 
+** Collision inélastique de deux protons
+#+BEGIN_QUESTION
+On considère une collision entre deux protons $p^+$ ($m_pc^2=\unit[938.25]{MeV}$) donnant un
+deutéron $d^+$ ($m_dc^2=\unit[1875.56]{MeV}$) et un méson $\pi^+$ ($m_\pi c^2=\unit[139.6]{MeV}$) :
+#+BEGIN_SRC latex
+  \begin{align*}
+    p^++p^+\to d^++\pi^+
+  \end{align*}
+#+END_SRC
+Quelle est, dans le référentiel du centre de masse $\mathcal{R}^*$, l'énergie seuil de la réaction ?
+Calculer, au seuil de la réaction, l'énergie du proton projectile dans le référentiel du laboratoire
+$\mathcal{R}$ où le proton cible est au repos. On donnera l'expression littérale et la valeur
+numérique.
+#+END_QUESTION
+
+Le référentiel du centre de masse $\mathcal{R}^*$ est, par définition, celui dans lequel la somme
+des impulsions (initiales comme finales étant donné la conservation de l'impulsion) est
+nulle. Ainsi, les impulsions des protons sont nécessairement opposées de même que celles du deutéron
+et du pion (émission dos à dos). Par ailleurs, le seuil de la réaction correspond à la situation où
+la totalité de l'énergie initiale est dissipée sous forme d'énergie de masse : les particules
+produites sont alors au repos et l'énergie incidente ne "sert" qu'à produire ces particules sur
+leurs couches de masse. Au seuil de la réaction, l'énergie est égale à $m_dc^2+m_\pi c^2$. Étant
+donné que les particules incidentes sont identiques (même masse, même impulsion), on déduit que
+l'énergie cinétique seuil est alors
+#+BEGIN_SRC latex
+  \begin{align*}
+  E^*=E_{p_1}^*+E_{p_2}^*=2T_S^*+2m_pc^2&=m_dc^2+m_\pi c^2\\
+  T_S^*&=\frac{m_dc^2+m_\pi c^2-2m_pc^2}{2}=\unit[69.33]{MeV}
+  \end{align*}
+#+END_SRC
+
+Dans l'hypothèse où un proton incident vient à taper sur une cible d'hydrogène /i.e./ sur un proton
+immobile, le calcul de l'énergie seuil nécessaire à la production du deutéron et du pion est
+sensiblement différent. Dans cette situation, l'impulsion totale est nécessairement différente de 0
+et égale à l'impulsion du proton projectile. La somme des impulsions du deutéron et du pion est
+ainsi égale à $\vv{p}_p$. Au seuil de la réaction, nous pouvons néanmoins considérer les deux
+situations comme équivalentes du point de vue des invariants relativistes. En particulier, la norme
+du quadri-vecteur énergie impulsion est la même sous les deux hypothèses. On a alors
+#+BEGIN_SRC latex
+  \begin{align*}
+    E^2-\vv{p}_p^2c^2&=E^{*2}=(m_dc^2+m_\pi c^2)^2
+  \end{align*}
+#+END_SRC
+où $E=E_p^\text{proj.}+m_pc^2$ et $\vv{p}^2c^2=E_p^{\text{proj.}2}-m_p^2c^4$ d'où
+#+BEGIN_SRC latex
+  \begin{align*}
+    \cancel{E_p^{\text{proj.}2}} + 2E_p^\text{proj.}m_pc^2+m_p^2c^4-\cancel{E_p^{\text{proj.}2}}+m_p^2c^4&=(m_dc^2+m_\pi c^2)^2\\
+    E_p^\text{proj.}&=\frac{(m_dc^2+m_\pi c^2)^2 - 2m_p^2c^4}{2m_pc^2}
+  \end{align*}
+#+END_SRC
+De même l'énergie cinétique seuil $T_S^\text{proj.}$ peut s'écrire
+#+BEGIN_SRC latex
+  \begin{align*}
+  T_s^\text{proj.}&=E_p^\text{proj.}-m_pc^2=\frac{(m_dc^2+m_\pi c^2)^2 - 2m_p^2c^4-2m_p^2c^4}{2m_pc^2}\\
+  &=\frac{(m_dc^2+m_\pi c^2+2m_pc^2)(m_dc^2+m_\pi c^2-2m_pc^2)}{2m_pc^2}\\
+  &=\frac{(m_dc^2+m_\pi c^2+2m_pc^2)}{m_pc^2}T_S^*=\frac{\sum m_{i,f}c^2}{m_\text{cible}c^2}\,T_S*
+  \end{align*}
+#+END_SRC
+L'énergie cinétique à fournir dans le cas d'une réaction sur cible fixe est ainsi toujours plus
+grande que l'énergie cinétique dans le cas d'une collision frontale $T_S^\text{proj.}>T_S^*$.
+
 ** Cinématique des désintégrations en deux corps
 #+BEGIN_QUESTION
 1) Une particule de masse $M$ et de quadrivecteur énergie-impulsion $\underline{P} = (E/c, \vv{p})$
@@ -1359,7 +1422,8 @@ $\vv{v_2}'$.
       x_0=-\nicefrac{2}{D}$ et
       $f(x_0)=0.165$. $\tan\theta_\text{max}=0.165\to\theta_\text{max}\simeq$ 9°.
 
-      #+BEGIN_SRC ipython :session :results raw drawer :exports none
+      #+BEGIN_SNIPPET
+      #+BEGIN_SRC jupyter-python
         %matplotlib inline
         import matplotlib.pyplot as plt
         import numpy as np
@@ -1376,14 +1440,12 @@ $\vv{v_2}'$.
                    [0, r"$\frac{\pi}{4}$", r"$\frac{\pi}{2}$", r"$\frac{3\pi}{4}$", r"$\pi$"])
         x0 = np.arccos(-2/D)
         plt.plot(x0, f(x0), "o")
-        plt.annotate("0.165", xy=(x0, f(x0)), color="C1")
+        plt.annotate("0.165", xy=(x0, f(x0)), color="C1");
       #+END_SRC
 
       #+RESULTS:
-      :results:
-      : Text(1.88934,0.164888,'0.165')
-      [[file:./obipy-resources/1735ETt.png]]
-      :end:
+      [[file:./.ob-jupyter/b66c908fc15b9a5be797584a5dbe14c482b2336c.png]]
+      #+END_SNIPPET
 
 ** Collision frontale
 #+BEGIN_QUESTION
@@ -1450,6 +1512,88 @@ $\beta = v/c$ avec une particule immobile de masse $m$.
         \end{align*}
       #+END_SRC
 * TD3 : Dynamique relativiste
+** Masse = énergie au repos
+#+BEGIN_QUESTION
+1) Deux morceaux d'argile, chacun de masse $m$ ont une collision frontale à la vitesse
+   $\nicefrac{3c}{5}$. Elles se combinent pour former une particule composite (/cf./ figure
+   ci-dessous). Quelle est la masse $M$ de cette particule ?
+
+   #+BEGIN_CENTER
+   #+LATEX: \includegraphics[width=0.75\linewidth]{figures/clay.pdf}
+   #+LATEX: \captionof{figure}{\textbf{Collision-adhésion de deux particules de masses égales.}}
+   #+END_CENTER
+#+END_QUESTION
+
+1) Conservation du quadri-vecteur énergie-impulsion dans le référentiel du centre de masse\nbsp:
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \underline{P}_1+\underline{P}_2=\underline{P}
+     \end{align*}
+   #+END_SRC
+   avec $\underline{P}_1=(\gamma mc, \vv{p})$, $\underline{P}_2=(\gamma mc, -\vv{p})$ et
+   $\gamma=\frac{1}{\sqrt{1-\left(\frac{3}{5}\right)^2}}=\nicefrac{5}{4}$. Par ailleurs, la
+   particule de masse $M$ est produite au repos soit $\underline{P}=(Mc, \vv{0})$ donc $M=2\gamma
+   m=2.5m > 2m$.
+
+#+BEGIN_QUESTION
+2) [@2] An example of bound state is the hydrogen atom. It consists of a positively charged proton
+   and a negatively charged electron, the two being bound together by the electric force. The rest
+   masses of the two particles are respectively:
+   $m_p=\unit[938.3]{MeV}/c^2;m_e=\unit[0.5]{MeV}/c^2$. The corresponding binding energy is $\Delta
+   E=\unit[-13.5]{eV}$. Evaluate the rest energy $Mc^2$ of the hydrogen atom and the relative mass
+   gain $(m_e+m_p-M)/(m_e+m_p)$.
+#+END_QUESTION
+
+2) [@2] Pour l'atome d'hydrogène $Mc^2=m_pc^2+m_ec^2+\Delta E$ avec $\Delta E < 0$ car l'atome est
+   lié. Le gain relatif de masse s'écrit alors
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \frac{m_e+m_p-M}{m_e+m_p}=\frac{-\Delta E}{m_e+m_p}=\frac{13.5\,10^{-6}}{0.5+938.3}=1.4\,10^{-8}
+     \end{align*}
+   #+END_SRC
+
+#+BEGIN_QUESTION
+3) [@3] *Défaut de masse :* une particule $\alpha$ est le noyau d'un atome\nbsp^{4}He, constitué de
+   deux neutrons et de deux protons. Les différentes masses sont[fn:4e7c18b7ed5ec89] : masse du
+   noyau d'Hélium : 4.0026 u, masse du proton : 1.0073 u, masse du neutron : 1.0087 u. Calculer
+   l'énergie de liaison de la particule $\alpha$.
+
+   Même question pour le noyau\nbsp^{238}_{92}U dont la masse vaut 238.0022 u. Quelle est l'énergie
+   de liaison électronique totale de cet élément sachant que la masse de l'atome\nbsp^{238}_{92}U
+   vaut 238.0508 u (on prendra $m_e=\unit[5.49\times10^{-4}]{u}$) ?
+#+END_QUESTION
+
+3) [@3] Calcul de l'énergie de liaison de la particule $\alpha$
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \Delta E &= M(^4\text{He})-2m_p-2m_n\\
+       &=4.0026-2\times(1.0073+1.0087)\\
+       &=\unit[-0.0294]{u}=\unit[-27.4]{MeV}/c^2
+     \end{align*}
+   #+END_SRC
+
+   Calcul de l'énergie de liaison nucléaire $\Delta E_\text{nucl}$
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \Delta E_\text{nucl} &= M(^{238}_{92}\text{U})-92m_p-146m_n\\
+       &=238.0022-92\times1.0073 - 146\times1.0087\\
+       &=\unit[-1.9396]{u}
+     \end{align*}
+   #+END_SRC
+
+   Calcul de l'énergie de liaison électronique $\Delta E$
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \Delta E &= M_\text{at}(^{238}_{92}\text{U})-92m_p-146m_n-92m_e\\
+       &=238.0508-92\times1.0073 - 146\times1.0087 -92\times5.49\,10^{-4}\\
+       &=\unit[-1.9415]{u}
+     \end{align*}
+   #+END_SRC
+   L'énergie de liaison électronique est bien supérieure à l'énergie de liaison nucléaire assurant
+   ainsi la liaison entre le cortège électronique et le noyau ($\Delta E_\text{nuage}=\Delta
+   E-\Delta E_\text{nucl}=\unit[-1.77]{MeV}$ soit une énergie non négligeable pour arracher la
+   totalité des électron au noyau).
+
 ** Mouvement à accélération propre constante
 #+BEGIN_QUESTION
 Un vaisseau spatial quitte la Terre avec une accélération propre $a_0$ constante à chaque instant. On
@@ -1504,7 +1648,8 @@ l'origine des coordonnées avec une vitesse nulle.
      \end{align*}
    #+END_SRC
 
-   #+BEGIN_SRC ipython :session :results raw drawer :exports results
+   #+BEGIN_SNIPPET
+   #+BEGIN_SRC jupyter-python
      %matplotlib inline
      import numpy as np
      import matplotlib.pyplot as plt
@@ -1516,14 +1661,12 @@ l'origine des coordonnées avec une vitesse nulle.
      plt.plot(t, v)
      plt.xlim(0, 10)
      plt.xlabel(r"$t$ [années]")
-     plt.ylabel(r"$\frac{v}{c}$")
+     plt.ylabel(r"$\frac{v}{c}$");
    #+END_SRC
 
    #+RESULTS:
-   :results:
-   : Text(0,0.5,'$\\frac{v}{c}$')
-   [[file:./obipy-resources/4037hzV.png]]
-   :end:
+   [[file:./.ob-jupyter/0d99f569b82c872ab20530ff353a4bfb6ee8ae4c.png]]
+   #+END_SNIPPET
 
    Dès lors, on peut intégrer le temps propre en fonction du temps terrestre moyennant la
    connaissance de la dépendance temporelle de $v(t)$ soit
@@ -1542,17 +1685,16 @@ l'origine des coordonnées avec une vitesse nulle.
      \end{align*}
    #+END_SRC
 
-  #+BEGIN_SRC ipython :session :results raw drawer :exports results
+  #+BEGIN_SNIPPET
+  #+BEGIN_SRC jupyter-python
     plt.plot(t, 1/a_0*np.arcsinh(a_0*t))
     plt.xlabel(r"$t$ [années]")
-    plt.ylabel(r"$t^*$ [années]")
+    plt.ylabel(r"$t^*$ [années]");
   #+END_SRC
 
   #+RESULTS:
-  :results:
-  : Text(0,0.5,'$t^*$ [années]')
-  [[file:./obipy-resources/4037u9b.png]]
-  :end:
+  [[file:./.ob-jupyter/c1aa0d22642b16b7f6bfa5943fa9046dd60b57a7.png]]
+  #+END_SNIPPET
 
 2)
    #+BEGIN_SRC latex
@@ -1600,7 +1742,7 @@ l'origine des coordonnées avec une vitesse nulle.
    | $t$ (a.)        |        5.15 |         30000 | 2.2 10^{6} | 1.5 10^{10}     |
    |-----------------+-------------+---------------+------------+-----------------|
 
-** Force de Minkowski
+** COMMENT Force de Minkowski
 #+BEGIN_QUESTION
 Une généralisation relativiste de la relation fondamentale de la dynamique est l’équation de Minkowski:
 #+BEGIN_SRC latex
@@ -1797,6 +1939,16 @@ propriétés de cette quadri-force.
         \end{align*}
       #+END_SRC
 
+** Mouvement d'une particule chargée dans un champ électrique uniforme
+#+BEGIN_QUESTION
+Soit un référentiel galiléen $\mathcal{R}$ où règne un champ électrique uniforme et indépendant du
+temps $\vv{E}_S$ dirigé suivant l'axe $Ox$. À $t=0$ une particule chargée est envoyée de l'origine
+$O$ du repère avec une vitesse initiale $\vv{v}_0$ parallèle à l'axe $Oy$.
+
+Étudier le mouvement de cette particule chargée par rapport au référentiel $\mathcal{R}$ et donner
+l'équation de sa trajectoire. Retrouver l'expression de la trajectoire classique dans
+l'approximation non relativiste.
+#+END_QUESTION
 ** Synchrotron à protons
 #+BEGIN_QUESTION
 Un synchrotron est un accélérateur de particules qui permet de maintenir les particules sur une
@@ -1961,7 +2113,7 @@ pour un proton.
    #+END_SRC
    et la distance parcourue $\ell = n\cdot2\pi R=\unit[5.16\,10^{10}]{m}$.
 
-** Particule chargée dans un champ électromagnétique
+** COMMENT Particule chargée dans un champ électromagnétique
 #+BEGIN_QUESTION
 On étudie le mouvement d'une particule de masse $m$ et de charge $q$ dans un référentiel
 $\mathcal{R}$ où règne un champ électromagnétique uniforme et statique, décrit par
@@ -1990,7 +2142,7 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
        m\frac{\d U^\mu}{\d\tau}=qF^{\mu\nu}U_\nu
      \end{align*}
    #+END_SRC
-   où $U_\nu=(\gamma, -\gamma\vv{v})=(U_0, U_1, U_2, U_3)$ et $U^\mu=(\gamma c,
+   où $U_\nu=(\gamma c, -\gamma\vv{v})=(U_0, U_1, U_2, U_3)$ et $U^\mu=(\gamma c,
    \gamma\vv{v})=(U_0,-U_1,-U_2,-U_3)$ soit les 4 équations du mouvement
    #+BEGIN_SRC latex
      \begin{align*}
@@ -2018,7 +2170,7 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
        &=Bc\times-\frac{qE}{mc}U_2+E\times\frac{qB}{m}U_2=0
      \end{align*}
    #+END_SRC
-   La quantité $\Omega$ est donc constante et sachant que $\U_\nu=\gamma(c, -\vv{v})$, on peut alors
+   La quantité $\Omega$ est donc constante et sachant que $U_\nu=\gamma(c, -\vv{v})$, on peut alors
    écrire
    #+BEGIN_SRC latex
      \begin{align*}
@@ -2097,7 +2249,7 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
           \omega=-\frac{\d\chi}{\d\tau}&=\frac{q}{mc}\sqrt{B^2c^2-E^2}>0\text{ si } q>0
         \end{align*}
       #+END_SRC
-      $omega$ est un invariant de Lorentz du fait que $q, m, c$ et $B^2c^2-E^2$ sont eux-mêmes des
+      $\omega$ est un invariant de Lorentz du fait que $q, m, c$ et $B^2c^2-E^2$ sont eux-mêmes des
       invariants de Lorentz.
 
    2) On se place dans le cas où $U_1(\tau=0)=U_2(\tau=0)=0$ soit $v_{x0}=0$ et $\gamma_0=1$,
@@ -2177,7 +2329,8 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
    $Y=\nicefrac{y}{\frac{c}{\omega}\,\frac{E}{\surd B^2c^2-E^2}}$ en fonction de
    $X=\nicefrac{x}{\frac{c}{\omega}\,\frac{EBc}{B^2c^2-E^2}}$
 
-   #+BEGIN_SRC ipython :session :results raw drawer :exports results
+   #+BEGIN_SNIPPET
+   #+BEGIN_SRC jupyter-python
      %matplotlib inline
      import matplotlib.pyplot as plt
      import numpy as np
@@ -2189,14 +2342,12 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
      plt.ylabel(r"$Y$")
      plt.xticks([0, 2*np.pi, 4*np.pi, 6*np.pi, 8*np.pi],
                 [0, r"$2\pi$", r"$4\pi$", r"$6\pi$", r"$8\pi$" ])
-     _ = plt.legend(title=r"$\uparrow\vec{E}\odot\vec{B}$", loc="upper left", bbox_to_anchor=(1,1))
+     plt.legend(title=r"$\uparrow\vec{E}\odot\vec{B}$", loc="upper left", bbox_to_anchor=(1,1));
    #+END_SRC
 
    #+RESULTS:
-   :results:
-   # Out[90]:
-   [[file:./obipy-resources/XClz7Q.png]]
-   :end:
+   [[file:./.ob-jupyter/353c085a03c1503121c80f41c39ac9bf9334dd23.png]]
+   #+END_SNIPPET
 
    La particule intialement au repos en $O$ est dans un premier temps accélérée par le champ
    électrique $q\vv{E}\parallel\vv{u}_y$ puis subit la force magnétique $q\vv{v}\times\vv{B}$ qui
@@ -2235,7 +2386,7 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
       #+END_SRC
       résultat attendu puisque à $\tau = 0$, la vitesse initiale de la particule est nulle
       ($\gamma=1$) et $y=0$ (donc $\phi=0$).
-* TD4 : Électrodynamique relativiste
+* COMMENT TD4 : Électrodynamique relativiste
 ** Charge ponctuelle en mouvement rectiligne uniforme
 :PROPERTIES:
 :CUSTOM_ID: sec::charge_tru
@@ -2421,7 +2572,8 @@ point de coordonnées $(x, y, z)$ dans $\mathcal{R}$.
    #+END_SRC
    soit pas tout à fait une distribution de Lorentz /i.e./ $\frac{1}{1+x^2}$.
 
-   #+BEGIN_SRC ipython :session :results raw drawer :exports results
+   #+BEGIN_SNIPPET
+   #+BEGIN_SRC jupyter-python
      import numpy as np
 
      y, z = 5, 5
@@ -2445,13 +2597,12 @@ point de coordonnées $(x, y, z)$ dans $\mathcal{R}$.
      ax[1].set_xlabel(r"$\xi$")
      ax[0].set_yticks([])
      ax[1].set_yticks([])
-     _ = ax[1].legend()
+     ax[0].legend(bbox_to_anchor=(1, 1));
    #+END_SRC
 
    #+RESULTS:
-   :results:
-   [[file:./obipy-resources/2255YRy.png]]
-   :end:
+   [[file:./.ob-jupyter/d8fd1a417d1895b23011d2d1f5d7aaffa749b28c.png]]
+   #+END_SNIPPET
 
    Les lignes de champ électrique sont radiales et quasiment isotrope dans le plan $(yO\xi)$ pour
    $\beta\simeq0$. En revanche, dès lors que $\beta\to1$, le champ électrique se trouve focalisé.
@@ -2568,6 +2719,9 @@ particules, caractéristique de désintégrations par interaction faible.
 soit $\underline{P}.\underline{P}=\underline{P}^*.\underline{P}^*$ où $\underline{P}^*=(mc,
 \vv{0})$ par définition du référentiel propre de la particule. Ainsi,
 $\frac{E^2}{c^2}-\vv{p}^2=m^2c^4$ d'où $E=pc$ pour un photon de masse nulle.
+
+[fn:4e7c18b7ed5ec89] L'unité u de masse atomique vaut 1/12 de la masse de l'atome de\nbsp^{12}C. 1 u
+= $\unit[(1/N_A)]{g} = \unit[1.6605\times10^{-27}]{kg}=\unit[931.49]{MeV}/c^2$.
 
 [fn:1abe39dd815778cf] On prend la convention : le premier indice est l'indice de ligne et le second
 est l'indice de colonne. Attention, les indices varient de 0 à 3 : la colonne d'indice 1 est donc la

@@ -1,0 +1,58 @@
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+  \Large
+  \begin{scope}[cm={{1.33333,0.0,0.0,-1.33333,(0.0,110.66667)}}]
+    \begin{scope}[scale=0.100]
+      \path[draw=black,line join=miter,line cap=butt,miter limit=10.00,line
+        width=1pt] (231.5270,320.8710) .. controls (231.5270,258.2540) and
+      (180.7620,207.4880) .. (118.1450,207.4880) .. controls (55.5273,207.4880) and
+      (4.7656,258.2540) .. (4.7656,320.8710) .. controls (4.7656,383.4880) and
+      (55.5273,434.2540) .. (118.1450,434.2540) .. controls (180.7620,434.2540) and
+      (231.5270,383.4880) .. (231.5270,320.8710) -- cycle;
+      \path[draw=black,line join=miter,line cap=butt,miter limit=10.00,line
+        width=1pt] (1535.4200,320.8710) .. controls (1535.4200,258.2540) and
+      (1484.6600,207.4880) .. (1422.0400,207.4880) .. controls (1359.4200,207.4880)
+      and (1308.6600,258.2540) .. (1308.6600,320.8710) .. controls
+      (1308.6600,383.4880) and (1359.4200,434.2540) .. (1422.0400,434.2540) ..
+      controls (1484.6600,434.2540) and (1535.4200,383.4880) .. (1535.4200,320.8710)
+      -- cycle;
+      \path[draw=black,line join=miter,line cap=butt,miter limit=10.00,line
+        width=1pt] (2841.8300,320.8710) .. controls (2841.8300,225.5550) and
+      (2764.5600,148.2770) .. (2669.2400,148.2770) .. controls (2573.9300,148.2770)
+      and (2496.6500,225.5550) .. (2496.6500,320.8710) .. controls
+      (2496.6500,416.1880) and (2573.9300,493.4650) .. (2669.2400,493.4650) ..
+      controls (2764.5600,493.4650) and (2841.8300,416.1880) .. (2841.8300,320.8710)
+      -- cycle;
+      \path[draw=black,line join=miter,line cap=butt,miter limit=10.00,line
+        width=1pt] (231.5270,320.8710) -- (685.0550,320.8710);
+      \path[fill=black,even odd rule] (599.3910,301.9730) -- (674.9770,320.8710) --
+      (599.3910,339.7700) -- cycle;
+      \path[draw=black,line join=miter,line cap=butt,miter limit=10.00,line
+        width=1pt] (599.3910,301.9730) -- (674.9770,320.8710) --
+      (599.3910,339.7700) -- cycle;
+      \path[draw=black,line join=miter,line cap=butt,miter limit=10.00,line
+        width=1pt] (1308.6600,320.8710) -- (855.1290,320.8710);
+      \path[fill=black,even odd rule] (940.7970,339.7700) -- (865.2070,320.8710) --
+      (940.7970,301.9730) -- cycle;
+      \path[draw=black,line join=miter,line cap=butt,miter limit=10.00,line
+        width=1pt] (940.7970,339.7700) -- (865.2070,320.8710) --
+      (940.7970,301.9730) -- cycle;
+      \begin{scope}[scale=10.000]
+        \path[cm={{1.0,0.0,0.0,-1.0,(28.8219,43.4254)}},fill=black,nonzero rule]
+        (0.0000,0.0000) node[above right] (text56) {$\nicefrac{3c}{5}$};
+        \path[cm={{1.0,0.0,0.0,-1.0,(108.8219,43.4254)}},fill=black,nonzero rule]
+        (0.0000,0.0000) node[above right] (text56) {$\nicefrac{3c}{5}$};
+        \path[cm={{1.0,0.0,0.0,-1.0,(257.1678,71.77078)}},fill=black,nonzero rule]
+        (0.0000,0.0000) node[above right] (text60) {after};
+        \path[cm={{1.0,0.0,0.0,-1.0,(57.1678,71.77078)}},fill=black,nonzero rule]
+        (0.0000,0.0000) node[above right] (text60) {before};
+        \path[cm={{1.0,0.0,0.0,-1.0,(258.4208,0.90708)}},fill=black,nonzero rule]
+        (0.0000,0.0000) node[above right] (text64) {$M$};
+        \path[cm={{1.0,0.0,0.0,-1.0,(5.4208,10.90708)}},fill=black,nonzero rule]
+        (0.0000,0.0000) node[above right] (text64) {$m$};
+        \path[cm={{1.0,0.0,0.0,-1.0,(135.4208,10.90708)}},fill=black,nonzero rule]
+        (0.0000,0.0000) node[above right] (text64) {$m$};
+      \end{scope}
+    \end{scope}
+  \end{scope}
+
+\end{tikzpicture}
