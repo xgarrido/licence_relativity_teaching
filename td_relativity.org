@@ -1511,7 +1511,7 @@ $\beta = v/c$ avec une particule immobile de masse $m$.
           T_m'&=2mc^2\beta^2\gamma^2
         \end{align*}
       #+END_SRC
-* TD3 : Dynamique relativiste
+* COMMENT TD3 : Dynamique relativiste
 ** Masse = énergie au repos
 #+BEGIN_QUESTION
 1) Deux morceaux d'argile, chacun de masse $m$ ont une collision frontale à la vitesse
@@ -1742,7 +1742,7 @@ l'origine des coordonnées avec une vitesse nulle.
    | $t$ (a.)        |        5.15 |         30000 | 2.2 10^{6} | 1.5 10^{10}     |
    |-----------------+-------------+---------------+------------+-----------------|
 
-** COMMENT Force de Minkowski
+** Force de Minkowski
 #+BEGIN_QUESTION
 Une généralisation relativiste de la relation fondamentale de la dynamique est l’équation de Minkowski:
 #+BEGIN_SRC latex
@@ -1905,7 +1905,7 @@ propriétés de cette quadri-force.
           &=\frac{1}{2}\left(F^{\mu\nu}+F^{\nu\mu}\right)U_\mu U_\nu
         \end{align*}
       #+END_SRC
-      dont le résultat sera automatiquemnt nul dès lors que $F^{\mu\nu}$ est antisymétrique.
+      dont le résultat sera automatiquement nul dès lors que $F^{\mu\nu}$ est antisymétrique.
 
    2) La relation de Minkowski s'écrit
       #+BEGIN_SRC latex
@@ -1949,6 +1949,150 @@ $O$ du repère avec une vitesse initiale $\vv{v}_0$ parallèle à l'axe $Oy$.
 l'équation de sa trajectoire. Retrouver l'expression de la trajectoire classique dans
 l'approximation non relativiste.
 #+END_QUESTION
+
+Pour déterminer la trajectoire de la particule de charge $q$, on applique le principe fondamental de
+dynamique *relativiste* /i.e./ $\frac{\d\vv{p}}{\d t}=\sum\vv{F}=q\vv{E}_S$ avec $\vv{p}=\gamma
+m\vv{v}$. En mécanique classique, ce problème est facilement intégrable du fait que $\gamma=1$ et
+$\frac{\d\vv{p}}{\d t}=m\frac{\d\vv{v}}{\d t}$. Les équations du mouvement s'écrivent
+#+BEGIN_SRC latex
+  \begin{align*}
+  m\frac{\d^2x}{\d t^2}&=qE_S;m\frac{\d^2y,z}{\d t^2}=0\\
+  \end{align*}
+#+END_SRC
+soit, étant donné les conditions initiales, les solutions suivantes
+#+BEGIN_SRC latex
+  \begin{align*}
+    x(t)&=\frac{qE_St^2}{2m}\\
+    y(t)&=v_0t\\
+    z(t)&=0\\
+    \to y&=\sqrt{\frac{2mv_0^2}{qE_S}x}
+  \end{align*}
+#+END_SRC
+
+En mécanique relativiste, nous pouvons intégrer les différentes composantes du vecteur impulsion
+soit
+#+BEGIN_SRC latex
+  \begin{align*}
+    \frac{\d p_x}{\d t}&=qE_S\to p_x(t)=qE_St+p_x(t=0)\\
+    \frac{\d p_y}{\d t}&=0\to p_y(t)=\text{constante}=p_y(t=0)\\
+    \frac{\d p_z}{\d t}&=0\to p_z(t)=\text{constante}=p_z(t=0)\\\\
+  \end{align*}
+#+END_SRC
+Sachant que $v_x(t=0)=v_z(t=0)=0$ et $v_y(t=0)=v_0$, on obtient
+#+BEGIN_SRC latex
+  \begin{align*}
+    p_x&=qE_St\\
+    p_y&=\gamma_0 mv_0=\frac{mv_0}{\sqrt{1 - \left(\nicefrac{v_0}{c}\right)^2}}\\
+    p_z&=0\\
+  \end{align*}
+#+END_SRC
+
+Comme en mécanique classique, la trajectoire demeure bien dans le plan $(xOy)$. La vitesse peut
+s'exprimer en fonction de l'impulsion de la façon suivante
+#+BEGIN_SRC latex
+  \begin{align*}
+    \beta&=\frac{v}{c}=\frac{\gamma mv}{\gamma mc}=\frac{pc}{E}\\
+    \vv{v}&=\frac{\vv{p}c^2}{E}
+  \end{align*}
+#+END_SRC
+De plus
+#+BEGIN_SRC latex
+  \begin{align*}
+    E^2&=p^2c^2+m^2c^4\\
+    &=\left(q^2E_S^2t^2+(\gamma_0 mv_0)^2\right)c^2+m^2c^4\\
+    &=q^2E_S^2c^2t^2+E_0^2
+  \end{align*}
+#+END_SRC
+avec $E_0^2=(\gamma_0 mv_0)^2c^2+m^2c^4$ soit une vitesse $\vv{v}$ dont les composantes s'écrivent
+#+BEGIN_SRC latex
+  \begin{align*}
+    \vv{v}=\left\{
+    \begin{array}{lll}
+      \frac{\d x}{\d t}=&\frac{p_xc^2}{E}=&\frac{qE_Sc^2t}{\sqrt{q^2E_S^2c^2t^2+E_0^2}}\\
+      \frac{\d y}{\d t}=&\frac{p_xc^2}{E}=&\frac{\gamma_0mv_0c^2}{\sqrt{q^2E_S^2c^2t^2+E_0^2}}\\
+      \frac{\d z}{\d t}=&0
+    \end{array}
+    \right.
+  \end{align*}
+#+END_SRC
+
+On peut dès lors intégrer les coordonnées $x, y, z$ en fonction du temps pour obtenir
+#+BEGIN_SRC latex
+  \begin{align*}
+    \d x&=\frac{qE_Sc^2t}{E_0\sqrt{1+\left(\frac{qE_Sct}{E_0}\right)^2}}\d t\\
+    &=\frac{E_0}{2qE_S}\cdot\frac{\d\left(\frac{qE_Sct}{E_0}\right)^2}{\sqrt{1+\left(\frac{qE_Sct}{E_0}\right)^2}}\\
+    x(t)&=\frac{E_0}{qE_S}\left(\sqrt{1+\left(\frac{qE_Sct}{E_0}\right)^2}-1\right)+\cancel{x(t=0)}
+  \end{align*}
+#+END_SRC
+
+#+BEGIN_SRC latex
+  \begin{align*}
+    \d y&=\frac{\gamma_0 mv_0c^2}{E_0\sqrt{1+\left(\frac{qE_Sct}{E_0}\right)^2}}\d t\\
+    &=\frac{\gamma_0 mv_0c}{qE_S}\cdot\frac{\d\left(\frac{qE_Sct}{E_0}\right)}{\sqrt{1+\left(\frac{qE_Sct}{E_0}\right)^2}}\\
+    y(t)&=\frac{\gamma_0 mv_0c}{qE_S}\text{argsh}\frac{qE_Sct}{E_0}+\cancel{y(t=0)}
+  \end{align*}
+#+END_SRC
+
+La coordonnée $z$ est constante et nulle puisque la particule est initialement en $O$.
+
+En remplaçant le temps $t=f(y)$ dans l'expression de la coordonnée $x$, on obtient l'équation
+cartésienne de la trajectoire /i.e./
+#+BEGIN_SRC latex
+  \begin{align*}
+  \frac{qE_Sy}{\gamma_0 mv_0c}&=\text{argsh}\frac{qE_Sct}{E_0}\\
+  \text{sh}\frac{qE_Sy}{\gamma_0 mv_0c}&=\frac{qE_Sct}{E_0}\\
+  x(y)&=\frac{E_0}{qE_S}\left(\sqrt{1+\text{sh}^2\frac{qE_Sy}{\gamma_0 mv_0c}}-1\right)\\
+  &=\frac{E_0}{qE_S}\left(\text{ch}\frac{qE_Sy}{\gamma_0 mv_0c}-1\right)\\
+  y &=\frac{\gamma_0mv_0c}{qE_S}\text{argch}\left(1+\frac{qE_S}{E_0}x\right)
+  \end{align*}
+#+END_SRC
+
+Dans l'approximation non-relativiste $\nicefrac{v}{c}\ll1$, on a $E_0\simeq mc^2$ et
+$\gamma_0mv_0\simeq mv_0$. Pour $u\ll1$, le cosinus hyperbolique se développe en
+$\text{ch}\,u\simeq1+\frac{u^2}{2}+\ldots$ et $x$ s'écrit
+#+BEGIN_SRC latex
+  \begin{align*}
+    x\simeq\frac{1}{2}\,\frac{qE_S}{mv_0^2}y^2
+  \end{align*}
+#+END_SRC
+soit la trajectoire parabolique obtenue en début d'exercice.
+
+#+BEGIN_SNIPPET
+#+BEGIN_SRC jupyter-python
+  %matplotlib inline
+  import matplotlib.pyplot as plt
+  import numpy as np
+
+  q = 1.6e-19
+  m = 9.1e-31
+  c = 3e8
+  Es = 1.0
+  #q = m = Es = c = 1.0
+  def plot(v0, axes):
+      gamma0 = 1/np.sqrt(1-v0**2/c**2)
+      E0 = np.sqrt((gamma0*m*v0*c)**2+m**2*c**4)
+
+      x = np.linspace(0.0, 1, 100)
+      yrelat = gamma0*m*v0*c/q/Es * np.arccosh(1+q*Es*x/E0)
+      yclass = np.sqrt(2*m*v0**2/q/Es*x)
+      axes.plot(x, yrelat, "-r")
+      axes.plot(x, yclass, "--k")
+      axes.legend([], title=r"$v_0={}\cdot c$".format(v0/c))
+      axes.set_ylabel(r"$y$ [m]")
+      axes.set_xlabel(r"$x$ [m]")
+
+  fig, axes = plt.subplots(1, 2, figsize=(8, 5))
+  for i, v0 in enumerate([0.1, 0.9]):
+      plot(v0*c, axes[i])
+
+  plt.tight_layout()
+#+END_SRC
+
+#+RESULTS:
+[[file:./.ob-jupyter/cd97217c7289d7633de5f4c6ac4aaf732f68bd51.png]]
+#+LATEX: \captionof{figure}{\textbf{Trajectoire d'un électron dans un champ électrique constant $E_S=\unit[1]{V/m}$}. La courbe en pointillée noire correspond à la trajectoire déduite de la mécanique classique; la courbe rouge à celle issue du traitement relativiste.}
+#+END_SNIPPET
+
 ** Synchrotron à protons
 #+BEGIN_QUESTION
 Un synchrotron est un accélérateur de particules qui permet de maintenir les particules sur une
@@ -2386,8 +2530,8 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
       #+END_SRC
       résultat attendu puisque à $\tau = 0$, la vitesse initiale de la particule est nulle
       ($\gamma=1$) et $y=0$ (donc $\phi=0$).
-* COMMENT TD4 : Électrodynamique relativiste
-** Charge ponctuelle en mouvement rectiligne uniforme
+* TD4 : Électrodynamique relativiste
+** COMMENT Charge ponctuelle en mouvement rectiligne uniforme
 :PROPERTIES:
 :CUSTOM_ID: sec::charge_tru
 :END:
@@ -2660,9 +2804,9 @@ deux droites parallèles distantes de $d$. Soit $\mathcal{R}'$ le référentiel 
    covariante de la force de Lorentz.
 #+END_QUESTION
 
-2) [@2] À partir des résultats établis lors de l'exercice [[#sec::charge_tru]], on sait qu'une charge en
-   translation rectiligne uniforme génère un champ électromagnétique $(\vv{E},\vv{B})$ à une
-   distance $d$ de la forme
+2) [@2] À partir des résultats établis lors de l'exercice "Charge ponctuelle en mouvement rectiligne
+   uniforme", on sait qu'une charge en translation rectiligne uniforme génère un champ
+   électromagnétique $(\vv{E},\vv{B})$ à une distance $d$ de la forme
    #+BEGIN_SRC latex
      \begin{align*}
        \vv{E}(M_2)&=-\frac{\gamma e}{4\pi\epsilon_0}\frac{d}{d^3}\vv{u_z}=-\frac{\gamma e}{4\pi\epsilon_0d^2}\vv{u_z}=\gamma\vv{E}'(M_2)\\
@@ -2706,6 +2850,167 @@ deux droites parallèles distantes de $d$. Soit $\mathcal{R}'$ le référentiel 
        &=\frac{\mu_0\gamma ve}{4\pi d^2}\vv{u}_y
      \end{align*}
    #+END_SRC
+
+** Courant dans un fil
+#+BEGIN_QUESTION
+Démontrer qu'un fil conducteur infiniment long et fin, assimilé à l'axe $Ox$, parcouru par un
+courant $I$ et portant une charge linéique $\lambda$, crée, en un point $M$ situé à une distance $r$
+du fil, des champs électrique et magnétique ayant pour expression :
+#+BEGIN_SRC latex
+  \begin{align}
+    \label{eq:1}
+    \vv{E}(M)&=\frac{1}{2\pi\epsilon_0}\frac{\lambda}{r}\vv{e_r},\quad\text{et}\quad\vv{B}(M)=\frac{\mu_0}{2\pi}\frac{I}{r}\vv{e_\theta}
+  \end{align}
+#+END_SRC
+#+END_QUESTION
+
+Les champs électrique et magnétique se déduisent respectivement des théorème de Gauss et
+d'Ampère. Les invariances du problème que sont l'invariance par rotation $\theta$ autour du fil et
+l'invariance par translation selon l'axe $Ox$ du fil, implique que les champs ne dépendent que de la
+distance $r$ au fil. Par ailleurs, tout plan contenant le fil est plan de symétrie de la
+distribution de charge $\lambda$ : le champ électrique est donc colinéaire au vecteur
+$\vv{e_r}$. Ainsi le champ $\vv{E}(M)$ s'écrit $E(r)\vv{e_r}$. En considérant une surface de Gauss
+$\mathcal{S}$ cylindrique de rayon $r$ et de hauteur $h$, on a
+#+BEGIN_SRC latex
+  \begin{align*}
+    \oiint_\mathcal{S}\vv{E}(M).\vv{\d S}&=\frac{1}{\epsilon_0}\sum Q_\text{int}\\
+    E(r)\times2\pi rh&=\frac{\lambda h}{\epsilon_0}\\
+    \vv{E}(M)&=\frac{1}{2\pi\epsilon_0}\frac{\lambda}{r}\vv{e_r}
+  \end{align*}
+#+END_SRC
+
+Pour le champ magnétique, tout plan contenant le fil est plan de symétrie de la distribution de
+courant en particulier le plan $(\vv{e_r},\vv{e_z})$ d'où $\vv{B}(M)=B(r)\vv{e_\theta}$. En
+choisissant un contour $\mathcal{C}$ circulaire de rayon $r$ centré autour de l'axe du fil, on
+obtient
+#+BEGIN_SRC latex
+  \begin{align*}
+    \oint_\mathcal{C}\vv{B}(M).\vv{\d\ell}&=\mu_0\sum I_\text{enlacé}\\
+    B(r)\times2\pi r&=\mu_0I\\
+    \vv{B}(M)&=\frac{\mu_0}{2\pi}\frac{I}{r}\vv{e_\theta}
+  \end{align*}
+#+END_SRC
+
+#+BEGIN_QUESTION
+On considère un fil rectiligne d’axe $Ox$. Le fil contient des charges positives (des ions)
+immobiles correspondant à une charge électrique volumique $\rho_i$ et une densité de courant
+$\vv{j_i}=\vv{0}$. Il y a aussi des électrons (charge $\rho_e$) se déplaçant à la vitesse
+$\vv{u}=u\vv{e_x}$ créant une densité de courant $\vv{j_e}=\rho_e\vv{u}$. Le fil étant globalement neutre, la
+densité totale de charge vaut $\rho=\rho_i+\rho_e=0$
+
+1) Le quadri-courant *total* sera noté $\underline{J}$. Écrire ses composantes dans le référentiel
+   $\mathcal{R}$ dans lequel le fil est immobile.
+#+END_QUESTION
+
+1) Le quadrivecteur courant $\underline{J}$ a pour expression $(\rho c, \vv{j})$ où $\rho$ et
+   $\vv{J}$ sont respectivement les densités volumiques de charge et de courant. On peut par
+   ailleurs décomposer le quadri-courant total en une composante relative aux électrons
+   $\underline{J}_e$ et une seconde $\underline{J}_i$ correspondant aux ions. On a ainsi
+   $\underline{J}=\underline{J}_e+\underline{J}_i$ où $\vv{J}_e=(\rho_e c, \vv{j_e}=\rho_e\vv{u})$
+   et $\underline{J}_i=(\rho_i c, \vv{j_i}=\vv{0})$ soit $\underline{J}=(0, \rho_eu\vv{e_x})$ du
+   fait de la neutralité électrique du fil.
+
+
+#+BEGIN_QUESTION
+2) [@2] On considère un référentiel $\mathcal{R}'$ se déplaçant à une vitesse constante $V\vv{e_x}$
+   par rapport à $\mathcal{R}$. Déterminer les densités de charge et de courant totales dans
+   $\mathcal{R}'$.
+#+END_QUESTION
+
+2) [@2] Le quadri-courant $\underline{J}'=(\rho'c, \vv{j}')$ se déduit de $\underline{J}$ /via/ la
+   transformation de Lorentz soit
+
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \underline{J}'=
+       \begin{bmatrix}\rho'c\\j'_x\\j'_y\\j'z\end{bmatrix}&=
+         \begin{pmatrix}
+           \gamma & -\beta\gamma&0&0\\
+           -\beta\gamma & \gamma&0&0\\
+           0&0&1&0\\
+           0&0&0&1
+         \end{pmatrix}
+         \cdot\begin{bmatrix}0\\\rho_eu\\0\\0\end{bmatrix}\\
+         &=\begin{bmatrix}-\beta\gamma\rho_eu\\ \gamma\rho_eu=\gamma j_x\\0\\0\end{bmatrix}
+     \end{align*}
+   #+END_SRC
+   où $\beta=\frac{V}{c}$.
+
+#+BEGIN_QUESTION
+3) [@3] Dans $\mathcal{R}$ une charge test $q$ est immobile à une distance $r$ du fil. Quelle force
+   ressent-elle ?
+#+END_QUESTION
+
+3) [@3] Dans $\mathcal{R}$, la neutralité électrique du fil $\rho=\rho_i+\rho_e=0$ impose un champ
+   électrique nul. La charge $q$ étant par ailleurs immobile $\vv{v}=\vv{0}$, la force électromagnétisme s'exerçant
+   sur la charge est nulle $\vv{F}=q\vv{E}+q\vv{v}\wedge\vv{B}=\vv{0}$.
+
+#+BEGIN_QUESTION
+4) [@4] On va tenter de retrouver ce résultat en travaillant dans le référentiel $\mathcal{R}'$.
+   1) En utilisant les résultats de la question 1), déterminer dans $\mathcal{R}'$ les champs
+      $\vv{E}'$ et $\vv{B}'$ créés par le fil. /Indication: on notera $S$ la section du fil. Il est/
+      /approprié d'introduire la charge linéique du fil dans $\mathcal{R}'$ \((\lambda'=\rho'S\) et
+      le courant $I'=J'_xS$ afin d'utiliser la relation \ref{eq:1}/.
+
+   2) Déterminer, toujours dans $\mathcal{R}'$, la force induite sur la particule (qui se déplace à
+      vitesse constante dans $\mathcal{R}'$).
+
+   3) Retrouver le même résultat en utilisant le concept de quadri-force (/cf./ exercice "Force de
+      Minkowski") dont on rappelle qu'elle s'exprime comme
+      $\mathcal{F}^{\mu}=\gamma(\vv{F}_\text{Lorentz}\cdot\vv{v}/c, \vv{F}_\text{Lorentz})$ où
+      $\vv{F}_\text{Lorentz}=q(\vv{E}+\vv{v}\wedge\vv{B})$.
+#+END_QUESTION
+
+4) [@4]
+   1) Les expressions issues de la relation \ref{eq:1} font intervenir la densité linéique de charge
+      $\lambda$ et le courant $I$. Or ces deux quantités peuvent s'exprimer en fonction des densités
+      volumiques de charge et de courant de la façon suivante
+
+     #+BEGIN_SRC latex
+        \begin{align*}
+          \lambda&=\rho S=(\rho_i+\rho_e)S=0\\
+          I&=j_xS=\rho_euS
+        \end{align*}
+      #+END_SRC
+      dans $\mathcal{R}$ et
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \lambda'&=\rho' S=-\frac{V}{c^2}\gamma\rho_euS=-\frac{V}{c^2}\gamma I\\
+          I'&=j'_xS=\gamma j_xS=\gamma I
+        \end{align*}
+      #+END_SRC
+      dans $\mathcal{R}'$. La section $S$ du fil est la même quelque soit le référentiel puisqu'il
+      s'agit d'une dimension transverse au déplacement de $\mathcal{R}'/\mathcal{R}$.
+
+      Ainsi, les champs électrique $\vv{E}'$ et magnétique $\vv{B}'$ s'écrivent
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \vv{E}'(M)&=\frac{1}{2\pi\epsilon_0}\frac{\lambda'}{r}\vv{e_r}=\frac{1}{2\pi\epsilon_0}\\
+          \vv{B}'(M)&=\frac{\mu_0}{2\pi}\frac{I'}{r}\vv{e_\theta}\\
+        \end{align*}
+      #+END_SRC
+      sachant là aussi que la distance $r$ et les vecteurs $\vv{e_r}$ et $\vv{e_\theta}$ sont autant
+      de quantités transverses au déplacement et donc identiques sous un changement de référentiel.
+
+   2) La force $\vv{F}'$ qui s'exerce sur la charge $q$ s'exprime ainsi
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \vv{F}'(M)&=q\vv{E}'(M)+q\vv{v}\wedge\vv{B}'(M)
+        \end{align*}
+      #+END_SRC
+      où $\vv{v}=-V\vv{e_x}$ correspond à la vitesse de la charge $q$ vue depuis $\mathcal{R}'$
+      (pour rappel, la charge est immobile dans $\mathcal{R}$). On a donc
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \vv{F}'(M)&=q\left(-\frac{1}{2\pi\epsilon_0r}\frac{V}{c^2}\gamma I\vv{e_r}-V\vv{e_x}\wedge\frac{\mu_0}{2\pi r}\gamma I\vv{e_\theta}\right)\\
+          &=\frac{q}{2\pi r}\gamma I V\left(-\frac{1}{\epsilon_0c^2}\vv{e_r}+\mu_0\vv{e_r}\right) = \vv{0}\quad(\mu_0\epsilon_0c^2=1)
+        \end{align*}
+      #+END_SRC
+
+   3) L'expression de la quadri-force $\underline{\mathcal{F}}$ directement proportionnelle à la
+      force de Lorentz implique nécessairement $\vv{F}(M)=\vv{F}'(M)=\vv{0}$.
+
+
 
 * Footnotes
 
