@@ -2826,8 +2826,9 @@ deux droites parallèles distantes de $d$. Soit $\mathcal{R}'$ le référentiel 
    repoussent plus.
 
    On peut retrouver ce résultat à partir de la transformation des champs électriques et magnétiques
-   soit pour la composante longitudinale au déplacement $\vv{E}'_\parallel=\vv{E}_\parallel=\vv{0}$ et
-   $\vv{B}'_\parallel=\vv{B}_\parallel=\vv{0}$ et pour la composante transverse
+   soit, en $M2$, pour la composante longitudinale au déplacement
+   $\vv{E}'_\parallel=\vv{E}_\parallel=\vv{0}$ et $\vv{B}'_\parallel=\vv{B}_\parallel=\vv{0}$ et pour la
+   composante transverse
    #+BEGIN_SRC latex
      \begin{align*}
        \vv{E}_\perp&= \gamma\,\left(\vv{E}'_\perp-\vv{v}\times\vv{B}'_\perp\right)\\
@@ -2936,6 +2937,10 @@ densité totale de charge vaut $\rho=\rho_i+\rho_e=0$
    #+END_SRC
    où $\beta=\frac{V}{c}$.
 
+   On notera que la densité volumique de charge électronique $\rho_e=-ne$ étant négative, la
+   densité total $\rho'$ est positive sous le changement de référentiel
+   $\mathcal{R}\to\mathcal{R}'$. De même $j'_x<0$.
+
 #+BEGIN_QUESTION
 3) [@3] Dans $\mathcal{R}$ une charge test $q$ est immobile à une distance $r$ du fil. Quelle force
    ressent-elle ?
@@ -2985,7 +2990,7 @@ densité totale de charge vaut $\rho=\rho_i+\rho_e=0$
       Ainsi, les champs électrique $\vv{E}'$ et magnétique $\vv{B}'$ s'écrivent
       #+BEGIN_SRC latex
         \begin{align*}
-          \vv{E}'(M)&=\frac{1}{2\pi\epsilon_0}\frac{\lambda'}{r}\vv{e_r}=\frac{1}{2\pi\epsilon_0}\\
+          \vv{E}'(M)&=\frac{1}{2\pi\epsilon_0}\frac{\lambda'}{r}\vv{e_r}\\
           \vv{B}'(M)&=\frac{\mu_0}{2\pi}\frac{I'}{r}\vv{e_\theta}\\
         \end{align*}
       #+END_SRC
