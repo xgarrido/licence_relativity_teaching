@@ -1511,7 +1511,7 @@ $\beta = v/c$ avec une particule immobile de masse $m$.
           T_m'&=2mc^2\beta^2\gamma^2
         \end{align*}
       #+END_SRC
-* COMMENT TD3 : Dynamique relativiste
+* TD3 : Dynamique relativiste
 ** Masse = énergie au repos
 #+BEGIN_QUESTION
 1) Deux morceaux d'argile, chacun de masse $m$ ont une collision frontale à la vitesse
@@ -1742,7 +1742,7 @@ l'origine des coordonnées avec une vitesse nulle.
    | $t$ (a.)        |        5.15 |         30000 | 2.2 10^{6} | 1.5 10^{10}     |
    |-----------------+-------------+---------------+------------+-----------------|
 
-** Force de Minkowski
+** COMMENT Force de Minkowski
 #+BEGIN_QUESTION
 Une généralisation relativiste de la relation fondamentale de la dynamique est l’équation de Minkowski:
 #+BEGIN_SRC latex
@@ -2530,7 +2530,7 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
       #+END_SRC
       résultat attendu puisque à $\tau = 0$, la vitesse initiale de la particule est nulle
       ($\gamma=1$) et $y=0$ (donc $\phi=0$).
-* TD4 : Électrodynamique relativiste
+* COMMENT TD4 : Électrodynamique relativiste
 ** COMMENT Charge ponctuelle en mouvement rectiligne uniforme
 :PROPERTIES:
 :CUSTOM_ID: sec::charge_tru
@@ -2954,7 +2954,7 @@ densité totale de charge vaut $\rho=\rho_i+\rho_e=0$
 4) [@4] On va tenter de retrouver ce résultat en travaillant dans le référentiel $\mathcal{R}'$.
    1) En utilisant les résultats de la question 1), déterminer dans $\mathcal{R}'$ les champs
       $\vv{E}'$ et $\vv{B}'$ créés par le fil. /Indication: on notera $S$ la section du fil. Il est/
-      /approprié d'introduire la charge linéique du fil dans $\mathcal{R}'$ \((\lambda'=\rho'S\) et
+      /approprié d'introduire la charge linéique du fil dans $\mathcal{R}'$ \((\lambda'=\rho'S)\) et
       le courant $I'=J'_xS$ afin d'utiliser la relation \ref{eq:1}/.
 
    2) Déterminer, toujours dans $\mathcal{R}'$, la force induite sur la particule (qui se déplace à
@@ -2990,8 +2990,8 @@ densité totale de charge vaut $\rho=\rho_i+\rho_e=0$
       Ainsi, les champs électrique $\vv{E}'$ et magnétique $\vv{B}'$ s'écrivent
       #+BEGIN_SRC latex
         \begin{align*}
-          \vv{E}'(M)&=\frac{1}{2\pi\epsilon_0}\frac{\lambda'}{r}\vv{e_r}\\
-          \vv{B}'(M)&=\frac{\mu_0}{2\pi}\frac{I'}{r}\vv{e_\theta}\\
+          \vv{E}'(M)&=\frac{1}{2\pi\epsilon_0}\frac{\lambda'}{r}\vv{e_r}=-\frac{1}{2\pi\epsilon_0}\frac{V}{c^2}\frac{\gamma I}{r}\vv{e_r}\\
+          \vv{B}'(M)&=\frac{\mu_0}{2\pi}\frac{I'}{r}\vv{e_\theta}=\frac{\mu_0}{2\pi}\frac{\gamma I}{r}\vv{e_\theta}\\
         \end{align*}
       #+END_SRC
       sachant là aussi que la distance $r$ et les vecteurs $\vv{e_r}$ et $\vv{e_\theta}$ sont autant
@@ -3014,7 +3014,6 @@ densité totale de charge vaut $\rho=\rho_i+\rho_e=0$
 
    3) L'expression de la quadri-force $\underline{\mathcal{F}}$ directement proportionnelle à la
       force de Lorentz implique nécessairement $\vv{F}(M)=\vv{F}'(M)=\vv{0}$.
-
 
 
 * Footnotes
