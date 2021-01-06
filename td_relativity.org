@@ -5,11 +5,10 @@
 #+OPTIONS: ^:{} toc:2 tags:t author:nil email:nil split:html
 #+LATEX_CLASS: teaching-class
 #+LATEX_CLASS_OPTIONS: [novc]
-#+LATEX_HEADER: \usepackage{svg}
 
 #+PROPERTY: header-args:jupyter-python :session relativity :exports both
 
-* COMMENT TD1 : Principe de relativité et premières conséquences
+* TD1 : Principe de relativité et premières conséquences
 ** Désintégration
 #+BEGIN_QUESTION
 Le \Lambda_{0} est un baryon de masse 1115 MeV/c^{2} qui se désintègre en une paire proton-pion :
@@ -724,7 +723,15 @@ pendant l'aller et 8 signaux pendant le retour.
 #+ATTR_LATEX: :width \linewidth
 [[file:figures/alice_bob_signaux_1.pdf]]
 
-* COMMENT TD2 : Optique et cinématique du point
+** Footnotes
+
+[fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
+$uds$. La terminologie d'étrangeté vient de la durée de vie particulièrement longue de ces
+particules, caractéristique de désintégrations par interaction faible.
+
+[fn:55e25f58788cdf5] Attention ce n'est $\vv{v}-\vv{V}$ que dans la limite non relativiste !
+
+* TD2 : Optique et cinématique du point
 ** Quadri-vecteur d'onde
 #+BEGIN_QUESTION
 Dans cet exercice nous allons démontrer que pour une onde de pulsation $\omega$, de vecteur d’onde
@@ -980,7 +987,6 @@ soit
 #+BEGIN_SNIPPET
 #+BEGIN_SRC jupyter-python
   %matplotlib inline
-  %config InlineBackend.figure_format = "svg"
   import numpy as np
   def f(theta, beta):
         return (1-beta**2)/(1-beta*np.cos(theta))**2
@@ -997,7 +1003,7 @@ soit
 #+END_SRC
 
 #+RESULTS:
-[[file:./.ob-jupyter/ed0d0e1f1d43164d178ec40995f43e0a1e92d82d.svg]]
+[[file:./.ob-jupyter/bdd97947a78077dcf8e1de9cca85e1d0bc8dcec6.png]]
 
 #+END_SNIPPET
 
@@ -1034,6 +1040,131 @@ L'angle $\theta_\text{lim.}$ pour lequel la moitié des photons sont émis est t
     \end{align*}
 #+END_SRC
 soit pour $\beta=\nicefrac{1}{2}$, $\theta_\text{lim.}=\nicefrac{\pi}{3}$ = 60°.
+** Collision inélastique de deux protons
+#+BEGIN_QUESTION
+On considère une collision entre deux protons $p^+$ ($m_pc^2=\unit[938.25]{MeV}$) donnant un
+deutéron $d^+$ ($m_dc^2=\unit[1875.56]{MeV}$) et un méson $\pi^+$ ($m_\pi c^2=\unit[139.6]{MeV}$) :
+#+BEGIN_SRC latex
+  \begin{align*}
+    p^++p^+\to d^++\pi^+
+  \end{align*}
+#+END_SRC
+Quelle est, dans le référentiel du centre de masse $\mathcal{R}^*$, l'énergie seuil de la réaction ?
+Calculer, au seuil de la réaction, l'énergie du proton projectile dans le référentiel du laboratoire
+$\mathcal{R}$ où le proton cible est au repos. On donnera l'expression littérale et la valeur
+numérique.
+#+END_QUESTION
+
+Le référentiel du centre de masse $\mathcal{R}^*$ est, par définition, celui dans lequel la somme
+des impulsions (initiales comme finales étant donné la conservation de l'impulsion) est
+nulle. Ainsi, les impulsions des protons sont nécessairement opposées de même que celles du deutéron
+et du pion (émission dos à dos). Par ailleurs, le seuil de la réaction correspond à la situation où
+la totalité de l'énergie initiale est dissipée sous forme d'énergie de masse : les particules
+produites sont alors au repos et l'énergie incidente ne "sert" qu'à produire ces particules sur
+leurs couches de masse. Au seuil de la réaction, l'énergie est égale à $m_dc^2+m_\pi c^2$. Étant
+donné que les particules incidentes sont identiques (même masse, même impulsion), on déduit que
+l'énergie cinétique seuil est alors
+#+BEGIN_SRC latex
+  \begin{align*}
+  E^*=E_{p_1}^*+E_{p_2}^*=2T_S^*+2m_pc^2&=m_dc^2+m_\pi c^2\\
+  T_S^*&=\frac{m_dc^2+m_\pi c^2-2m_pc^2}{2}=\unit[69.33]{MeV}
+  \end{align*}
+#+END_SRC
+
+Dans l'hypothèse où un proton incident vient à taper sur une cible d'hydrogène /i.e./ sur un proton
+immobile, le calcul de l'énergie seuil nécessaire à la production du deutéron et du pion est
+sensiblement différent. Dans cette situation, l'impulsion totale est nécessairement différente de 0
+et égale à l'impulsion du proton projectile. La somme des impulsions du deutéron et du pion est
+ainsi égale à $\vv{p}_p$. Au seuil de la réaction, nous pouvons néanmoins considérer les deux
+situations comme équivalentes du point de vue des invariants relativistes. En particulier, la norme
+du quadri-vecteur énergie impulsion est la même sous les deux hypothèses. On a alors
+#+BEGIN_SRC latex
+  \begin{align*}
+    E^2-\vv{p}_p^2c^2&=E^{*2}=(m_dc^2+m_\pi c^2)^2
+  \end{align*}
+#+END_SRC
+où $E=E_p^\text{proj.}+m_pc^2$ et $\vv{p}^2c^2=E_p^{\text{proj.}2}-m_p^2c^4$ d'où
+#+BEGIN_SRC latex
+  \begin{align*}
+    \cancel{E_p^{\text{proj.}2}} + 2E_p^\text{proj.}m_pc^2+m_p^2c^4-\cancel{E_p^{\text{proj.}2}}+m_p^2c^4&=(m_dc^2+m_\pi c^2)^2\\
+    E_p^\text{proj.}&=\frac{(m_dc^2+m_\pi c^2)^2 - 2m_p^2c^4}{2m_pc^2}
+  \end{align*}
+#+END_SRC
+De même l'énergie cinétique seuil $T_S^\text{proj.}$ peut s'écrire
+#+BEGIN_SRC latex
+  \begin{align*}
+  T_s^\text{proj.}&=E_p^\text{proj.}-m_pc^2=\frac{(m_dc^2+m_\pi c^2)^2 - 2m_p^2c^4-2m_p^2c^4}{2m_pc^2}\\
+  &=\frac{(m_dc^2+m_\pi c^2+2m_pc^2)(m_dc^2+m_\pi c^2-2m_pc^2)}{2m_pc^2}\\
+  &=\frac{(m_dc^2+m_\pi c^2+2m_pc^2)}{m_pc^2}T_S^*=\frac{\sum m_{i,f}c^2}{m_\text{cible}c^2}\,T_S*
+  \end{align*}
+#+END_SRC
+L'énergie cinétique à fournir dans le cas d'une réaction sur cible fixe est ainsi toujours plus
+grande que l'énergie cinétique dans le cas d'une collision frontale $T_S^\text{proj.}>T_S^*$.
+
+** Collision frontale
+#+BEGIN_QUESTION
+On étudie la collision élastique frontale d'une particule incidente de masse $M$ et de vitesse
+$\beta = v/c$ avec une particule immobile de masse $m$.
+1) Écrire les quadrivecteurs énergie-impulsion initiaux de chaque particule dans le référentiel du
+   laboratoire.
+2) Construire la transformation de Lorentz qui fait passer du référentiel du laboratoire au
+   référentiel $\mathcal{R}^*$ dans lequel la particule de masse $M$ est au repos. En déduire la
+   quadri-impulsion de chaque particule dans $\mathcal{R}^*$.
+#+END_QUESTION
+
+1) Dans le référentiel du laboratoire, les quadri-vecteurs énergie-impulsion de la particule lourde
+   et de la particule légère sont respectivement $(E_M/c, \vv{p}_M)=(\gamma Mc, \gamma
+   M\vv{v})=(\gamma Mc, \gamma M\beta c\vv{u}_x)$ et $(E_m/c, \vv{p}_m)=(mc, \vv{0})$.
+
+2) Dans le référentiel de la particule de masse $M$, cette dernière voit la particule de masse $m$
+   se déplacer avec une vitesse $v=-\beta c\vv{u}_x$. La transformation de Lorentz de chaque
+   quadri-vecteurs donne
+   #+BEGIN_SRC latex
+     \begin{align*}
+       \begin{pmatrix}\frac{E_M^*}{c}\\p_M^*\end{pmatrix}&=\begin{bmatrix}\gamma&-\beta\gamma\\-\beta\gamma&\gamma\end{bmatrix}\begin{pmatrix}\gamma Mc\\\gamma Mc\beta\end{pmatrix}=\begin{pmatrix}Mc\\0\end{pmatrix}\\
+       \begin{pmatrix}\frac{E_m^*}{c}\\p_m^*\end{pmatrix}&=\begin{bmatrix}\gamma&-\beta\gamma\\-\beta\gamma&\gamma\end{bmatrix}\begin{pmatrix}mc\\0\end{pmatrix}=\begin{pmatrix}\gamma mc\\-\gamma mc\beta\end{pmatrix}
+     \end{align*}
+   #+END_SRC
+   On retrouve bien que la particule est au repos $\vv{p}_M^*=\vv{0}$ tandis que l'impulsion de $m$
+   est opposée à celle de $M$.
+#+BEGIN_QUESTION
+3) [@3] On se place dans le cas limite où $M\gg  m$.
+   1) En étudiant la cinématique d'une collision frontale dans $\mathcal{R}^*$, déterminer sans
+      aucun calcul l'impulsion finale maximale de la particule légère.
+   2) En revenant dans le référentiel du laboratoire, montrer alors que l'énergie cinétique finale maximale
+      transférée à la particule légère lors de la collision est
+      #+BEGIN_SRC latex
+        \begin{align*}
+          K=2mc^2\beta^2\gamma^2.
+        \end{align*}
+      #+END_SRC
+#+END_QUESTION
+3) [@3]
+   1) Après la collision, le cas où le transfert d'impulsion est le plus élevé correspond à la
+      rétrodiffusion de la particule $m$. Si $M\gg m$, on peut considérer que la particule de masse
+      $M$ ne se déplace quasiment pas après la collision (rebond sur un mur infiniment
+      lourd). Ainsi, toute l'impulsion initiale $p_m^*$ est transférée lors du rebond de la
+      particule $m$ : $p_m'=+\gamma mc\beta$. Le quadri-vecteur énergie-impulsion de la particule
+      $m$ après collision est donc
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \begin{pmatrix}\frac{E_m'^*}{c}\\p_m'^*\end{pmatrix}&=\begin{pmatrix}\gamma mc\\+\gamma mc\beta\end{pmatrix}
+        \end{align*}
+      #+END_SRC
+   2) En faisant la transformation de Lorentz inverse, on obtient
+      #+BEGIN_SRC latex
+        \begin{align*}
+          \begin{pmatrix}\frac{E_m'}{c}\\p_m'\end{pmatrix}&=\begin{bmatrix}\gamma&\gamma\beta\\\gamma\beta&\gamma\end{bmatrix}\begin{pmatrix}\gamma mc\\\gamma mc\beta\end{pmatrix}
+        \end{align*}
+      #+END_SRC
+      soit
+      #+BEGIN_SRC latex
+        \begin{align*}
+          E_m'&=\gamma^2 mc^2+\gamma^2\beta^2 mc^2\\
+          T_m'&=E_m'-mc^2=(\underbrace{\gamma^2-1}_{\beta^2\gamma^2})mc^2+\gamma^2\beta^2mc^2\\
+          T_m'&=2mc^2\beta^2\gamma^2
+        \end{align*}
+      #+END_SRC
 ** Collisions élastiques
 #+BEGIN_QUESTION
 Une particule de masse $m$ et d’énergie cinétique $K$ entre en collision avec une autre particule de
@@ -1188,67 +1319,6 @@ $\vv{v_2}'$.
        \cos\alpha&=\frac{K}{K+4mc^2}
      \end{align*}
    #+END_SRC
-
-** Collision inélastique de deux protons
-#+BEGIN_QUESTION
-On considère une collision entre deux protons $p^+$ ($m_pc^2=\unit[938.25]{MeV}$) donnant un
-deutéron $d^+$ ($m_dc^2=\unit[1875.56]{MeV}$) et un méson $\pi^+$ ($m_\pi c^2=\unit[139.6]{MeV}$) :
-#+BEGIN_SRC latex
-  \begin{align*}
-    p^++p^+\to d^++\pi^+
-  \end{align*}
-#+END_SRC
-Quelle est, dans le référentiel du centre de masse $\mathcal{R}^*$, l'énergie seuil de la réaction ?
-Calculer, au seuil de la réaction, l'énergie du proton projectile dans le référentiel du laboratoire
-$\mathcal{R}$ où le proton cible est au repos. On donnera l'expression littérale et la valeur
-numérique.
-#+END_QUESTION
-
-Le référentiel du centre de masse $\mathcal{R}^*$ est, par définition, celui dans lequel la somme
-des impulsions (initiales comme finales étant donné la conservation de l'impulsion) est
-nulle. Ainsi, les impulsions des protons sont nécessairement opposées de même que celles du deutéron
-et du pion (émission dos à dos). Par ailleurs, le seuil de la réaction correspond à la situation où
-la totalité de l'énergie initiale est dissipée sous forme d'énergie de masse : les particules
-produites sont alors au repos et l'énergie incidente ne "sert" qu'à produire ces particules sur
-leurs couches de masse. Au seuil de la réaction, l'énergie est égale à $m_dc^2+m_\pi c^2$. Étant
-donné que les particules incidentes sont identiques (même masse, même impulsion), on déduit que
-l'énergie cinétique seuil est alors
-#+BEGIN_SRC latex
-  \begin{align*}
-  E^*=E_{p_1}^*+E_{p_2}^*=2T_S^*+2m_pc^2&=m_dc^2+m_\pi c^2\\
-  T_S^*&=\frac{m_dc^2+m_\pi c^2-2m_pc^2}{2}=\unit[69.33]{MeV}
-  \end{align*}
-#+END_SRC
-
-Dans l'hypothèse où un proton incident vient à taper sur une cible d'hydrogène /i.e./ sur un proton
-immobile, le calcul de l'énergie seuil nécessaire à la production du deutéron et du pion est
-sensiblement différent. Dans cette situation, l'impulsion totale est nécessairement différente de 0
-et égale à l'impulsion du proton projectile. La somme des impulsions du deutéron et du pion est
-ainsi égale à $\vv{p}_p$. Au seuil de la réaction, nous pouvons néanmoins considérer les deux
-situations comme équivalentes du point de vue des invariants relativistes. En particulier, la norme
-du quadri-vecteur énergie impulsion est la même sous les deux hypothèses. On a alors
-#+BEGIN_SRC latex
-  \begin{align*}
-    E^2-\vv{p}_p^2c^2&=E^{*2}=(m_dc^2+m_\pi c^2)^2
-  \end{align*}
-#+END_SRC
-où $E=E_p^\text{proj.}+m_pc^2$ et $\vv{p}^2c^2=E_p^{\text{proj.}2}-m_p^2c^4$ d'où
-#+BEGIN_SRC latex
-  \begin{align*}
-    \cancel{E_p^{\text{proj.}2}} + 2E_p^\text{proj.}m_pc^2+m_p^2c^4-\cancel{E_p^{\text{proj.}2}}+m_p^2c^4&=(m_dc^2+m_\pi c^2)^2\\
-    E_p^\text{proj.}&=\frac{(m_dc^2+m_\pi c^2)^2 - 2m_p^2c^4}{2m_pc^2}
-  \end{align*}
-#+END_SRC
-De même l'énergie cinétique seuil $T_S^\text{proj.}$ peut s'écrire
-#+BEGIN_SRC latex
-  \begin{align*}
-  T_s^\text{proj.}&=E_p^\text{proj.}-m_pc^2=\frac{(m_dc^2+m_\pi c^2)^2 - 2m_p^2c^4-2m_p^2c^4}{2m_pc^2}\\
-  &=\frac{(m_dc^2+m_\pi c^2+2m_pc^2)(m_dc^2+m_\pi c^2-2m_pc^2)}{2m_pc^2}\\
-  &=\frac{(m_dc^2+m_\pi c^2+2m_pc^2)}{m_pc^2}T_S^*=\frac{\sum m_{i,f}c^2}{m_\text{cible}c^2}\,T_S*
-  \end{align*}
-#+END_SRC
-L'énergie cinétique à fournir dans le cas d'une réaction sur cible fixe est ainsi toujours plus
-grande que l'énergie cinétique dans le cas d'une collision frontale $T_S^\text{proj.}>T_S^*$.
 
 ** Cinématique des désintégrations en deux corps
 #+BEGIN_QUESTION
@@ -1444,73 +1514,17 @@ grande que l'énergie cinétique dans le cas d'une collision frontale $T_S^\text
       #+END_SRC
 
       #+RESULTS:
-      [[file:./.ob-jupyter/b66c908fc15b9a5be797584a5dbe14c482b2336c.png]]
+      [[file:./.ob-jupyter/84742a9132f72de963e27d7f24d85088bb9a2fc1.png]]
+
       #+END_SNIPPET
 
-** Collision frontale
-#+BEGIN_QUESTION
-On étudie la collision élastique frontale d'une particule incidente de masse $M$ et de vitesse
-$\beta = v/c$ avec une particule immobile de masse $m$.
-1) Écrire les quadrivecteurs énergie-impulsion initiaux de chaque particule dans le référentiel du
-   laboratoire.
-2) Construire la transformation de Lorentz qui fait passer du référentiel du laboratoire au
-   référentiel $\mathcal{R}^*$ dans lequel la particule de masse $M$ est au repos. En déduire la
-   quadri-impulsion de chaque particule dans $\mathcal{R}^*$.
-#+END_QUESTION
+** Footnotes
 
-1) Dans le référentiel du laboratoire, les quadri-vecteurs énergie-impulsion de la particule lourde
-   et de la particule légère sont respectivement $(E_M/c, \vv{p}_M)=(\gamma Mc, \gamma
-   M\vv{v})=(\gamma Mc, \gamma M\beta c\vv{u}_x)$ et $(E_m/c, \vv{p}_m)=(mc, \vv{0})$.
+[fn:248c710448ab8f4] ce résultat s'obtient en calculant la norme du quadri-vecteur $\underline{P}$
+soit $\underline{P}.\underline{P}=\underline{P}^*.\underline{P}^*$ où $\underline{P}^*=(mc,
+\vv{0})$ par définition du référentiel propre de la particule. Ainsi,
+$\frac{E^2}{c^2}-\vv{p}^2=m^2c^4$ d'où $E=pc$ pour un photon de masse nulle.
 
-2) Dans le référentiel de la particule de masse $M$, cette dernière voit la particule de masse $m$
-   se déplacer avec une vitesse $v=-\beta c\vv{u}_x$. La transformation de Lorentz de chaque
-   quadri-vecteurs donne
-   #+BEGIN_SRC latex
-     \begin{align*}
-       \begin{pmatrix}\frac{E_M^*}{c}\\p_M^*\end{pmatrix}&=\begin{bmatrix}\gamma&-\beta\gamma\\-\beta\gamma&\gamma\end{bmatrix}\begin{pmatrix}\gamma Mc\\\gamma Mc\beta\end{pmatrix}=\begin{pmatrix}Mc\\0\end{pmatrix}\\
-       \begin{pmatrix}\frac{E_m^*}{c}\\p_m^*\end{pmatrix}&=\begin{bmatrix}\gamma&-\beta\gamma\\-\beta\gamma&\gamma\end{bmatrix}\begin{pmatrix}mc\\0\end{pmatrix}=\begin{pmatrix}\gamma mc\\-\gamma mc\beta\end{pmatrix}
-     \end{align*}
-   #+END_SRC
-   On retrouve bien que la particule est au repos $\vv{p}_M^*=\vv{0}$ tandis que l'impulsion de $m$
-   est opposée à celle de $M$.
-#+BEGIN_QUESTION
-3) [@3] On se place dans le cas limite où $M\gg  m$.
-   1) En étudiant la cinématique d'une collision frontale dans $\mathcal{R}^*$, déterminer sans
-      aucun calcul l'impulsion finale maximale de la particule légère.
-   2) En revenant dans le référentiel du laboratoire, montrer alors que l'énergie cinétique finale maximale
-      transférée à la particule légère lors de la collision est
-      #+BEGIN_SRC latex
-        \begin{align*}
-          K=2mc^2\beta^2\gamma^2.
-        \end{align*}
-      #+END_SRC
-#+END_QUESTION
-3) [@3]
-   1) Après la collision, le cas où le transfert d'impulsion est le plus élevé correspond à la
-      rétrodiffusion de la particule $m$. Si $M\gg m$, on peut considérer que la particule de masse
-      $M$ ne se déplace quasiment pas après la collision (rebond sur un mur infiniment
-      lourd). Ainsi, toute l'impulsion initiale $p_m^*$ est transférée lors du rebond de la
-      particule $m$ : $p_m'=+\gamma mc\beta$. Le quadri-vecteur énergie-impulsion de la particule
-      $m$ après collision est donc
-      #+BEGIN_SRC latex
-        \begin{align*}
-          \begin{pmatrix}\frac{E_m'^*}{c}\\p_m'^*\end{pmatrix}&=\begin{pmatrix}\gamma mc\\+\gamma mc\beta\end{pmatrix}
-        \end{align*}
-      #+END_SRC
-   2) En faisant la transformation de Lorentz inverse, on obtient
-      #+BEGIN_SRC latex
-        \begin{align*}
-          \begin{pmatrix}\frac{E_m'}{c}\\p_m'\end{pmatrix}&=\begin{bmatrix}\gamma&\gamma\beta\\\gamma\beta&\gamma\end{bmatrix}\begin{pmatrix}\gamma mc\\\gamma mc\beta\end{pmatrix}
-        \end{align*}
-      #+END_SRC
-      soit
-      #+BEGIN_SRC latex
-        \begin{align*}
-          E_m'&=\gamma^2 mc^2+\gamma^2\beta^2 mc^2\\
-          T_m'&=E_m'-mc^2=(\underbrace{\gamma^2-1}_{\beta^2\gamma^2})mc^2+\gamma^2\beta^2mc^2\\
-          T_m'&=2mc^2\beta^2\gamma^2
-        \end{align*}
-      #+END_SRC
 * TD3 : Dynamique relativiste
 ** Masse = énergie au repos
 #+BEGIN_QUESTION
@@ -1742,7 +1756,7 @@ l'origine des coordonnées avec une vitesse nulle.
    | $t$ (a.)        |        5.15 |         30000 | 2.2 10^{6} | 1.5 10^{10}     |
    |-----------------+-------------+---------------+------------+-----------------|
 
-** COMMENT Force de Minkowski
+** Force de Minkowski
 #+BEGIN_QUESTION
 Une généralisation relativiste de la relation fondamentale de la dynamique est l’équation de Minkowski:
 #+BEGIN_SRC latex
@@ -2257,7 +2271,7 @@ pour un proton.
    #+END_SRC
    et la distance parcourue $\ell = n\cdot2\pi R=\unit[5.16\,10^{10}]{m}$.
 
-** COMMENT Particule chargée dans un champ électromagnétique
+** Particule chargée dans un champ électromagnétique
 #+BEGIN_QUESTION
 On étudie le mouvement d'une particule de masse $m$ et de charge $q$ dans un référentiel
 $\mathcal{R}$ où règne un champ électromagnétique uniforme et statique, décrit par
@@ -2530,8 +2544,28 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
       #+END_SRC
       résultat attendu puisque à $\tau = 0$, la vitesse initiale de la particule est nulle
       ($\gamma=1$) et $y=0$ (donc $\phi=0$).
-* COMMENT TD4 : Électrodynamique relativiste
-** COMMENT Charge ponctuelle en mouvement rectiligne uniforme
+** Footnotes
+
+[fn:4e7c18b7ed5ec89] L'unité u de masse atomique vaut 1/12 de la masse de l'atome de\nbsp^{12}C. 1 u
+= $\unit[(1/N_A)]{g} = \unit[1.6605\times10^{-27}]{kg}=\unit[931.49]{MeV}/c^2$.
+
+[fn:1abe39dd815778cf] On prend la convention : le premier indice est l'indice de ligne et le second
+est l'indice de colonne. Attention, les indices varient de 0 à 3 : la colonne d'indice 1 est donc la
+seconde colonne.
+
+[fn:883299da15d8a45] L'énergie totale d'une particule de masse $m$ et de charge $q$ plongée dans un
+champ électromagnétique et suivant une trajectoire $\vv{r}(t)$ (vitesse $\vv{v}(t)=\dot{\vv{r}}$)
+est
+#+BEGIN_SRC latex
+  \begin{align*}
+    \mathcal{E}=\frac{mc^2}{\surd 1 - \vv{v}^2(t)/c^2}+q\phi(\vv{r}(t),t),
+  \end{align*}
+#+END_SRC
+où $\phi$ est le potentiel scalaire : $\vv{E}(\vv{r},t)=-\vv{\nabla}\phi-\partial_t\vv{A}$ et
+$\vv{B}(\vv{r},t)=\vv{\nabla}\times\vv{A}$.
+
+* TD4 : Électrodynamique relativiste
+** Charge ponctuelle en mouvement rectiligne uniforme
 :PROPERTIES:
 :CUSTOM_ID: sec::charge_tru
 :END:
@@ -3014,35 +3048,3 @@ densité totale de charge vaut $\rho=\rho_i+\rho_e=0$
 
    3) L'expression de la quadri-force $\underline{\mathcal{F}}$ directement proportionnelle à la
       force de Lorentz implique nécessairement $\vv{F}(M)=\vv{F}'(M)=\vv{0}$.
-
-
-* Footnotes
-
-[fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
-$uds$. La terminologie d'étrangeté vient de la durée de vie particulièrement longue de ces
-particules, caractéristique de désintégrations par interaction faible.
-
-[fn:55e25f58788cdf5] Attention ce n'est $\vv{v}-\vv{V}$ que dans la limite non relativiste !
-
-[fn:248c710448ab8f4] ce résultat s'obtient en calculant la norme du quadri-vecteur $\underline{P}$
-soit $\underline{P}.\underline{P}=\underline{P}^*.\underline{P}^*$ où $\underline{P}^*=(mc,
-\vv{0})$ par définition du référentiel propre de la particule. Ainsi,
-$\frac{E^2}{c^2}-\vv{p}^2=m^2c^4$ d'où $E=pc$ pour un photon de masse nulle.
-
-[fn:4e7c18b7ed5ec89] L'unité u de masse atomique vaut 1/12 de la masse de l'atome de\nbsp^{12}C. 1 u
-= $\unit[(1/N_A)]{g} = \unit[1.6605\times10^{-27}]{kg}=\unit[931.49]{MeV}/c^2$.
-
-[fn:1abe39dd815778cf] On prend la convention : le premier indice est l'indice de ligne et le second
-est l'indice de colonne. Attention, les indices varient de 0 à 3 : la colonne d'indice 1 est donc la
-seconde colonne.
-
-[fn:883299da15d8a45] L'énergie totale d'une particule de masse $m$ et de charge $q$ plongée dans un
-champ électromagnétique et suivant une trajectoire $\vv{r}(t)$ (vitesse $\vv{v}(t)=\dot{\vv{r}}$)
-est
-#+BEGIN_SRC latex
-  \begin{align*}
-    \mathcal{E}=\frac{mc^2}{\surd 1 - \vv{v}^2(t)/c^2}+q\phi(\vv{r}(t),t),
-  \end{align*}
-#+END_SRC
-où $\phi$ est le potentiel scalaire : $\vv{E}(\vv{r},t)=-\vv{\nabla}\phi-\partial_t\vv{A}$ et
-$\vv{B}(\vv{r},t)=\vv{\nabla}\times\vv{A}$.
