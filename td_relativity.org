@@ -128,8 +128,8 @@ différentes.
   déplacement du référentiel $\nicefrac{\mathcal{R}'}{\mathcal{R}}$ sont contractées.
 
 - *2^{ème} démonstration* : on considère à présent la mesure des extrémités de la règle $A$ et $B$ au
-  même instant $t_A=t_B$ dans $\mathcal{R}$. On a donc deux événements coïncidents repérés en
-  coordonnées espace-temps par les quadri-vecteurs
+  même instant $\pmb{t_A=t_B}$ dans $\mathcal{R}$. On a donc deux événements coïncidents repérés
+  en coordonnées espace-temps par les quadri-vecteurs
   #+BEGIN_SRC latex
     \begin{align*}
       E_A=
@@ -725,8 +725,8 @@ pendant l'aller et 8 signaux pendant le retour.
 
 ** Footnotes
 
-[fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule constituée de 3 quarks de valence
-$uds$. La terminologie d'étrangeté vient de la durée de vie particulièrement longue de ces
+[fn:cb0c07154fe6de2] le baryon \Lambda_{0} est une particule "étrange" constituée de 3 quarks de
+valence $uds$. La terminologie d'étrangeté vient de la durée de vie particulièrement longue de ces
 particules, caractéristique de désintégrations par interaction faible.
 
 [fn:55e25f58788cdf5] Attention ce n'est $\vv{v}-\vv{V}$ que dans la limite non relativiste !
@@ -1514,7 +1514,7 @@ $\vv{v_2}'$.
       #+END_SRC
 
       #+RESULTS:
-      [[file:./.ob-jupyter/84742a9132f72de963e27d7f24d85088bb9a2fc1.png]]
+      [[file:./.ob-jupyter/2d70e46100fbc5bb7679fcb51d012eb9fc0b0409.png]]
 
       #+END_SNIPPET
 
@@ -1679,7 +1679,7 @@ l'origine des coordonnées avec une vitesse nulle.
    #+END_SRC
 
    #+RESULTS:
-   [[file:./.ob-jupyter/0d99f569b82c872ab20530ff353a4bfb6ee8ae4c.png]]
+   [[file:./.ob-jupyter/002694ee957dc6b97f0828da162bdd70aee3e55b.png]]
    #+END_SNIPPET
 
    Dès lors, on peut intégrer le temps propre en fonction du temps terrestre moyennant la
@@ -1707,7 +1707,7 @@ l'origine des coordonnées avec une vitesse nulle.
   #+END_SRC
 
   #+RESULTS:
-  [[file:./.ob-jupyter/c1aa0d22642b16b7f6bfa5943fa9046dd60b57a7.png]]
+  [[file:./.ob-jupyter/8f9f0b2c3f806c0455a17eb651c4ed07739d3b66.png]]
   #+END_SNIPPET
 
 2)
@@ -2103,7 +2103,7 @@ soit la trajectoire parabolique obtenue en début d'exercice.
 #+END_SRC
 
 #+RESULTS:
-[[file:./.ob-jupyter/cd97217c7289d7633de5f4c6ac4aaf732f68bd51.png]]
+[[file:./.ob-jupyter/a27afb53293d3acc9ef28d35b0e6b242f9dcef61.png]]
 #+LATEX: \captionof{figure}{\textbf{Trajectoire d'un électron dans un champ électrique constant $E_S=\unit[1]{V/m}$}. La courbe en pointillée noire correspond à la trajectoire déduite de la mécanique classique; la courbe rouge à celle issue du traitement relativiste.}
 #+END_SNIPPET
 
@@ -2504,7 +2504,7 @@ $\vv{E}=E\vv{u}_y$ et $\vv{B}=B\vv{u}_z$, avec $E\geq0$ et $B\geq0$, constants.
    #+END_SRC
 
    #+RESULTS:
-   [[file:./.ob-jupyter/353c085a03c1503121c80f41c39ac9bf9334dd23.png]]
+   [[file:./.ob-jupyter/a261e447aae09dc78bd2728c2ba298a0ed3a5d45.png]]
    #+END_SNIPPET
 
    La particule intialement au repos en $O$ est dans un premier temps accélérée par le champ
@@ -2779,7 +2779,7 @@ point de coordonnées $(x, y, z)$ dans $\mathcal{R}$.
    #+END_SRC
 
    #+RESULTS:
-   [[file:./.ob-jupyter/d8fd1a417d1895b23011d2d1f5d7aaffa749b28c.png]]
+   [[file:./.ob-jupyter/6e014f0c763d258ce928be87d5bab6ea0ebf18b6.png]]
    #+END_SNIPPET
 
    Les lignes de champ électrique sont radiales et quasiment isotrope dans le plan $(yO\xi)$ pour
