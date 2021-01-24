@@ -1,0 +1,122 @@
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  photon/.style={decorate,decoration={snake,post length=2mm,pre length=2mm, segment length=1.0mm, amplitude=0.5mm,}}
+}
+\begin{tikzpicture}[y=-1cm, use optics]
+  \newcounter{step}
+  \setcounter{step}{6}
+
+  \clip (2, 2) rectangle (16, 10);
+
+  \sf
+  \large
+
+  \definecolor{red}{RGB}{221,42,43}
+  \definecolor{green}{RGB}{132,184,24}
+  \definecolor{blue}{RGB}{0,51,153}
+  \definecolor{orange}{RGB}{192,128,64}
+  \definecolor{gray}{RGB}{107,108,110}
+  \ifnum\value{step}<3
+  \draw[thick,black,<->] (5.87375,2.54) node[above right] {$y'$} -- (5.87375,6.0325) -- (8.09625,3.81) node[right] {$z'$};
+  \draw[thick,black,->] (5.87375,6.0325) -- (9.04875,6.0325) node[above right] {$x'$};
+  \fi
+
+  \ifnum\value{step}>1
+  \begin{scope}[xshift=-3cm, yshift=-3cm]
+  \draw[thick,black,<->] (5.87375,2.54) node[above right] {$y$} -- (5.87375,6.0325) -- (8.09625,3.81) node[right] {$z$};
+  \draw[thick,black,->] (5.87375,6.0325) -- (9.04875,6.0325) node[above right] {$x$};
+  \end{scope}
+  \fi
+
+  \begin{scope}[xshift=8cm, yshift=-4.5cm]
+    \ifnum\value{step}<4
+    \draw[very thick, blue] (0, 0) rectangle (5, 0.5);
+    \foreach \x in {0.0,0.1,...,5}
+    \draw[blue] (\x, 0) -- (\x, 0.1);
+    \fi
+
+    \ifnum\value{step}<2
+    \draw[thick, blue, <->] (0, 0.7) -- (5, 0.7) node[midway, below] {$L'$};
+    \fi
+
+    \ifnum\value{step}=1
+    \draw[photon, red, <->] (0, -0.2) -- (5, -0.2) node[midway, above] {$\Delta t'=\nicefrac{2L'}{c}$};
+    \node[mirror, object height=0.5cm] at (5, -0.2) {};
+    \fi
+
+    \ifnum\value{step}=2
+    \draw[very thick, ->] (5, 0.25) -- (6, 0.25) node[midway,above] {$\vv{V}$};
+    \fi
+
+    \ifthenelse{\value{step}>2\AND\value{step}<4}{
+    \draw[very thick, ->] (5, 0.25) -- (6, 0.25) node[midway,above] {$\vv{V}$};
+    \draw[blue] (0, 0.5) node[below left] {$A$};
+    \draw[blue] (5, 0.5) node[below right] {$B$};
+    \draw[thick, blue, <->] (0, 0.7) -- (5, 0.7) node[midway, below] {$L$};
+    }{}
+
+    \ifnum\value{step}=4
+    \draw[photon, red, ->] (0, -0.4) -- (6, -0.4) node[midway, above] {$c\Delta t_{A\to B}=L + V\Delta t_{A\to B}$};
+    \begin{scope}[xshift=1cm]
+    \draw[very thick, blue] (0, 0) rectangle (5, 0.5);
+    \foreach \x in {0.0,0.1,...,5}
+    \draw[blue] (\x, 0) -- (\x, 0.1);
+    \draw[blue] (0, 0.5) node[below left] {$A$};
+    \draw[blue] (5, 0.5) node[below right] {$B$};
+    \node[mirror, object height=1cm] at (5, -0.5) {};
+    \end{scope}
+
+    \begin{scope}[opacity=0.5]
+    \draw[very thick, blue] (0, 0) rectangle (5, 0.5);
+    \foreach \x in {0.0,0.1,...,5}
+    \draw[blue] (\x, 0) -- (\x, 0.1);
+    \end{scope}
+    \fi
+
+    \ifnum\value{step}>4
+    \draw[photon, red, ->] (6, -0.8) -- (2, -0.8) node[midway, above] {$c\Delta t_{B\to A}=L - V\Delta t_{B\to A}$};
+    \draw[photon, red, ->] (0, -0.4) -- (6, -0.4);
+    \begin{scope}[xshift=2cm]
+    \draw[very thick, blue] (0, 0) rectangle (5, 0.5);
+    \foreach \x in {0.0,0.1,...,5}
+    \draw[blue] (\x, 0) -- (\x, 0.1);
+    \draw[blue] (0, 0.5) node[below left] {$A$};
+    \draw[blue] (5, 0.5) node[below right] {$B$};
+    \end{scope}
+
+    \begin{scope}[xshift=1cm, opacity=0.5]
+    \draw[very thick, blue] (0, 0) rectangle (5, 0.5);
+    \foreach \x in {0.0,0.1,...,5}
+    \draw[blue] (\x, 0) -- (\x, 0.1);
+    \node[mirror, object height=1cm] at (5, -0.5) {};
+    \end{scope}
+
+    \begin{scope}[opacity=0.25]
+    \draw[very thick, blue] (0, 0) rectangle (5, 0.5);
+    \foreach \x in {0.0,0.1,...,5}
+    \draw[blue] (\x, 0) -- (\x, 0.1);
+    \end{scope}
+    \fi
+
+    \ifnum\value{step}=6
+    \Large
+    \draw (3, 3) node {$\begin{aligned}
+        \Delta t &= \Delta t_{A\to B}+\Delta t_{B\to A}=\gamma\Delta t'\\
+        &\dots\\
+        L &= \frac{L'}{\gamma}
+      \end{aligned}$};
+    \fi
+
+
+
+  \end{scope}
+
+
+\end{tikzpicture}%
+
+%% Configure (x)emacs for this file ...
+%% Local Variables:
+%% mode: latex
+%% End:
